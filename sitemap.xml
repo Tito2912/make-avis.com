@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- sitemap.xml — make-avis.com (FR/EN) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Accueil FR -->
+  <url>
+    <loc>https://make-avis.com/</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/"/>
+  </url>
+
+  <!-- Home EN -->
+  <url>
+    <loc>https://make-avis.com/en/</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/"/>
+  </url>
+
+  <!-- Blog hub FR -->
+  <url>
+    <loc>https://make-avis.com/blog.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog.html"/>
+  </url>
+
+  <!-- Blog hub EN -->
+  <url>
+    <loc>https://make-avis.com/en/blog.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog.html"/>
+  </url>
+
+  <!-- Article FR -->
+  <url>
+    <loc>https://make-avis.com/blog-1.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1.html"/>
+  </url>
+
+  <!-- Article EN -->
+  <url>
+    <loc>https://make-avis.com/en/blog-1.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1.html"/>
+  </url>
+
+  <!-- Mentions légales FR -->
+  <url>
+    <loc>https://make-avis.com/mentions-legales.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales.html"/>
+  </url>
+
+  <!-- Legal notice EN -->
+  <url>
+    <loc>https://make-avis.com/en/legal-notice.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales.html"/>
+  </url>
+
+  <!-- Politique de confidentialité FR -->
+  <url>
+    <loc>https://make-avis.com/politique-de-confidentialite.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite.html"/>
+  </url>
+
+  <!-- Privacy policy EN -->
+  <url>
+    <loc>https://make-avis.com/en/privacy-policy.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite.html"/>
+  </url>
+</urlset>

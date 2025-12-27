@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Make (ex-Integromat) — Automatiser son business en 2025 | Tutoriels, cas d’usage & comparatif</title>
+  <meta name="description" content="Automatisez vos tâches avec Make (ex-Integromat) : scénarios visuels, webhooks, routeurs/itérateurs, gestion d’erreurs, Data Stores et modules IA. Guide FR 2025, cas d’usage concrets (Sheets, Notion, Shopify, Gmail...), comparatif vs Zapier/n8n et FAQ RGPD." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://make-avis.com/" />
+  <link rel="alternate" hreflang="fr" href="https://make-avis.com/" />
+  <link rel="alternate" hreflang="en" href="https://make-avis.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://make-avis.com/" />
+  <link rel="icon" href="/Images/favicon.ico" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="/Images/capture-make.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Make (ex-Integromat) — Automatiser son business en 2025" />
+  <meta property="og:description" content="Scénarios visuels, IA, webhooks, routeurs/itérateurs, gestion d’erreurs, Data Stores. Cas d’usage + comparatif vs Zapier/n8n." />
+  <meta property="og:url" content="https://make-avis.com/" />
+  <meta property="og:image" content="https://make-avis.com/Images/capture-make.png" />
+  <meta property="og:site_name" content="make-avis.com" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Make (ex-Integromat) — Automatiser son business en 2025" />
+  <meta name="twitter:description" content="Guide FR 2025, cas d’usage (Sheets, Notion, Shopify, Gmail...), comparatif vs Zapier/n8n, FAQ & conformité." />
+  <meta name="twitter:image" content="https://make-avis.com/Images/capture-make.png" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"E-Com Shop",
+    "url":"https://make-avis.com/",
+    "logo":"https://make-avis.com/Images/logo-make.png",
+    "email":"contact.ecomshopfrance@gmail.com"
+  }
+  </script>
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"make-avis.com",
+    "url":"https://make-avis.com/"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://make-avis.com/"}
+    ]
+  }
+  </script>
+
+  <!-- Consent Mode v2 par défaut (avant tout chargement d'analytics) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+  <!-- GA4 sera injecté dynamiquement après consentement dans /main.js -->
+  <script>window.GA_MEASUREMENT_ID="G-ZVQ7Z5ZGK9";</script>
+  <script defer src="/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Header (mobile-first) -->
+    <header class="site-header" role="banner" aria-label="En-tête principal">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="/" class="logo-link" aria-label="Accueil make-avis.com">
+          <img src="/Images/logo-make.png" width="124" height="28" alt="Make (logo)" decoding="async" />
+        </a>
+      </div>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Sélecteur de langue">
+          <a href="/" class="lang-link active" data-lang="fr">FR</a>
+          <span aria-hidden="true">|</span>
+          <a href="/en/" class="lang-link" data-lang="en">EN</a>
+        </div>
+        <a class="btn cta"
+           href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=home&utm_content=header"
+           target="_blank" rel="noopener nofollow sponsored"
+           data-utm-page="home" data-utm-section="header">
+          Essayer Make gratuitement
+        </a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <nav id="nav" class="nav" role="navigation" aria-label="Navigation principale" hidden>
+      <div class="container nav-panel">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link" data-i18n="nav.home" aria-current="page">Accueil</a></li>
+          <li><a href="/blog.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
+          <li><a href="/mentions-legales.html" class="nav-link" data-i18n="nav.legal">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite.html" class="nav-link" data-i18n="nav.privacy">Politique de confidentialité</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=home&utm_content=menu"
+             target="_blank" rel="noopener nofollow sponsored"
+             data-utm-page="home" data-utm-section="menu">
+            Essayer Make gratuitement
+          </a>
+          <div class="lang-switch" role="group" aria-label="Sélecteur de langue">
+            <a href="/" class="lang-link active" data-lang="fr">FR</a>
+            <span aria-hidden="true">|</span>
+            <a href="/en/" class="lang-link" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="main" role="main">
+    <!-- Hero -->
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Automatisez votre business avec Make en 2025</h1>
+          <p class="lead">
+            Créez des scénarios visuels qui connectent vos outils, ajoutent de l’IA quand il faut, gèrent
+            les cas d’erreur et s’exécutent en temps réel via webhooks — le tout sans code.
+          </p>
+          <div class="cta-row">
+            <a class="btn cta btn-lg"
+               href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=home&utm_content=hero"
+               target="_blank" rel="noopener nofollow sponsored"
+               data-utm-page="home" data-utm-section="hero">
+              Essayer Make gratuitement
+            </a>
+            <a class='btn ghost' data-utm-page='home' data-utm-section='hero-secondary' href="/blog-1.html">
+              Voir le tutoriel complet 2025
+            </a>
+          </div>
+          <ul class="hero-bullets" role="list">
+            <li>Éditeur visuel + mapping des données</li>
+            <li>Modules IA &amp; agents (400+ apps IA prises en charge)</li>
+            <li>&gt;2 700 intégrations officielles</li>
+          </ul>
+        </div>
+        <figure class="hero-media">
+          <img src="/Images/capture-make.png" alt="Aperçu d’un scénario Make avec modules, routeur et itérateur" loading="eager" decoding="async" fetchpriority="high" width="1200" height="720" />
+          <figcaption class="sr-only">Exemple de scénario Make</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Bénéfices clés 2025 -->
+    <section class="section benefits">
+      <div class="container">
+        <h2>Bénéfices clés</h2>
+        <div class="grid cards-3">
+          <article class="card">
+            <h3>Scénarios visuels &amp; mapping</h3>
+            <p>Assemblez vos automatisations sur un canevas visuel. Le panneau de <em>mapping</em> vous permet de transformer et d’acheminer les données champ par champ (fonctions, tableaux, structures, etc.).</p>
+          </article>
+          <article class="card">
+            <h3>Contrôle du flux&nbsp;: routeurs &amp; itérateurs</h3>
+            <p>Branchez la logique avec des <strong>routeurs</strong> (conditions, fallback) et traitez les listes avec des <strong>itérateurs</strong> et agrégateurs pour gérer finement vos boucles.</p>
+          </article>
+          <article class="card">
+            <h3>Webhooks instantanés</h3>
+            <p>Déclenchez vos scénarios dès qu’un événement survient (file d’attente, exécutions parallèles ou séquentielles, réponse HTTP personnalisée).</p>
+          </article>
+          <article class="card">
+            <h3>Gestion d’erreurs &amp; reprises</h3>
+            <p>Ajoutez des <em>error handlers</em>, configurez les reprises et conservez la stabilité de vos scénarios (notifications, historique, rollback des modules ACID).</p>
+          </article>
+          <article class="card">
+            <h3>Data Stores intégrés</h3>
+            <p>Stockez des données métier légères entre exécutions (structures, lecture/écriture rapides) sans déployer une base dédiée.</p>
+          </article>
+          <article class="card">
+            <h3>IA &amp; Agents</h3>
+            <p>Activez des agents et modules IA pour classer, résumer, extraire et décider, avec <strong>400+ apps IA</strong> supportées.</p>
+          </article>
+        </div>
+        <div class="benefits-cta">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=home&utm_content=benefits"
+             target="_blank" rel="noopener nofollow sponsored"
+             data-utm-page="home" data-utm-section="benefits">
+            Démarrer un scénario
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cas d’usage -->
+    <section class="section use-cases">
+      <div class="container">
+        <h2>Cas d’usage concrets</h2>
+        <div class="grid cards-3">
+          <article class="card">
+            <h3>Google Sheets -> Gmail & Slack</h3>
+            <p>Surveillez une ligne ajoutée dans Sheets, enrichissez les données, puis envoyez des e-mails personnalisés et un résumé Slack à l’équipe.</p>
+          </article>
+          <article class="card">
+            <h3>Shopify -> Notion &amp; Airtable</h3>
+            <p>Synchronisez les commandes, générez des fiches produit enrichies, puis créez des rapports hebdomadaires dans Airtable.</p>
+          </article>
+          <article class="card">
+            <h3>Webhooks -> CRM</h3>
+            <p>Recevez des leads via webhook, normalisez les champs, dédupliquez, et <em>upsertez</em> vos contacts dans le CRM (reprises, limites d’API).</p>
+          </article>
+          <article class="card">
+            <h3>Support -> IA</h3>
+            <p>Analysez automatiquement les tickets entrants, détectez l’intention/urgence avec l’IA, routez vers la bonne équipe avec un routeur.</p>
+          </article>
+          <article class="card">
+            <h3>Factures -> Drive &amp; compta</h3>
+            <p>Classez vos PDFs, extrayez les montants avec un module IA et publiez les écritures dans votre outil comptable.</p>
+          </article>
+          <article class="card">
+            <h3>Marketing -> Calendrier éditorial</h3>
+            <p>Générez des briefs, validez par Slack, créez les tâches et planifiez les publications automatiquement.</p>
+          </article>
+        </div>
+        <div class="chips">
+          <span class="chip">Google Sheets</span>
+          <span class="chip">Notion</span>
+          <span class="chip">Shopify</span>
+          <span class="chip">Gmail</span>
+          <span class="chip">Slack</span>
+          <span class="chip">Airtable</span>
+          <span class="chip">Webhooks</span>
+          <span class="chip">Data Stores</span>
+        </div>
+        <div class="usecases-cta">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=home&utm_content=usecases"
+             target="_blank" rel="noopener nofollow sponsored"
+             data-utm-page="home" data-utm-section="usecases">
+            Tester ces scénarios
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparatif bref (factuel) -->
+    <section class="section compare">
+      <div class="container">
+        <h2>Make vs Zapier vs n8n (aperçu factuel)</h2>
+        <div class="table-wrap" role="region" aria-label="Comparatif automatique">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>Make</th>
+                <th>Zapier</th>
+                <th>n8n</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Intégrations</td>
+                <td>2 700+ apps</td>
+                <td>~8 000+ apps</td>
+                <td>~1 000+ (natif) + communauté</td>
+              </tr>
+              <tr>
+                <td>Éditeur</td>
+                <td>Canvas visuel, mapping, outils (routeur, itérateur, agrégateur)</td>
+                <td>Canvas/Builder, interfaces & bases (Tables)</td>
+                <td>Canvas visuel, nœuds, code/HTTP</td>
+              </tr>
+              <tr>
+                <td>IA</td>
+                <td>Modules &amp; Agents IA</td>
+                <td>Workflows/agents IA multi-apps</td>
+                <td>Nœuds IA (agents, LLM, RAG...)</td>
+              </tr>
+              <tr>
+                <td>Hébergement</td>
+                <td>SaaS</td>
+                <td>SaaS</td>
+                <td>Open-source, auto-hébergeable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          Choisissez selon vos besoins (catalogue d’apps, gouvernance, auto-hébergement, budget, complexité).
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ (SEO + JSON-LD FAQPage rendu via /main.js) -->
+    <section class="section faq">
+      <div class="container">
+        <h2>FAQ Make 2025</h2>
+
+        <details class="faq-item">
+          <summary>Make est-il adapté à l’e-commerce&nbsp;?</summary>
+          <div class="faq-body">
+            Oui. Relié à Shopify, Stripe, Gmail, Sheets, Slack, Airtable, etc., vous automatisez la gestion des commandes, des stocks et de la relation client.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Comment gérer les erreurs et éviter de «&nbsp;perdre&nbsp;» des données&nbsp;?</summary>
+          <div class="faq-body">
+            Utilisez les <em>error handlers</em>, configurez des reprises, surveillez l’historique et tirez parti du rollback des modules ACID. Les webhooks peuvent fonctionner en file d’attente.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Make propose-t-il des fonctions IA&nbsp;?</summary>
+          <div class="faq-body">
+            Oui, via des modules et agents IA pour classer, résumer, extraire et prendre des décisions sur vos données.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quelle différence principale avec n8n&nbsp;?</summary>
+          <div class="faq-body">
+            n8n est open-source et auto-hébergeable, très flexible pour les équipes techniques. Make offre un SaaS visuel avec un large catalogue d’intégrations et une expérience prête à l’emploi.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Puis-je stocker des informations entre exécutions&nbsp;?</summary>
+          <div class="faq-body">
+            Oui, avec les <em>Data Stores</em> intégrés (structures de données, lecture/écriture rapides).
+          </div>
+        </details>
+
+        <div class="faq-cta">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=home&utm_content=faq"
+             target="_blank" rel="noopener nofollow sponsored"
+             data-utm-page="home" data-utm-section="faq">
+            Créer mon compte Make
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc conformité -->
+    <section class="section compliance">
+      <div class="container">
+        <h2>Conformité &amp; transparence</h2>
+        <ul class="list">
+          <li>Ce site est un site d’affiliation indépendant (E-Com Shop). Nous pouvons percevoir une commission si vous vous inscrivez via nos liens.</li>
+          <li>Pas de conseil financier. L’automatisation peut interagir avec des outils liés aux investissements&nbsp;: informez-vous et testez sur comptes de démo si nécessaire.</li>
+          <li>Cookies uniquement après consentement (Analytics/Marketing). Vous pouvez <button type="button" class="link-like" data-action="open-cookie-modal">gérer vos cookies</button> à tout moment.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (identique FR/EN, liens adaptés) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo-link">
+          <img src="/Images/logo-make.png" width="124" height="28" alt="Make (logo)" decoding="async" />
+        </a>
+        <p class="small">
+          © <span id="year"></span> E-Com Shop — 60 rue François 1er, 75008 Paris — <a href="mailto:contact.ecomshopfrance@gmail.com">contact.ecomshopfrance@gmail.com</a>
+        </p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens de pied de page">
+        <ul>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
+      <div class="footer-cta">
+        <a class="btn cta"
+           href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=home&utm_content=footer"
+           target="_blank" rel="noopener nofollow sponsored"
+           data-utm-page="home" data-utm-section="footer">
+          Essayer Make gratuitement
+        </a>
+        <div class="lang-switch" role="group" aria-label="Sélecteur de langue en pied de page">
+          <a href="/" class="lang-link active" data-lang="fr">FR</a>
+          <span aria-hidden="true">|</span>
+          <a href="/en/" class="lang-link" data-lang="en">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton persistant gestion cookies -->
+  <button type="button" class="cookie-manage-fab" aria-label="Gérer mes cookies" data-action="open-cookie-modal">Cookies</button>
+
+  <!-- Cookie Banner / Modal -->
+  <div class="cookie-backdrop" hidden></div>
+  <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-title" hidden>
+    <div class="cookie-content">
+      <h2 id="cookie-title">Gestion des cookies</h2>
+      <p>Nous utilisons des cookies pour améliorer votre expérience. Vous pouvez accepter par catégorie.</p>
+      <form id="cookie-form">
+        <fieldset>
+          <legend>Catégories</legend>
+          <label class="switch">
+            <input type="checkbox" name="necessary" checked disabled />
+            <span>Nécessaires (toujours actifs)</span>
+          </label>
+          <label class="switch">
+            <input type="checkbox" name="analytics" />
+            <span>Analytics (GA4)</span>
+          </label>
+          <label class="switch">
+            <input type="checkbox" name="marketing" />
+            <span>Marketing</span>
+          </label>
+        </fieldset>
+        <div class="cookie-actions">
+          <button type="button" class="btn ghost" data-action="reject-all">Tout refuser</button>
+          <button type="button" class="btn" data-action="accept-necessary">Autoriser nécessaires</button>
+          <button type="submit" class="btn cta">Tout accepter</button>
+        </div>
+        <p class="small">Vous pourrez modifier votre choix depuis le bouton «&nbsp;Cookies&nbsp;» en bas à droite.</p>
+      </form>
+      <button type="button" class="modal-close" aria-label="Fermer" data-action="close-cookie-modal">×</button>
+    </div>
+  </div>
+
+  <!-- Notes & sources (en commentaires, non affichées) -->
+  <!--
+    SOURCES (vérifiées août 2025) — Make:
+      Intégrations (2 700+) : https://www.make.com/en/integrations
+      Page produit (IA, Agents, 400+ apps IA) : https://www.make.com/en
+      Router : https://help.make.com/router
+      Iterator : https://help.make.com/iterator
+      Webhooks : https://help.make.com/webhooks
+      Erreurs & avertissements / gestion d’erreurs : https://help.make.com/introduction-to-errors-and-warnings ; https://help.make.com/how-to-handle-errors
+      Data Stores / structures : https://help.make.com/data-stores ; https://help.make.com/data-structures
+      Mapping : https://help.make.com/mapping ; https://help.make.com/step-8-map-data
+
+    COMPARATIF (références publiques) :
+      Zapier (≈8 000+ apps) : https://zapier.com/ ; https://zapier.com/developer-platform
+      n8n (≈1 000+ natif, open-source/auto-hébergeable) : https://n8n.io/integrations/ ; https://docs.n8n.io/hosting/
+  -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

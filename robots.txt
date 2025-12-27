@@ -1,0 +1,16 @@
+# robots.txt — make-avis.com (FR/EN)
+# Objectif : autoriser l’indexation des pages réelles, éviter les doublons à paramètres,
+# et pointer vers le sitemap (Google/Bing/Yandex).
+
+# Règles communes à tous les robots
+User-agent: *
+Allow: /
+Disallow: /search
+Disallow: /*?*
+
+# Spécifique Yandex : hôte préféré + nettoyage des paramètres de tracking
+Host: make-avis.com
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&gclid&fbclid&ref : /
+
+# Sitemap principal
+Sitemap: https://make-avis.com/sitemap.xml

@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Automatiser son business (e-commerce & contenu IA) avec Make en 2025 : tutoriel complet, cas d’usage, bonnes pratiques & limites</title>
+  <meta name="description" content="Guide 2025 pour automatiser son business avec Make (ex-Integromat) : pas-à-pas e-commerce, contenus IA, webhooks, routeurs/itérateurs, Data Stores, gestion d’erreurs, monitoring (Make Grid), crédits & conformité RGPD.">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+
+  <link rel="canonical" href="https://make-avis.com/blog-1.html" />
+  <link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1.html" />
+  <link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1.html" />
+  <link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1.html" />
+  <link rel="icon" href="/Images/favicon.ico" />
+
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Automatiser son business avec Make en 2025 : le guide complet" />
+  <meta property="og:description" content="Pas-à-pas e-commerce & contenu IA, webhooks, routeurs/itérateurs, Data Stores, gestion d’erreurs, Make Grid, crédits & RGPD." />
+  <meta property="og:url" content="https://make-avis.com/blog-1.html" />
+  <meta property="og:image" content="https://make-avis.com/Images/capture-make.png" />
+  <meta property="og:site_name" content="make-avis.com" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Automatiser son business avec Make en 2025 : le guide complet" />
+  <meta name="twitter:description" content="Tutoriel 2025 : e-commerce, IA, monitoring, gestion d’erreurs, sécurité & conformité." />
+  <meta name="twitter:image" content="https://make-avis.com/Images/capture-make.png" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"E-Com Shop",
+    "url":"https://make-avis.com/",
+    "logo":"https://make-avis.com/Images/logo-make.png",
+    "email":"contact.ecomshopfrance@gmail.com"
+  }
+  </script>
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"make-avis.com",
+    "url":"https://make-avis.com/"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://make-avis.com/"},
+      {"@type":"ListItem","position":2,"name":"Blog","item":"https://make-avis.com/blog.html"},
+      {"@type":"ListItem","position":3,"name":"Automatiser son business (e-commerce & contenu IA) avec Make en 2025","item":"https://make-avis.com/blog-1.html"}
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Automatiser son business (e-commerce & contenu IA) avec Make en 2025 : tutoriel complet, cas d’usage, bonnes pratiques & limites",
+    "description":"Guide 2025 pour automatiser son business avec Make : e-commerce, IA, webhooks, routeurs/itérateurs, Data Stores, gestion d’erreurs, monitoring (Make Grid), crédits & RGPD.",
+    "image":"https://make-avis.com/Images/capture-make.png",
+    "author":{"@type":"Organization","name":"E-Com Shop"},
+    "publisher":{"@type":"Organization","name":"E-Com Shop","logo":{"@type":"ImageObject","url":"https://make-avis.com/Images/logo-make.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://make-avis.com/blog-1.html"},
+    "datePublished":"2025-08-30",
+    "dateModified":"2025-08-30",
+    "wordCount":"2400"
+  }
+  </script>
+
+  <!-- Consent Mode v2 par défaut (avant tout chargement d'analytics) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+  <!-- GA4 (injecté après consentement via /main.js) -->
+  <script>window.GA_MEASUREMENT_ID="G-ZVQ7Z5ZGK9";</script>
+  <script defer src="/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Header (identique au site) -->
+    <header class="site-header" role="banner" aria-label="En-tête principal">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="/" class="logo-link" aria-label="Accueil make-avis.com">
+          <img src="/Images/logo-make.png" width="124" height="28" alt="Make (logo)" decoding="async" />
+        </a>
+      </div>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Sélecteur de langue">
+          <a href="/" class="lang-link active" data-lang="fr">FR</a>
+          <span aria-hidden="true">|</span>
+          <a href="/en/blog-1.html" class="lang-link" data-lang="en">EN</a>
+        </div>
+        <a class="btn cta"
+           href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=header"
+           target="_blank" rel="noopener nofollow sponsored"
+           data-utm-page="blog-1" data-utm-section="header">
+          Essayer Make gratuitement
+        </a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <nav id="nav" class="nav" role="navigation" aria-label="Navigation principale" hidden>
+      <div class="container nav-panel">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">Accueil</a></li>
+          <li><a href="/blog.html" class="nav-link">Blog</a></li>
+          <li><a href="/mentions-legales.html" class="nav-link">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite.html" class="nav-link" aria-current="page">Politique de confidentialité</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=menu"
+             target="_blank" rel="noopener nofollow sponsored"
+             data-utm-page="blog-1" data-utm-section="menu">
+            Essayer Make gratuitement
+          </a>
+          <div class="lang-switch" role="group" aria-label="Sélecteur de langue">
+            <a href="/" class="lang-link active" data-lang="fr">FR</a>
+            <span aria-hidden="true">|</span>
+            <a href="/en/blog-1.html" class="lang-link" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="main" role="main">
+    <!-- Hero -->
+    <section class="section page-hero">
+      <div class="container">
+        <h1>Automatiser son business (e-commerce & contenu IA) avec Make en 2025</h1>
+        <p class="lead">
+          Ce guide ultra-pratique vous montre comment bâtir des scénarios Make robustes et conformes : e-commerce (Shopify -> Notion/Airtable -> Gmail/Slack), contenus IA (agents & contextes), monitoring (Make Grid), gestion d’erreurs, limites & coûts variables (sans tarifs).
+        </p>
+        <div class="cta-row">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=hero"
+             target="_blank" rel="noopener nofollow sponsored">
+            Créer mon compte Make
+          </a>
+          <a class='btn ghost' href="/blog.html">Retour au blog</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sommaire -->
+    <nav class="section toc" aria-label="Sommaire de l’article">
+      <div class="container">
+        <h2>Sommaire</h2>
+        <ol class="toc-list">
+          <li><a href="#intro">Pourquoi Make en 2025 ?</a></li>
+          <li><a href="#fondamentaux">Fondamentaux & architecture de scénarios</a></li>
+          <li><a href="#pas-a-pas-ecommerce">Pas-à-pas e-commerce (Shopify -> Notion/Airtable -> Gmail/Slack)</a></li>
+          <li><a href="#contenu-ia">Contenu IA : agents, contexte & workflow éditorial</a></li>
+          <li><a href="#monitoring">Monitoring, observabilité & Make Grid</a></li>
+          <li><a href="#couts-limites">Coûts variables, limites & gouvernance</a></li>
+          <li><a href="#rgpd">RGPD, sécurité & bonnes pratiques</a></li>
+          <li><a href="#pieges">Pièges courants & dépannage</a></li>
+          <li><a href="#faq">FAQ rapide</a></li>
+          <li><a href="#cta-final">Aller plus loin</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Intro -->
+    <section id="intro" class="section">
+      <div class="container">
+        <h2>1) Pourquoi Make en 2025 ?</h2>
+        <p>
+          Make (ex-Integromat) est une plateforme d’automatisation visuelle qui connecte plus de <strong>2 700 applications</strong> et expose un éditeur en canevas, un <em>mapping</em> de données champ-par-champ, des outils de contrôle de flux (routeurs, itérateurs, agrégateurs), des <strong>webhooks</strong> instantanés et des <strong>Data Stores</strong> pour persister des informations légères entre exécutions.
+          En 2025, Make enrichit fortement sa couche IA : <em>Make AI Agents</em> (agents réutilisables avec contexte), nouveaux modules IA (y compris prise en charge de modèles LLM récents), et une <strong>vue d’ensemble</strong> de votre paysage d’automatisation via <em>Make Grid</em> (bêta publique).
+        </p>
+        <figure class="wide">
+          <img src="/Images/capture-make.png" alt="Aperçu d’un scénario Make avec modules, routeur et itérateur" loading="lazy" decoding="async" width="1200" height="720" />
+          <figcaption class="sr-only">Exemple de canevas Make</figcaption>
+        </figure>
+        <p class="note">
+          Objectif de ce guide : vous donner des <strong>recettes concrètes</strong> et des <strong>checklists</strong> pour livrer des scénarios fiables, observables et conformes, sans rentrer dans les tarifs (variables selon votre usage).
+        </p>
+      </div>
+    </section>
+
+    <!-- Fondamentaux -->
+    <section id="fondamentaux" class="section">
+      <div class="container">
+        <h2>2) Fondamentaux & architecture de scénarios</h2>
+        <h3>2.1 Éditeur visuel & mapping</h3>
+        <p>
+          Le cœur de Make est son éditeur visuel : vous reliez des modules (déclencheurs, actions, outils) et vous configurez un <em>mapping</em> fin des données. Le panneau de mapping permet :
+        </p>
+        <ul class="list">
+          <li>de <strong>transférer</strong> des champs d’un module à l’autre ;</li>
+          <li>de <strong>transformer</strong> (fonctions, concaténation, dates, JSON) ;</li>
+          <li>de <strong>déboguer</strong> avec l’inspection des <em>bundles</em> (exécutions « run once »).</li>
+        </ul>
+
+        <h3>2.2 Contrôle de flux : routeurs, itérateurs, agrégateurs</h3>
+        <p>
+          Les <strong>routeurs</strong> branchent votre scénario en routes conditionnelles (avec route de secours <em>fallback</em>) ; les <strong>itérateurs</strong> déroulent un tableau en éléments unitaires ; les <strong>agrégateurs</strong> regroupent des éléments (ex. consolider des lignes avant envoi).
+        </p>
+
+        <h3>2.3 Webhooks instantanés & file d’attente</h3>
+        <p>
+          Les <strong>webhooks</strong> déclenchent vos scénarios dès réception d’une requête HTTP. Vous pouvez fonctionner en <em>parallèle</em> (par défaut) ou en <em>séquentiel</em> pour préserver l’ordre. En mode planifié, Make met en file d’attente les événements jusqu’au traitement.
+        </p>
+
+        <h3>2.4 Gestion d’erreurs & reprises</h3>
+        <p>
+          Les <strong>error handlers</strong> (break, commit, ignore, resume, rollback) isolent les incidents sans désactiver vos scénarios ; Make applique de l’<em>exponential backoff</em> et permet de <strong>relancer</strong> des exécutions incomplètes. Concevez vos scénarios pour que chaque erreur soit capturée, notifiée et, si possible, rejouée.
+        </p>
+
+        <h3>2.5 Data Stores & Data Structures</h3>
+        <p>
+          Les <strong>Data Stores</strong> servent de mémoire légère : conserver un état, un jeton, un pointeur de pagination, un cache de déduplication, etc. Les <strong>Data Structures</strong> décrivent le schéma attendu (JSON/XML) et alimentent le mapping.
+        </p>
+
+        <h3>2.6 Couches IA : Make AI Agents & modules IA</h3>
+        <p>
+          Make propose des <strong>agents IA</strong> réutilisables (projets, prompts globaux, contexte fichiers/texte, outillage), appelables depuis n’importe quel scénario. Les modules IA (et Agents) consomment des <em>crédits</em> (nouvelle unité de facturation 2025) avec possibilité d’utiliser votre propre fournisseur (selon plan).
+        </p>
+
+        <div class="cta-row">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=fondamentaux"
+             target="_blank" rel="noopener nofollow sponsored">
+            Démarrer gratuitement sur Make
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pas-à-pas e-commerce -->
+    <section id="pas-a-pas-ecommerce" class="section">
+      <div class="container">
+        <h2>3) Pas-à-pas e-commerce : Shopify -> Notion/Airtable -> Gmail/Slack</h2>
+        <p>
+          Objectif : quand une commande Shopify arrive, enrichir les données (client, SKU, marges), créer/mettre à jour une fiche Notion/Airtable, notifier le support (Gmail) et la team (Slack), puis logguer l’opération. On veut : <strong>zéro doublon</strong>, <strong>reprises</strong> propres, <strong>observabilité</strong>.
+        </p>
+
+        <h3>3.1 Pré-requis</h3>
+        <ul class="list">
+          <li>Accès Shopify, Notion/Airtable, Gmail, Slack ;</li>
+          <li>Un <strong>Data Store</strong> « orders_dedupe » (clé : order_id) ;</li>
+          <li>Un <strong>Webhook</strong> (si vous routez depuis un site ou un CRM) <em>ou</em> un déclencheur instant Shopify.</li>
+        </ul>
+
+        <h3>3.2 Schéma cible</h3>
+        <pre class="schema" aria-label="Schéma d’étapes">
+Shopify (trigger) 
+   └─> Router (B2B ?)
+        ├─> Enrichissement (fonctions + API)
+        ├─> Data Store (déduplication)
+        ├─> Notion/Airtable (upsert)
+        ├─> Gmail (accusé client)
+        ├─> Slack (résumé équipe)
+        └─> Log + Webhook Response
+        [Error Handler sur chaque branche critique]
+        </pre>
+
+        <h3>3.3 Étapes détaillées</h3>
+        <ol class="steps">
+          <li><strong>Déclencheur</strong> : Shopify « Nouvelle commande » (instant). Choisir le point de départ pour récupérer des événements existants si besoin.</li>
+          <li><strong>Enrichir</strong> : compléter les champs (marges, tags, pays, TVA) avec fonctions Make, voire un appel HTTP vers votre service de pricing.</li>
+          <li><strong>Déduplication</strong> : interroger le <em>Data Store</em> « orders_dedupe ». Si <em>order_id</em> déjà vu -> terminer proprement. Sinon, insérer la clé.</li>
+          <li><strong>Upsert Notion/Airtable</strong> : rechercher par <em>order_id</em>, créer si absent, mettre à jour si présent. Mapper champ par champ.</li>
+          <li><strong>Gmail</strong> : envoyer un email formaté au client (ou au support) avec l’ID commande, items, total TTC, lien suivi.</li>
+          <li><strong>Slack</strong> : poster un résumé (client, total, pays, lien fiche Notion/Airtable).</li>
+          <li><strong>Journalisation</strong> : si vous avez un endpoint logs, POST du résumé (horodatage, durée, statut, ID de scénario/exécution).</li>
+          <li><strong>Réponse Webhook</strong> : si le scénario est déclenché par webhook, répondre 200 et un court JSON (id, status).</li>
+        </ol>
+
+        <h3>3.4 Contrôle de flux & erreurs</h3>
+        <ul class="list">
+          <li><strong>Routeur</strong> : branche B2B (facturation, TVA intracommunautaire) vs B2C (messages différents).</li>
+          <li><strong>Itérateur</strong> : dérouler les items de la commande pour calculer totaux, lignes de facture, stocks.</li>
+          <li><strong>Error Handlers</strong> : sur Notion/Airtable/Gmail/Slack. En cas d’indisponibilité API, <em>retry</em>/<em>resume</em>, et un <strong>rollback</strong> si vous avez effectué des opérations d’écriture en amont (idempotence recommandée).</li>
+          <li><strong>Parallèle vs séquentiel</strong> : préférer <em>séquentiel</em> si l’ordre de traitement est critique (stock ou facturation).</li>
+        </ul>
+
+        <h3>3.5 Tests & validation</h3>
+        <p>
+          Exécutez des <em>runs</em> pas-à-pas (<em>run this module only</em>) pour apprendre les <em>structures</em> au mapping. Utilisez des commandes de test Shopify, puis des commandes réelles en sandbox si disponible.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=ecommerce"
+             target="_blank" rel="noopener nofollow sponsored">
+            Reproduire ce scénario
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenu IA -->
+    <section id="contenu-ia" class="section">
+      <div class="container">
+        <h2>4) Contenu IA : agents, contexte & workflow éditorial</h2>
+        <p>
+          Pour industrialiser votre contenu (blog, fiches produits, emails), combinez <strong>Make AI Agents</strong> et vos outils éditoriaux : un agent central produit des briefs et plans, un second révise/normalise, un troisième génère des résumés pour les réseaux sociaux. Le tout orchestré dans Make, avec <strong>contexte</strong> (fichiers ou texte) versionné.
+        </p>
+
+        <h3>4.1 Architecture type</h3>
+        <pre class="schema" aria-label="Schéma IA multi-agents">
+Trigger (plan éditorial) 
+   └─> Agent « Rédacteur » (brief + structure Hn)
+        └─> Agent « Relecteur » (cohérence, ton, méta)
+             └─> Agent « Social » (résumés, hooks, variantes)
+                  └─> Publication (Notion/Airtable + Slack)
+        </pre>
+
+        <h3>4.2 Contexte & réutilisation</h3>
+        <p>
+          Chargez des <em>contextes</em> (fichiers PDF/Docs ou texte) pour injecter vos lignes éditoriales, USP, glossaires. Mettez à jour dynamiquement le contexte (modules de création/suppression/lecture de contexte) pour éviter la dérive et garantir la fraîcheur.
+        </p>
+
+        <h3>4.3 Gouvernance IA</h3>
+        <ul class="list">
+          <li>Maintenez un <strong>prompt système global</strong> pour l’agent (ton, persona, interdits).</li>
+          <li>Définissez des <strong>timeouts</strong> et des <strong>limites</strong> pour chaque appel (éviter les boucles).</li>
+          <li>Consignez <strong>qui a publié quoi</strong> (logs), alertez en cas de dérive (score de confiance, longueur, mentions sensibles).</li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn cta"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=ia"
+             target="_blank" rel="noopener nofollow sponsored">
+            Activer Make AI Agents
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monitoring -->
+    <section id="monitoring" class="section">
+      <div class="container">
+        <h2>5) Monitoring, observabilité & Make Grid</h2>
+        <p>
+          Au-delà des historiques d’exécution et logs d’erreurs, <strong>Make Grid</strong> offre une <em>cartographie visuelle</em> (bêta publique) de vos scénarios, apps, Data Stores et briques IA : un « command center » pour voir les dépendances, comprendre les impacts et déboguer plus vite.
+        </p>
+
+        <h3>5.1 Checklists monitoring</h3>
+        <ul class="list">
+          <li>Surveillez les <strong>instant triggers</strong> et leurs limites (débits, files, retards).</li>
+          <li><strong>Webhook logs</strong> : consulter la file, purger si nécessaire, vérifier les 429/400/410.</li>
+          <li>Normalisez les <strong>niveaux d’alerte</strong> (erreur/avertissement) et notifiez via Slack/Email.</li>
+          <li>Activez un <strong>mode séquentiel</strong> si l’ordre d’arrivée est critique.</li>
+        </ul>
+
+        <h3>5.2 Indicateurs santé</h3>
+        <ul class="list">
+          <li>Durée moyenne d’exécution / scénario (p95/p99 vues dans l’historique).</li>
+          <li>Taux d’erreurs par type (auth, quota, mapping, app down).</li>
+          <li>Événements en file webhook & débits (r/s) vs limites.</li>
+          <li>Consommation <strong>d’opérations</strong> et de <strong>crédits</strong> (modules IA/Agents).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Coûts & limites -->
+    <section id="couts-limites" class="section">
+      <div class="container">
+        <h2>6) Coûts variables, limites & gouvernance</h2>
+        <p>
+          Make distingue l’<strong>usage d’opérations</strong> par scénario et, en 2025, introduit des <strong>crédits</strong> (unité de facturation) pour les modules IA/Agents et certaines fonctions avancées. Les Agents peuvent utiliser le fournisseur IA de Make (crédits + tokens) ou votre propre connexion (Pro+), avec logiques de consommation différentes.
+        </p>
+        <p>
+          Quelques points de vigilance :
+        </p>
+        <ul class="list">
+          <li><strong>Débits webhooks</strong> : jusqu’à ~30 requêtes/s traitées (sinon 429). Prévoyez <em>back-pressure</em>, queues, et <em>rate limiters</em> côté émetteur.</li>
+          <li><strong>Files webhook</strong> (mode planifié) : dimensionnez le « Maximum number of results/cycles » et la fréquence.</li>
+          <li><strong>Instant triggers</strong> : tenez compte des limites & quotas des apps tierces (API) et des notes de version Make.</li>
+          <li><strong>Relances</strong> : utilisez les relances d’exécutions incomplètes et l’<em>exponential backoff</em> pour lisser les incidents.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RGPD & sécurité -->
+    <section id="rgpd" class="section">
+      <div class="container">
+        <h2>7) RGPD, sécurité & bonnes pratiques</h2>
+        <ul class="list">
+          <li><strong>Minimisation</strong> : mappez uniquement les champs nécessaires. Pseudonymisez si possible.</li>
+          <li><strong>Journalisation</strong> : tracez les traitements (horodatage, finalité, base légale côté site), conservez des preuves de consentement.</li>
+          <li><strong>Webhooks sécurisés</strong> : clés API multiples si besoin, retour HTTP structuré, validation de signature côté source.</li>
+          <li><strong>Rétention</strong> : maîtrisez la durée de conservation des logs (y compris logs Webhook) et purgez régulièrement.</li>
+          <li><strong>Droits</strong> : prévoyez l’effacement/export de données et un contact DPO (voir nos pages légales).</li>
+        </ul>
+        <div class="note">
+          <strong>Rappel :</strong> ce site est un site d’affiliation indépendant. Pas de conseil financier ; testez vos automatisations avec prudence, surtout si elles touchent à des activités sensibles (paiements, trading, santé).
+        </div>
+      </div>
+    </section>
+
+    <!-- Pièges & dépannage -->
+    <section id="pieges" class="section">
+      <div class="container">
+        <h2>8) Pièges courants & dépannage</h2>
+        <h3>8.1 « Je ne vois pas mes champs au mapping »</h3>
+        <p>
+          Exécutez « run this module only » sur le module source (ou soumettez un exemple via le déclencheur) pour que Make « apprenne » la structure et peuple le panneau de mapping.
+        </p>
+
+        <h3>8.2 « Trop d’événements en même temps »</h3>
+        <p>
+          Activez le <strong>traitement séquentiel</strong> et augmentez le <em>max results/cycles</em> en mode planifié. En parallèle, implémentez côté source une <strong>stratégie anti-rebonds</strong> ou une <strong>file</strong>.
+        </p>
+
+        <h3>8.3 « Échec sur une app externe »</h3>
+        <p>
+          Placez un <strong>Error Handler</strong> dédié à l’app fautive avec <em>retry</em>/<em>resume</em>, et un <strong>rollback</strong> si vous avez effectué des opérations d’écriture en amont (idempotence recommandée).
+        </p>
+
+        <h3>8.4 « Où est passée l’intégration X/Twitter ? »</h3>
+        <p>
+          L’app « X (Twitter) » officielle a été retirée en 2025. Utilisez des alternatives (API via HTTP, outils tiers) en respectant les politiques de la plateforme.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+      <div class="container">
+        <h2>9) FAQ rapide</h2>
+
+        <details class="faq-item">
+          <summary>Combien d’apps Make peut connecter ?</summary>
+          <div class="faq-body">
+            Plus de <strong>2 700 intégrations</strong> officielles couvrant productivité, e-commerce, CRM, IA, etc. Vérifiez le catalogue avant de reproduire un scénario.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Les Agents IA peuvent-ils utiliser mon fournisseur LLM ?</summary>
+          <div class="faq-body">
+            Oui sur certains plans (Pro+), en alternative au fournisseur IA de Make. Les logiques de crédits/tokens diffèrent selon le choix.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Y a-t-il des limites de débit côté webhooks ?</summary>
+          <div class="faq-body">
+            Oui : prévoyez du lissage (files, backoff) et surveillez les 429. Le mode séquentiel garantit l’ordre si nécessaire.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Puis-je stocker un état entre deux exécutions ?</summary>
+          <div class="faq-body">
+            Oui via les <strong>Data Stores</strong> (clé/valeur structurée) ; idéal pour déduplication, curseurs, caches.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section id="cta-final" class="section cta-section">
+      <div class="container">
+        <h2>Prêt à construire vos automatisations ?</h2>
+        <p>Testez gratuitement Make, créez vos premiers scénarios et activez les Agents IA sur un périmètre pilote.</p>
+        <div class="cta-row">
+          <a class="btn cta btn-lg"
+             href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=footer-cta"
+             target="_blank" rel="noopener nofollow sponsored">
+            Essayer Make gratuitement
+          </a>
+          <a class='btn ghost' href="/blog.html">Voir d’autres tutoriels</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc conformité -->
+    <section class="section compliance">
+      <div class="container">
+        <h2>Conformité & transparence</h2>
+        <ul class="list">
+          <li>Ce site est un site d’affiliation indépendant (E-Com Shop). Nous pouvons percevoir une commission si vous vous inscrivez via nos liens.</li>
+          <li>Pas de conseil financier ; automatisez prudemment, surtout pour des opérations sensibles (paiements, trading, santé).</li>
+          <li>Cookies uniquement après consentement (Analytics/Marketing). Vous pouvez <button type="button" class="link-like" data-action="open-cookie-modal">gérer vos cookies</button> à tout moment.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (identique) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo-link">
+          <img src="/Images/logo-make.png" width="124" height="28" alt="Make (logo)" decoding="async" />
+        </a>
+        <p class="small">
+          © <span id="year"></span> E-Com Shop — 60 rue François 1er, 75008 Paris — <a href="mailto:contact.ecomshopfrance@gmail.com">contact.ecomshopfrance@gmail.com</a>
+        </p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens de pied de page">
+        <ul>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
+      <div class="footer-cta">
+        <a class="btn cta"
+           href="https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=blog-1&utm_content=footer"
+           target="_blank" rel="noopener nofollow sponsored">
+          Essayer Make gratuitement
+        </a>
+        <div class="lang-switch" role="group" aria-label="Sélecteur de langue en pied de page">
+          <a class="lang-link active" data-lang="fr" href="/blog-1.html">FR</a>
+          <span aria-hidden="true">|</span>
+          <a class="lang-link" data-lang="en" href="/en/blog-1.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton persistant gestion cookies -->
+  <button type="button" class="cookie-manage-fab" aria-label="Gérer mes cookies" data-action="open-cookie-modal">Cookies</button>
+
+  <!-- Cookie Banner / Modal -->
+  <div class="cookie-backdrop" hidden></div>
+  <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-title" hidden>
+    <div class="cookie-content">
+      <h2 id="cookie-title">Gestion des cookies</h2>
+      <p>Nous utilisons des cookies pour améliorer votre expérience. Vous pouvez accepter par catégorie.</p>
+      <form id="cookie-form">
+        <fieldset>
+          <legend>Catégories</legend>
+          <label class="switch">
+            <input type="checkbox" name="necessary" checked disabled />
+            <span>Nécessaires (toujours actifs)</span>
+          </label>
+          <label class="switch">
+            <input type="checkbox" name="analytics" />
+            <span>Analytics (GA4)</span>
+          </label>
+          <label class="switch">
+            <input type="checkbox" name="marketing" />
+            <span>Marketing</span>
+          </label>
+        </fieldset>
+        <div class="cookie-actions">
+          <button type="button" class="btn ghost" data-action="reject-all">Tout refuser</button>
+          <button type="button" class="btn" data-action="accept-necessary">Autoriser nécessaires</button>
+          <button type="submit" class="btn cta">Tout accepter</button>
+        </div>
+        <p class="small">Vous pourrez modifier votre choix depuis le bouton « Cookies » en bas à droite.</p>
+      </form>
+      <button type="button" class="modal-close" aria-label="Fermer" data-action="close-cookie-modal">×</button>
+    </div>
+  </div>
+
+  <!-- JSON-LD FAQPage (contenu ci-dessus) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Combien d’apps Make peut connecter ?",
+        "acceptedAnswer":{"@type":"Answer","text":"Plus de 2 700 intégrations officielles couvrant productivité, e-commerce, CRM, IA, etc."}
+      },
+      {
+        "@type":"Question",
+        "name":"Les Agents IA peuvent-ils utiliser mon fournisseur LLM ?",
+        "acceptedAnswer":{"@type":"Answer","text":"Oui sur certains plans (Pro+), en alternative au fournisseur IA de Make. Les logiques de crédits/tokens diffèrent selon le choix."}
+      },
+      {
+        "@type":"Question",
+        "name":"Y a-t-il des limites de débit côté webhooks ?",
+        "acceptedAnswer":{"@type":"Answer","text":"Oui : prévoyez du lissage (files, backoff) et surveillez les 429. Le mode séquentiel garantit l’ordre si nécessaire."}
+      },
+      {
+        "@type":"Question",
+        "name":"Puis-je stocker un état entre deux exécutions ?",
+        "acceptedAnswer":{"@type":"Answer","text":"Oui via les Data Stores (clé/valeur structurée) ; idéal pour déduplication, curseurs, caches."}
+      }
+    ]
+  }
+  </script>
+
+  <!-- SOURCES (vérifiées août 2025) — placées en commentaires pour transparence éditoriale.
+       Ces liens ne s’ouvrent pas automatiquement ; ils documentent les affirmations du guide. -->
+
+  <!--
+    INTÉGRATIONS & PRODUIT
+      Make — Intégrations (2 700+ apps) : https://www.make.com/en/integrations
+      Aide — Mapping (panneau de mapping) : https://help.make.com/mapping
+      Aide — Étape 8. Map data : https://help.make.com/step-8-map-data
+      Aide — Data stores : https://help.make.com/data-stores
+      Dev — Data stores API : https://developers.make.com/api-documentation/api-reference/data-stores
+      Aide — Data structures : https://help.make.com/data-structures
+
+    CONTRÔLE DE FLUX & OUTILS
+      Aide — Router : https://help.make.com/router
+      Aide — Iterator : https://help.make.com/iterator
+
+    WEBHOOKS & DÉBITS
+      Aide — Webhooks (file, 30 r/s, 429, logs & rétention) : https://help.make.com/webhooks
+
+    ERREURS, RELANCES & BACKOFF
+      Aide — Intro erreurs & avertissements : https://help.make.com/introduction-to-errors-and-warnings
+      Aide — Panorama gestion d’erreurs : https://help.make.com/overview-of-error-handling
+      Aide — Error handlers : https://www.make.com/en/help/errors/error-handlers/break-error-handler
+      Aide — Exponential backoff : https://help.make.com/exponential-backoff
+      Aide — Incomplete executions retry : https://help.make.com/incomplete-executions-retry
+
+    IA & AGENTS
+      Make — AI Agents (page produit) : https://www.make.com/en/ai-agents
+      Aide — Make AI Agents (hub) : https://help.make.com/make-ai-agents
+      Aide — Make AI Agents app (modules, crédits, contextes) : https://help.make.com/make-ai-agents-app
+      Aide — Context modules ajoutés : https://help.make.com/context-modules-added-to-make-ai-agents-app
+      Blog — What is an AI Agent? : https://www.make.com/en/blog/what-is-an-ai-agent
+
+    OBSERVABILITÉ
+      Aide — Make Grid (bêta publique) : https://help.make.com/make-grid-public-beta-is-now-live
+
+    NOTES DE VERSION 2025 (exemples marquants)
+      Aide — Release notes 2025 (crédits, GPT-5 dans OpenAI modules, rate limits instant triggers, etc.) : https://help.make.com/2025
+
+    DÉPRECATIONS & CHANGEMENTS
+      Communauté — Retrait de l’app X (Twitter) : https://community.make.com/t/make-is-officially-decommissioning-x-formerly-twitter-app/77497
+  -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
