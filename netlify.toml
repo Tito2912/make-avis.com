@@ -84,27 +84,37 @@
   force  = true
 
 ########################################
-# Pretty URL helpers (keep .html canonical in our internal links)
+# Canonicalize .html -> pretty paths
 ########################################
 # FR
 [[redirects]]
-  from = "/blog"
-  to   = "/blog.html"
+  from = "/blog.html"
+  to   = "/blog"
   status = 301
 
 [[redirects]]
-  from = "/blog-1"
-  to   = "/blog-1.html"
+  from = "/blog-1.html"
+  to   = "/blog-1"
   status = 301
 
 [[redirects]]
-  from = "/mentions-legales"
-  to   = "/mentions-legales.html"
+  from = "/mentions-legales.html"
+  to   = "/mentions-legales"
+  status = 301
+
+[[redirects]]
+  from = "/politique-de-confidentialite.html"
+  to   = "/politique-de-confidentialite"
   status = 301
 
 [[redirects]]
   from = "/politiques-de-confidentialite"
-  to   = "/politique-de-confidentialite.html"
+  to   = "/politique-de-confidentialite"
+  status = 301
+
+[[redirects]]
+  from = "/politiques-de-confidentialite/*"
+  to   = "/politique-de-confidentialite"
   status = 301
 
 # EN
@@ -114,23 +124,23 @@
   status = 301
 
 [[redirects]]
-  from = "/en/blog"
-  to   = "/en/blog.html"
+  from = "/en/blog.html"
+  to   = "/en/blog"
   status = 301
 
 [[redirects]]
-  from = "/en/blog-1"
-  to   = "/en/blog-1.html"
+  from = "/en/blog-1.html"
+  to   = "/en/blog-1"
   status = 301
 
 [[redirects]]
-  from = "/en/legal-notice"
-  to   = "/en/legal-notice.html"
+  from = "/en/legal-notice.html"
+  to   = "/en/legal-notice"
   status = 301
 
 [[redirects]]
-  from = "/en/privacy-policy"
-  to   = "/en/privacy-policy.html"
+  from = "/en/privacy-policy.html"
+  to   = "/en/privacy-policy"
   status = 301
 
 ########################################

@@ -22,73 +22,73 @@
 
   <!-- Blog hub FR -->
   <url>
-    <loc>https://make-avis.com/blog.html</loc>
+    <loc>https://make-avis.com/blog</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog"/>
   </url>
 
   <!-- Blog hub EN -->
   <url>
-    <loc>https://make-avis.com/en/blog.html</loc>
+    <loc>https://make-avis.com/en/blog</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog"/>
   </url>
 
   <!-- Article FR -->
   <url>
-    <loc>https://make-avis.com/blog-1.html</loc>
+    <loc>https://make-avis.com/blog-1</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1"/>
   </url>
 
   <!-- Article EN -->
   <url>
-    <loc>https://make-avis.com/en/blog-1.html</loc>
+    <loc>https://make-avis.com/en/blog-1</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1"/>
   </url>
 
   <!-- Mentions légales FR -->
   <url>
-    <loc>https://make-avis.com/mentions-legales.html</loc>
+    <loc>https://make-avis.com/mentions-legales</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales"/>
   </url>
 
   <!-- Legal notice EN -->
   <url>
-    <loc>https://make-avis.com/en/legal-notice.html</loc>
+    <loc>https://make-avis.com/en/legal-notice</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales"/>
   </url>
 
   <!-- Politique de confidentialité FR -->
   <url>
-    <loc>https://make-avis.com/politique-de-confidentialite.html</loc>
+    <loc>https://make-avis.com/politique-de-confidentialite</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite"/>
   </url>
 
   <!-- Privacy policy EN -->
   <url>
-    <loc>https://make-avis.com/en/privacy-policy.html</loc>
+    <loc>https://make-avis.com/en/privacy-policy</loc>
     <lastmod>2025-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite"/>
   </url>
 </urlset>

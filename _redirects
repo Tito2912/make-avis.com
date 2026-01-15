@@ -10,34 +10,34 @@ https://www.make-avis.com/*      https://make-avis.com/:splat      301!
 /index.html                      /                                 301
 /en/index.html                   /en/                              301
 
-# Pretty paths -> canonical .html (FR)
-# (Internal links already use .html; these help users typing without extension.)
-/blog                            /blog.html                        301
-/blog/                           /blog.html                        301
-/blog-1                          /blog-1.html                      301
-/blog-1/                         /blog-1.html                      301
-/mentions-legales                /mentions-legales.html            301
-/mentions-legales/               /mentions-legales.html            301
-/politiques-de-confidentialite   /politique-de-confidentialite.html 301
-/politiques-de-confidentialite/  /politique-de-confidentialite.html 301
-# Common FR variant -> canonical plural
-/politique-de-confidentialite    /politique-de-confidentialite.html 301
-/politique-de-confidentialite/*  /politique-de-confidentialite.html 301
+# Canonicalize .html -> pretty paths (FR)
+/blog.html                       /blog                             301
+/blog.html/                      /blog                             301
+/blog-1.html                     /blog-1                           301
+/blog-1.html/                    /blog-1                           301
+/mentions-legales.html           /mentions-legales                 301
+/mentions-legales.html/          /mentions-legales                 301
+/politique-de-confidentialite.html /politique-de-confidentialite   301
+/politique-de-confidentialite.html/ /politique-de-confidentialite  301
+# Legacy typos/variants -> canonical
+/politiques-de-confidentialite   /politique-de-confidentialite     301
+/politiques-de-confidentialite/  /politique-de-confidentialite     301
+/politique-de-confidentialite/*  /politique-de-confidentialite     301
 
 # EN root with trailing slash
 /en                              /en/                              301
 
-# Pretty paths -> canonical .html (EN)
-/en/blog                         /en/blog.html                     301
-/en/blog/                        /en/blog.html                     301
-/en/blog-1                       /en/blog-1.html                   301
-/en/blog-1/                      /en/blog-1.html                   301
-/en/legal-notice                 /en/legal-notice.html             301
-/en/legal-notice/                /en/legal-notice.html             301
-/en/privacy-policy               /en/privacy-policy.html           301
-/en/privacy-policy/              /en/privacy-policy.html           301
+# Canonicalize .html -> pretty paths (EN)
+/en/blog.html                    /en/blog                          301
+/en/blog.html/                   /en/blog                          301
+/en/blog-1.html                  /en/blog-1                        301
+/en/blog-1.html/                 /en/blog-1                        301
+/en/legal-notice.html            /en/legal-notice                  301
+/en/legal-notice.html/           /en/legal-notice                  301
+/en/privacy-policy.html          /en/privacy-policy                301
+/en/privacy-policy.html/         /en/privacy-policy                301
 # Optional short alias
-/en/legal                        /en/legal-notice.html             301
+/en/legal                        /en/legal-notice                  301
 
 # Explicit 404 fallback (non-SPA). Netlify will serve /404.html with 404 status.
 # Keep this at the end so previous rules take precedence.
