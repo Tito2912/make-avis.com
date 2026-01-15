@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Politique de confidentialité — make-avis.com (RGPD & Cookies)</title>
-  <meta name="description" content="Politique de confidentialité (RGPD) de make-avis.com : finalités, bases légales, cookies & Consent Mode v2, destinataires, transferts, durées de conservation, droits (accès, effacement, portabilité), contact DPO." />
+  <meta name="description" content="Politique RGPD make-avis.com : finalités, bases légales, cookies & Consent Mode v2, conservation, transferts, droits (accès/effacement/portabilité) et contact." />
   <meta name="google" content="notranslate" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
@@ -33,41 +33,51 @@
   <meta name="twitter:description" content="RGPD, cookies & Consent Mode v2, finalités, bases légales, destinataires, transferts, droits." />
   <meta name="twitter:image" content="https://make-avis.com/Images/capture-make.png" />
 
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"E-Com Shop",
-    "url":"https://make-avis.com/",
-    "logo":"https://make-avis.com/Images/logo-make.png",
-    "email":"contact.ecomshopfrance@gmail.com"
-  }
-  </script>
-
-  <!-- JSON-LD: WebPage + Breadcrumb + PrivacyPolicy -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
       {
+        "@type":"Organization",
+        "@id":"https://make-avis.com/#organization",
+        "name":"E-Com Shop",
+        "url":"https://make-avis.com/",
+        "logo":{"@type":"ImageObject","url":"https://make-avis.com/Images/logo-make.png"},
+        "email":"contact.ecomshopfrance@gmail.com"
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://make-avis.com/#website",
+        "url":"https://make-avis.com/",
+        "name":"make-avis.com",
+        "publisher":{"@id":"https://make-avis.com/#organization"},
+        "inLanguage":"fr-FR"
+      },
+      {
         "@type":"WebPage",
+        "@id":"https://make-avis.com/politique-de-confidentialite.html#webpage",
         "name":"Politique de confidentialité — make-avis.com",
         "url":"https://make-avis.com/politique-de-confidentialite.html",
-        "isPartOf":{"@type":"WebSite","name":"make-avis.com","url":"https://make-avis.com/"},
+        "isPartOf":{"@id":"https://make-avis.com/#website"},
+        "about":{"@id":"https://make-avis.com/politique-de-confidentialite.html#policy"},
         "breadcrumb":{
           "@type":"BreadcrumbList",
           "itemListElement":[
             {"@type":"ListItem","position":1,"name":"Accueil","item":"https://make-avis.com/"},
             {"@type":"ListItem","position":2,"name":"Politique de confidentialité","item":"https://make-avis.com/politique-de-confidentialite.html"}
           ]
-        }
+        },
+        "inLanguage":"fr-FR"
       },
       {
         "@type":"PrivacyPolicy",
+        "@id":"https://make-avis.com/politique-de-confidentialite.html#policy",
         "name":"Politique de confidentialité",
         "url":"https://make-avis.com/politique-de-confidentialite.html",
-        "publisher":{"@type":"Organization","name":"E-Com Shop"}
+        "isPartOf":{"@id":"https://make-avis.com/#website"},
+        "publisher":{"@id":"https://make-avis.com/#organization"},
+        "inLanguage":"fr-FR"
       }
     ]
   }

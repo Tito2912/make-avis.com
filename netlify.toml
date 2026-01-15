@@ -72,6 +72,12 @@
   force  = true
 
 [[redirects]]
+  from = "http://www.make-avis.com/*"
+  to   = "https://make-avis.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
   from = "https://www.make-avis.com/*"
   to   = "https://make-avis.com/:splat"
   status = 301

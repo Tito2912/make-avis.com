@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Privacy policy — make-avis.com (GDPR & Cookies)</title>
-  <meta name="description" content="make-avis.com GDPR privacy policy: purposes & legal bases, Google Analytics 4 with Consent Mode v2, recipients, international transfers, retention, your rights (access, erasure, portability), and data protection contact." />
+  <meta name="description" content="make-avis.com privacy policy (GDPR): purposes, legal bases, GA4 with Consent Mode v2, retention, recipients/transfers, your rights and contact." />
   <meta name="google" content="notranslate" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
@@ -33,41 +33,51 @@
   <meta name="twitter:description" content="GDPR, cookies & Consent Mode v2, purposes, legal bases, recipients, transfers, rights." />
   <meta name="twitter:image" content="https://make-avis.com/Images/capture-make.png" />
 
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"E-Com Shop",
-    "url":"https://make-avis.com/",
-    "logo":"https://make-avis.com/Images/logo-make.png",
-    "email":"contact.ecomshopfrance@gmail.com"
-  }
-  </script>
-
-  <!-- JSON-LD: WebPage + Breadcrumb + PrivacyPolicy -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
       {
+        "@type":"Organization",
+        "@id":"https://make-avis.com/#organization",
+        "name":"E-Com Shop",
+        "url":"https://make-avis.com/",
+        "logo":{"@type":"ImageObject","url":"https://make-avis.com/Images/logo-make.png"},
+        "email":"contact.ecomshopfrance@gmail.com"
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://make-avis.com/#website",
+        "url":"https://make-avis.com/",
+        "name":"make-avis.com",
+        "publisher":{"@id":"https://make-avis.com/#organization"},
+        "inLanguage":"en-US"
+      },
+      {
         "@type":"WebPage",
+        "@id":"https://make-avis.com/en/privacy-policy.html#webpage",
         "name":"Privacy policy — make-avis.com",
         "url":"https://make-avis.com/en/privacy-policy.html",
-        "isPartOf":{"@type":"WebSite","name":"make-avis.com","url":"https://make-avis.com/"},
+        "isPartOf":{"@id":"https://make-avis.com/#website"},
+        "about":{"@id":"https://make-avis.com/en/privacy-policy.html#policy"},
         "breadcrumb":{
           "@type":"BreadcrumbList",
           "itemListElement":[
             {"@type":"ListItem","position":1,"name":"Home","item":"https://make-avis.com/en/"},
             {"@type":"ListItem","position":2,"name":"Privacy policy","item":"https://make-avis.com/en/privacy-policy.html"}
           ]
-        }
+        },
+        "inLanguage":"en-US"
       },
       {
         "@type":"PrivacyPolicy",
+        "@id":"https://make-avis.com/en/privacy-policy.html#policy",
         "name":"Privacy policy",
         "url":"https://make-avis.com/en/privacy-policy.html",
-        "publisher":{"@type":"Organization","name":"E-Com Shop"}
+        "isPartOf":{"@id":"https://make-avis.com/#website"},
+        "publisher":{"@id":"https://make-avis.com/#organization"},
+        "inLanguage":"en-US"
       }
     ]
   }
