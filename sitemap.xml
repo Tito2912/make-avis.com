@@ -9,7 +9,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/"/>
+</url>
 
   <!-- Home EN -->
   <url>
@@ -18,7 +21,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/"/>
+</url>
 
   <!-- Blog hub FR -->
   <url>
@@ -27,7 +33,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/blog"/>
+</url>
 
   <!-- Blog hub EN -->
   <url>
@@ -36,7 +45,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/blog"/>
+</url>
 
   <!-- Article FR -->
   <url>
@@ -45,7 +57,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/blog-1"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/blog-1"/>
+</url>
 
   <!-- Article EN -->
   <url>
@@ -54,7 +69,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/blog-1"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/blog-1"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/blog-1"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/blog-1"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/blog-1"/>
+</url>
 
   <!-- Mentions légales FR -->
   <url>
@@ -63,7 +81,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/legal-notice"/>
+</url>
 
   <!-- Legal notice EN -->
   <url>
@@ -72,7 +93,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/mentions-legales"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/legal-notice"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/mentions-legales"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/legal-notice"/>
+</url>
 
   <!-- Politique de confidentialité FR -->
   <url>
@@ -81,7 +105,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/privacy-policy"/>
+</url>
 
   <!-- Privacy policy EN -->
   <url>
@@ -90,5 +117,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://make-avis.com/politique-de-confidentialite"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://make-avis.com/en/privacy-policy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://make-avis.com/politique-de-confidentialite"/>
-  </url>
+  
+    <xhtml:link rel="alternate" hreflang="es" href="https://make-avis.com/es/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://make-avis.com/de/privacy-policy"/>
+</url>
 </urlset>
