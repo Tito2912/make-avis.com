@@ -5,9 +5,11 @@ import { CTABox } from '@/components/CTABox';
 import type { Post } from '@/lib/types';
 
 export function ArticleLayout({ post }: { post: Post }) {
+  const showToc = post.type === 'article' && post.headings.length > 0;
+
   return (
     <article className="article stack">
-      <div className="grid">
+      <div className={`grid${showToc ? ' with-toc' : ''}`}>
         <div className="stack">
           {/* Jump links (optional): helps scanning long guides */}
           {post.jumpLinks?.length ? (
@@ -63,12 +65,14 @@ export function ArticleLayout({ post }: { post: Post }) {
           ) : null}
         </div>
 
-        <aside className="toc" aria-label="Table of contents">
-          <div className="card">
-            <strong>On this page</strong>
-            <TableOfContents headings={post.headings} />
-          </div>
-        </aside>
+        {showToc ? (
+          <aside className="toc" aria-label="Table of contents">
+            <div className="card">
+              <strong>On this page</strong>
+              <TableOfContents headings={post.headings} />
+            </div>
+          </aside>
+        ) : null}
       </div>
     </article>
   );

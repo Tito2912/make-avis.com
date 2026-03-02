@@ -239,11 +239,13 @@ a:hover {
 
 /* Layout blocks */
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02);
+  /* Keep `.card` as a semantic wrapper in MDX, but remove the "boxed card" look. */
+  display: flow-root;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 .grid {
@@ -304,7 +306,7 @@ a:hover {
 }
 
 @media (min-width: 960px) {
-  .article .grid {
+  .article .grid.with-toc {
     grid-template-columns: 2fr 1fr;
   }
 }
@@ -312,6 +314,14 @@ a:hover {
 .toc {
   position: sticky;
   top: 86px;
+  align-self: start;
+}
+
+@media (min-width: 960px) {
+  .toc {
+    border-left: 1px solid var(--border);
+    padding-left: 18px;
+  }
 }
 
 .toc ul {
