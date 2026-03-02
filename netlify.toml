@@ -1,157 +1,41 @@
-# netlify.toml - make-avis.com
-# Static FR/EN affiliate site for Make - mobile-first, SEO 2025, RGPD & security headers
-
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "out"
 
-########################################
-# Global Security & Privacy Headers
-########################################
-[[headers]]
-  for = "/*"
-  [headers.values]
-    # Content Security Policy - permissive enough for GA4 + our assets
-    # Notes:
-    # - keep 'unsafe-inline' for small inline bootstraps (Consent Mode default, GA id).
-    # - do NOT set frame-src 'none' to avoid breaking potential GTM <noscript> if added later.
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https: https://stats.g.doubleclick.net; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
-    # HTTPS hardening
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-Content-Type-Options   = "nosniff"
-    Referrer-Policy          = "strict-origin-when-cross-origin"
-    # Minimal, privacy-friendly permissions
-    Permissions-Policy       = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
-    # Additional isolation & cross-origin controls (gracefully ignored by old browsers)
-    Cross-Origin-Opener-Policy   = "same-origin"
-    Cross-Origin-Resource-Policy = "same-site"
-    Origin-Agent-Cluster         = "?1"
-    # Optional legacy defense (duplicated by CSP frame-ancestors)
-    X-Frame-Options          = "DENY"
-
-########################################
-# Performance Caching (immutable assets)
-########################################
-[[headers]]
-  for = "/Images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/style.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/main.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Favicon, robots & sitemaps: cache but allow quick invalidation when needed
-[[headers]]
-  for = "/favicon.ico"
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
-
-[[headers]]
-  for = "/robots.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/sitemap.xml"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-
-########################################
-# Canonical HTTPS (force SSL)
-########################################
 [[redirects]]
   from = "http://make-avis.com/*"
-  to   = "https://make-avis.com/:splat"
+  to = "https://make-avis.com/:splat"
   status = 301
-  force  = true
+  force = true
 
 [[redirects]]
   from = "http://www.make-avis.com/*"
-  to   = "https://make-avis.com/:splat"
+  to = "https://make-avis.com/:splat"
   status = 301
-  force  = true
+  force = true
 
 [[redirects]]
   from = "https://www.make-avis.com/*"
-  to   = "https://make-avis.com/:splat"
+  to = "https://make-avis.com/:splat"
   status = 301
-  force  = true
+  force = true
 
-########################################
-# Canonicalize .html -> pretty paths
-########################################
-# FR
-[[redirects]]
-  from = "/blog.html"
-  to   = "/blog"
-  status = 301
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+    X-Frame-Options = "DENY"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
 
-[[redirects]]
-  from = "/blog-1.html"
-  to   = "/blog-1"
-  status = 301
+[[headers]]
+  for = "/_next/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-[[redirects]]
-  from = "/mentions-legales.html"
-  to   = "/mentions-legales"
-  status = 301
-
-[[redirects]]
-  from = "/politique-de-confidentialite.html"
-  to   = "/politique-de-confidentialite"
-  status = 301
-
-[[redirects]]
-  from = "/politiques-de-confidentialite"
-  to   = "/politique-de-confidentialite"
-  status = 301
-
-[[redirects]]
-  from = "/politiques-de-confidentialite/*"
-  to   = "/politique-de-confidentialite"
-  status = 301
-
-# EN
-[[redirects]]
-  from = "/en"
-  to   = "/en/"
-  status = 301
-
-[[redirects]]
-  from = "/en/blog.html"
-  to   = "/en/blog"
-  status = 301
-
-[[redirects]]
-  from = "/en/blog-1.html"
-  to   = "/en/blog-1"
-  status = 301
-
-[[redirects]]
-  from = "/en/legal-notice.html"
-  to   = "/en/legal-notice"
-  status = 301
-
-[[redirects]]
-  from = "/en/privacy-policy.html"
-  to   = "/en/privacy-policy"
-  status = 301
-
-########################################
-# Language routing (client-side logic in /main.js handles autodetect + bot ignore)
-# We keep server redirects minimal to avoid crawler loops.
-########################################
-
-# Default 404 -> root (optional; we keep Netlify's 404 if present)
-# [[redirects]]
-#   from = "/*"
-#   to   = "/index.html"
-#   status = 404
-
-
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

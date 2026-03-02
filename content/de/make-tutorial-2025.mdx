@@ -1,0 +1,319 @@
+---
+title: "Mache: 2025 E-Commerce & AI Automation Tutorial"
+description: "2025 Mache Tutorial: E-Commerce + KI-Inhalte-Workflows, Webhooks, Router/iterators, Fehlerbehandlung, Data Stores und DSGVO-Notizen."
+lang: "de"
+translationKey: "tutorial_2025"
+canonical: "/de/make-tutorial-2025"
+type: "article"
+---
+
+<section className="section page-hero">
+<div className="stack">
+<h1>Automatisieren Sie Ihr Geschäft (E-Commerce &amp; AI-Inhalte) mit Make in 2025</h1>
+<p className="lead">
+          Dieses kompetente, praktische Tutorial zeigt, wie man widerstandsfähige Szenarien baut: visuelle Kartierung, Router &amp; Iteratoren, Webhooks, Fehlerhandling &amp; Retries, Data Stores, Make AI Agents und Beobachtbarkeit mit Make Grid. Sie finden Schritt für Schritt E-Commerce-Flows (Shopify ‡ Sheets/Notion/Airtable, Gmail/Slack) und pro Tips für DSGVO.
+        </p>
+<div className="cta-row">
+<a className="btn cta btn-lg" href="https://www.make.com/de/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=hero" rel="noopener nofollow sponsored noreferrer" target="_blank">
+            Mein Make-Konto erstellen
+          </a>
+<a className="btn ghost" href="/de/blog">Zurück zum Blog</a>
+</div>
+</div>
+</section>
+
+<section className="section" id="why-make-2025">
+<div className="stack">
+<h2>1) Warum 2025 machen: was ist neu</h2>
+<p>
+          Make bleibt eine visuelle, no-code/low-code-Plattform mit einem großen Katalog (2.700+-Integrationen), einem leistungsstarken Mapping-Panel und Echtzeit-Triggern über Webhooks. Im Jahr 2025 sind mehrere Änderungen besonders relevant:
+        </p>
+<ul>
+<li><strong>KI-Agenten (beta):</strong> Erstellen Sie Agenten-Workflows, die Ihre Szenarien als Werkzeuge verwenden und langfristigen Kontext (Dateien/Text) halten können.</li>
+<li><strong>Make Grid (offene Beta):</strong> eine lebendige, autogenerierte Karte Ihrer gesamten Automatisierungs- und KI-Landschaft, um Abhängigkeiten und Debug schneller zu visualisieren.</li>
+<li><strong>Credits Abrechnung (Aug 27, 2025):</strong> „Betriebe“ wurde <em>Kredite</em>. Die meisten Nicht-AI-Features immer noch konsumieren <em>1 Kredit pro Betrieb</em>; Make’s eingebaute KI-Funktionen können verwenden <em>Dynamik</em> Kredite auf Basis der Token/Dateinutzung.</li>
+<li><strong>Webhook Durchsatz &amp; Warteschlangen:</strong> Instant Trigger laufen in der Regel parallel und Make kann bis zu <em>30 eingehende Webhook-Anfragen/Sekunde</em> über einen Webhook; Sie können ein Szenario auf sequentielle, wenn nötig umschalten.</li>
+<li><strong>Twitter/X App-Deprekation:</strong> die X-Integration (früher Twitter) wurde im Jahr 2025 aufgrund der API-Richtlinie/Pricing eingestellt; Plan Migrationen entsprechend.</li>
+<li><strong>400+ AI-App-Integrationen:</strong> Machen Sie Listen 400+ vorgefertigte KI-App-Integrationen zusammen mit 2.500+ allgemeinen Apps, so dass es einfach ist, LLM-Tools mit Business-Systemen zu mischen.</li>
+</ul>
+<div className="cta-row">
+<a className="btn cta" href="https://www.make.com/de/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=why-2025" rel="noopener nofollow sponsored noreferrer" target="_blank">
+            Kostenlos starten (Make)
+          </a>
+</div>
+</div>
+</section>
+<section className="section" id="core-concepts">
+<div className="stack">
+<h2>2) Kernkonzepte, die wichtig sind</h2>
+<h3>Visuelle Szenarien &amp; Mapping</h3>
+<p>
+          Automatisierungen als bauen <em>Szenarien</em> auf einer Leinwand. Die Ein- und Ausgänge jedes Moduls werden Felder in den
+          <strong>Kartierung</strong> Panel, wo Sie Daten ziehen, Werte (Funktionen) transformieren und Arrays/Kollektionen navigieren. Sie können ein einzelnes Modul ausführen, um seine Ausgangsstruktur "learn" zu starten, und dann zuversichtlich zu den nächsten Schritten abbilden.
+        </p>
+<h3>Router, Iteratoren &amp; Aggregate</h3>
+<p>
+<strong>Router</strong> Verzweigen Sie Ihren Fluss in mehrere Routen mit Filtern und einem möglichen <em>Zurück zur Übersicht</em> Route (verarbeitet sequentiell).
+          <strong>Itering</strong> ein Array in ein Bündel pro Element teilen; <em>Array-Aggregat</em> danach, wenn Sie die Ergebnisse neu kombinieren müssen.
+        </p>
+<h3>Auslöser: Abfrage vs webhooks</h3>
+<p>
+          Polling-Module überprüfen nach Änderungen im Zeitplan. <strong>Webhoot</strong> Wenn Sie die geordnete Verarbeitung bevorzugen oder über gemeinsame Ressourcen verfügen (z.B. eine satzbegrenzte API), aktivieren Sie die HTTP-Anforderungen und lösen Sie typischerweise Szenarien sofort aus. <em>sequentiell</em> Ausführung.
+        </p>
+<h3>Fehlerbehebung und unvollständige Ausführung</h3>
+<p>
+          Befestigen Sie Fehlerhandler (Ignorieren, Wiederaufnahme, Commit, Rollback, Break), um erwartete Fehler zu bewältigen, ohne Ihr Szenario zu deaktivieren. <em>unvollständige Ausführung</em> um den Zustand eines gescheiterten Laufs für eine spätere Wiederaufnahme zu speichern und Datenverlust zu vermeiden. <em>exponentieller Rückschlag</em> für automatisierte Nachläufe.
+        </p>
+<h3>Datenspeicher &amp; Datenstrukturen</h3>
+<p>
+<strong>Datenspeicher</strong> sind Make’s integrierte, leichte Datenbank für wichtige Geschäftsdaten (Dämpfsets, Cursors, id caches).
+          <strong>Datenstrukturen</strong> formell JSON/XML/CSV Schemas beschreiben, so dass das Mapping vorhersehbar und validiert ist.
+        </p>
+<h3>KI Agenten &amp; Kontext</h3>
+<p>
+          Agenten können Ihre Szenarien als Werkzeuge verwenden, halten <em>Kontext</em> (Dateien/Text) als Langzeitspeicher und laufen Sie innerhalb von Zeit-/Schrittlimits, die Sie konfigurieren. Sie können entweder Make’s AI Provider (dynamische Kreditnutzung) oder Ihre eigene KI-Verbindung auf Pro+-Pläne verwenden.
+        </p>
+</div>
+</section>
+<section className="section" id="tutorial">
+<div className="stack">
+<h2>3) Schritt für Schritt Tutorial (mit Diagrammen)</h2>
+<h3>A) Bereiten Sie Ihren Arbeitsraum vor</h3>
+<ol>
+<li>Erstellen Sie ein Team und Ordner (z.B., <em>E-Commerce</em>, <em>Inhalt</em>, <em>Ops</em>). Name Szenarien klar (präfix by domain and intent).</li>
+<li>Variables Umgebungsset (API-Tasten) als <em>Verbindungen</em>. Für sensible Ströme verwenden Sie ein engagiertes Team mit begrenzten Mitgliedern.</li>
+<li>Plan <em>Eingaben/Ausgaben</em> für Szenarien, die als Werkzeuge (Agenten oder andere Szenarien) verwendet werden. Verwenden Sie “Scenario Inputs/Outputs”, um Typen und Validierungen zu definieren.</li>
+</ol>
+<figure>
+<img alt="Szenarium Leinwand mit Router und Iterator machen" height="720" loading="lazy" src="/images/capture-make.png" width="1200"/>
+<figcaption>Beispiel Leinwand: webhook -&gt; router (VIP vs standard) -&gt; iterator (line items) -&gt; Aktionen.</figcaption>
+</figure>
+<h3>B) Erstellen Sie eine Echtzeit-Leitaufnahme (Webhook -&gt; CRM)</h3>
+<ol>
+<li><strong>Trigger:</strong> Webhoot &gt; <em>Benutzerdefinierte Webhook</em>. Kopieren Sie die URL; Ihre Formular / Verlandung Seite wird hier POST.</li>
+<li><strong>Validierung:</strong> Eine neue <em>JSON &gt; Parse JSON</em> mit einem <em>Datenstruktur</em> Wenn ungültig, Route zu einem Fehler-Handler, der Slack alarmiert.</li>
+<li><strong>Routing:</strong> Eine neue <em>Router</em> für VIP vs Standard Leads (Filter auf UTM/Quelle oder ausgeben). <em>Zurück zur Übersicht</em>.</li>
+<li><strong>CRM-Upsert:</strong> Verwenden Sie natives CRM-Modul (oder HTTP) um <em>finden-&gt;create/update</em>. Überlegen <em>sequentiell</em> Szenario, wenn die CRM API strenge Ratenlimits durchsetzt.</li>
+<li><strong>Benachrichtigen:</strong> Slack- oder E-Mail-Zusammenfassung (Karteierte Felder). Fügen Sie einen Link zurück zu Ihrem CRM-Record.</li>
+<li><strong>Beobachtungsfähigkeit:</strong> Ermöglichen <em>unvollständige Ausführung</em> und ein Leichtgewicht schaffen <em>Datenspeicher</em> für Dedupe-Tasten (email+source).</li>
+</ol>
+<h3>C) Pipeline bestellen (Shopify -&gt; Notion/Airtable + Gmail/Slack)</h3>
+<ol>
+<li><strong>Trigger:</strong> Laden Sie die Erstellung von Bestellungen (falls vorhanden) oder Bestäubung ein.</li>
+<li><strong>Iterator:</strong> Iterate Line Items. Für jeden Artikel normalisieren SKUs und sammeln Gesamtsummen.</li>
+<li><strong>Branching:</strong> Router durch Erfüllungsregel (Dropship vs in-house) und Kunden-Tier.</li>
+<li><strong>Schreibe:</strong> Wenden Sie eine Notion/Airtable-Reihe mit kartierten Feldern an; fügen Sie Rechnung PDF an, wenn vorhanden.</li>
+<li><strong>Comms:</strong> Senden Sie eine personalisierte Gmail-Nachricht; posten Sie eine präzise Slack-Zusammenfassung mit Bestelllink.</li>
+<li><strong>Widerstandsfähigkeit:</strong> Fehler-Handler -&gt; Rollback Data Store Updates oder Flagge der Bestellung für manuelle Überprüfung (unvollständige Ausführung).</li>
+</ol>
+<h3>D) Redaktionskalender (AI-assisted)</h3>
+<ol>
+<li>Auslösen Sie von einem Notion/Airtable “ideas” Tisch oder über Webhook von Ihrem CMS.</li>
+<li>Verwenden Sie KI-Toolkit oder Ihre bevorzugte KI-App zu machen <em>Klassifikation</em> Ideen und Erstellung von Umrissen (Kredite: Fest + Token-basiert, wenn Sie Make-Anbieter verwenden).</li>
+<li>Erstellung von Aufgaben, Entwurf von Dokumenten und Terminen über Apps (Notion/Trello/Asana). <em>Datenspeicher</em> Cursors, um doppelte Entwürfe zu vermeiden.</li>
+</ol>
+<h3>E) Minimale Diagramme (textuell)</h3>
+<pre aria-label="Szenario-Diagramm" className="schema">
+Webhook ▶ Parse JSON ▶ Router (VIP / Standard / Fallback)
+  VIP ▶ CRM Upsert ▶ Slack VIP channel
+  Standard ▶ CRM Upsert ▶ Slack general
+  Fallback ▶ Notify + Data Store log
+
+Shopify (Order) ▶ Iterator (Items) ▶ Branch (Fulfillment)
+  In-house ▶ Pack &amp; Ship app ▶ Gmail customer
+  Dropship ▶ Supplier API ▶ Slack ops
+        </pre>
+<div className="cta-row">
+<a className="btn cta" href="https://www.make.com/de/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=tutorial-cta" rel="noopener nofollow sponsored noreferrer" target="_blank">
+            Versuchen Sie diese Szenarien auf Make
+          </a>
+</div>
+</div>
+</section>
+<section className="section" id="ecommerce">
+<div className="stack">
+<h2>4) E-Commerce &amp; AI-Inhalte: reale Anwendungsfälle</h2>
+<div className="grid cards-3">
+<article className="card">
+<div className="card-body">
+<h3>Ausgeglichene Checkout Erholung</h3>
+<p>Webhook aus Ihrem Geschäft -&gt; bereichern mit Data Store (Kundengeschichte) -&gt; E-Mail/SMS über Anbieter -&gt; Slack-Verdau von wiederhergestellten Bestellungen.</p>
+</div>
+</article>
+<article className="card">
+<div className="card-body">
+<h3>Inventar-Synchronisation</h3>
+<p>Polling Lieferanten API stündlich -&gt; Iterator-Elemente -&gt; bedingte Updates zu Shopify und Airtable.</p>
+</div>
+</article>
+<article className="card">
+<div className="card-body">
+<h3>KI-Inhaltsbriefe</h3>
+<p>Ideentabelle -&gt; KI-Klassifizierung und Umriss -&gt; Notion-Docs und Aufgaben erstellen. Agenten können Werkzeuge (Szenarien) auswählen und Marken-Docs als Kontext speichern.</p>
+</div>
+</article>
+</div>
+<p className="note">Tipp: Halten Sie einen schmalen Bereich pro Szenario; Kette über Webhooks oder Szenarieneingänge/Ausgänge, um riesige, hart-to-Debug-Flows zu vermeiden.</p>
+</div>
+</section>
+<section className="section" id="error-retries">
+<div className="stack">
+<h2>5) Zuverlässigkeit: Fehler, Retries, Geschwindigkeitsgrenzen</h2>
+<h3>Webhooks und Durchsatz</h3>
+<p>
+          Instant Webhooks sofort ausführen und läuft sind <em>parallel</em> standardmäßig. Wenn strenge Ordnungsfragen (Zahlungen, Aktien), toggle <strong>sequenzielle Verarbeitung</strong>. Machen kann bis zu <strong>30 eingehende Webhook-Anfragen/Sekunde</strong> per Webhook; darüber erhalten Sie HTTP 429.
+        </p>
+<h3>Default exponentielle Backoff</h3>
+<p>
+          Für transiente Fehler (<code>RateLimitError</code>, <code>ConnectionError</code>, <code>ModuleTimeoutError</code>), Machen Sie automatisch Termine wieder mit zunehmenden Verzögerungen. Mit unvollständigen Ausführungen aktiviert, geht die Retry-Leiter ~1 min -&gt; 10 min -&gt; ... bis zu Stunden vor dem Abschalten des Zeitplans, wenn Fehler bestehen bleiben.
+        </p>
+<h3>Fehlerbediener (5 Typen)</h3>
+<ul>
+<li><strong>Ignorieren</strong> (Drop/Fortsetzung) <strong>Verbrauch</strong> (Fortsetzung mit Standardeinstellungen), <strong>Mittelbindung</strong> / <strong>Zurück zur Übersicht</strong> (für ACID-fähige Module), <strong>Bruch</strong> (Kraft unvollständige Ausführung).</li>
+</ul>
+<h3>Praktisches Muster</h3>
+<ol>
+<li>Ermöglichen <em>unvollständige Ausführung</em> und <em>sequentiell</em> wenn Sie auf den gleichen Rekord schreiben, um Race Bedingungen zu vermeiden.</li>
+<li>Verwenden Sie einen Data Store-Eintrag, um die Idempotenz zu schützen (z.B. Hash of Payload).</li>
+<li>Putzmittel <em>Antwort von Webhook</em> in der Nähe des Endes, wenn Sie auf “error deaktiviert Szenario” Verhalten für Sichtbarkeit.</li>
+</ol>
+</div>
+</section>
+<section className="section" id="data">
+<div className="stack">
+<h2>6) Data Stores, Data Structures &amp; Mapping</h2>
+<h3>Datenspeicher</h3>
+<p>
+          Denken Sie an Data Stores als schnelle, strukturierte Tische innerhalb von Make: perfekt für Dedupe, Inkremental Cursors, kleine Referenzwörterbücher oder temporäre Warteschlangen. Sie sind kein Ersatz für Ihre Haupt-DB, aber sie beseitigen eine Menge Leim-Code für kleine Stateful Needs.
+        </p>
+<h3>Datenstrukturen</h3>
+<p>
+          Definieren und Wiederverwenden von Schemas für JSON/XML/CSV. Strukturen validieren Eingaben/Ausgaben und machen das Mapping vorhersehbar. Verwenden Sie den Generator, indem Sie eine Muster-Payload, dann tweak-Typen und benötigte Felder.
+        </p>
+<h3>Mapping-Arrays</h3>
+<p>
+          Sie können Array-Elemente in der Mapping-UI und kombinieren Array-Funktionen, um Werte nach Schlüssel zu wählen. Wenn Sie Struktur-Info (z.B. nach Parse JSON) fehlen, führen Sie das Modul einmal so Machen “learns” seine Ausgabe und zeigt Felder nachgeschaltet.
+        </p>
+</div>
+</section>
+<section className="section" id="ai-agents">
+<div className="stack">
+<h2>7) Machen Sie KI-Agenten: wo sie passen</h2>
+<p>
+          Agenten sind ideal für Aufgaben, die flexible Entscheidungen benötigen: Triaging-Tickets, Anreicherung von Leads, Summierung von Docs oder Orchestrieren von mehrstufigen Aufgaben, die von Kontext abhängig sind. In Make konfigurieren Sie den Agenten (Modell, Systemaufforderung, Tools = Szenarien, Kontextdateien). <em>Führen Sie einen Agenten</em> Modul.
+        </p>
+<ul>
+<li><strong>Kontext:</strong> Upload von Dateien (PDF, DOCX, CSV, JSON, TXT) oder Textbausteinen, um den Langzeitspeicher des Agenten zu erstellen.</li>
+<li><strong>Werkzeuge:</strong> ausgewählte Szenarien (muss On-Demand oder benutzerdefinierte webhook-triggered) mit klaren Namen/IO-Beschreibungen aussetzen.</li>
+<li><strong>Zeit/Schritte:</strong> cap Ausführungszeit und Iterationsschritte für Zuverlässigkeit und Kostenkontrolle.</li>
+<li><strong>Credits:</strong> Verwendung von Make’s AI-Anbieter verbraucht Credits basierend auf Tokens (plus 1 Credit pro Operation); mit Ihrem eigenen AI-Anbieter verwendet 1 Credit/op und Sie zahlen Tokens an diesen Anbieter.</li>
+</ul>
+<div className="cta-row">
+<a className="btn cta" href="https://www.make.com/de/ai-agents?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=agents" rel="noopener nofollow sponsored noreferrer" target="_blank">
+            KI-Agenten entdecken
+          </a>
+</div>
+</div>
+</section>
+<section className="section" id="grid">
+<div className="stack">
+<h2>8) Make Grid: Beobachtbarkeit &amp; Skala</h2>
+<p>
+          Da Automatisierungen sich vermehren, wird die Sichtbarkeit zum Engpass. <strong>Grid machen</strong> (open beta) zeigt eine Live-, autogenerierte Karte von Szenarien, Apps und KI-Komponenten, damit Sie Abhängigkeiten erkennen, Datenflüsse verstehen und schneller debug können.
+        </p>
+<p className="note">Grid ist in offener Beta und entwickelt; Überprüfen Sie die aktuelle Verfügbarkeit in Ihrem Konto.</p>
+</div>
+</section>
+<section className="section" id="gdpr">
+<div className="stack">
+<h2>9) DSGVO, Einwilligung &amp; Protokollierung Tipps</h2>
+<ul>
+<li>Sammeln Sie die Zustimmung auf Ihrer Website; Feuer GA4 nur nach der Annahme von Analytics. Verwenden Sie den Consent Mode v2 und speichern Sie die Wahlen mit einem Zeitstempel.</li>
+<li>Log sensible Handlungen (Kreate/Update-Kunde, Rückerstattungen) mit minimalen Daten in einem sicheren System; Vermeidung von Geheimnissen in Szenariennoten.</li>
+<li>Stellen Sie Zugriffspfade der betroffenen Person bereit: Sie können Artefakte (Data Stores, Connections, etc.) aus der UI löschen, falls erforderlich.</li>
+<li>Beschränken Sie den Zugriff auf das Team. Benutzen Sie das Mindestberechtigungsverhältnis und trennen Sie ggf. „Bauen“ von „Betrieben“.</li>
+</ul>
+</div>
+</section>
+<section className="section" id="limits">
+<div className="stack">
+<h2>10) Praktische Grenzen &amp; wenn nicht automatisieren</h2>
+<ul>
+<li><strong>Unstable APIs:</strong> Verwenden Sie Retries/Backoff und Alarme, aber akzeptieren Sie manuelle Rückschläge, wenn Anbieter flaky sind.</li>
+<li><strong>Hochrisikosequenzen:</strong> (z.B.:<em>Löschen</em>, <em>Erstattung</em>) hinter expliziten Filtern und Genehmigungen.</li>
+<li><strong>Mega-Szenarien:</strong> aufgeteilt in kleinere On-Demand-Tools, die über Webhooks gekettet werden; diese skaliert besser und debugs schneller.</li>
+<li><strong>X/Twitter Workflows:</strong> Plan Alternativen (Buffer, Hootsuite, Mastodon, Bluesky), da die X-App im Jahr 2025 eingestellt wurde.</li>
+</ul>
+</div>
+</section>
+<section className="section faq" id="faq">
+<div className="stack">
+<h2>11) FAQ</h2>
+<details className="faq-item">
+<summary>Wie viele Apps integrieren sich?</summary>
+<div className="faq-body">
+            Machen Sie Listen 2.700+ Integrationen in 2025 und unterstreicht 400+ AI-App-Integrationen im gesamten Katalog.
+          </div>
+</details>
+<details className="faq-item">
+<summary>Sind Agenten produktionsbereit?</summary>
+<div className="faq-body">
+            Agenten sind in Beta und Entwicklung. Verwenden Sie sie für Hilfsaufgaben und halten Sie Menschen in der Schleife. Für missionskritische Schriften, Design-Zulassungen und starke Validierung.
+          </div>
+</details>
+<details className="faq-item">
+<summary>Werden sich meine Kosten mit Krediten ändern?</summary>
+<div className="faq-body">
+            Ihr Plan/Pricing bleiben gleich; die meisten Nicht-AI-Betriebe kosten immer noch 1 Kredit. Eingebaute KI-Funktionen mit Make-Anbieter können dynamische Kredite auf Basis von Tokens / Dateien konsumieren.
+          </div>
+</details>
+<details className="faq-item">
+<summary>Irgendwelche Getchas mit Webhooks?</summary>
+<div className="faq-body">
+            Respektieren Sie die 30 req/s Leitlinie und verwenden Sie sequentiellen Modus bei der Bestellung. Fügen Sie ein Webhook Response-Modul hinzu, um Antworten und Sichtbarkeit zu steuern.
+          </div>
+</details>
+<div className="cta-row">
+<a className="btn cta" href="https://www.make.com/de/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=faq" rel="noopener nofollow sponsored noreferrer" target="_blank">
+            Erstellen Sie Ihr erstes Szenario
+          </a>
+<a className="btn ghost" href="/de/blog">Mehr Artikel</a>
+</div>
+</div>
+</section>
+
+<section className="section compliance">
+<div className="stack">
+<h2>Compliance und Transparenz</h2>
+<ul className="list">
+<li>Unabhängige Affiliate-Website (E-Com Shop). Wir können eine Provision verdienen, wenn Sie sich über unsere Links anmelden.</li>
+<li>Keine finanzielle Beratung. Automatisierung kann mit investitionsbezogenen Tools interagieren — sorgfältig testen und professionelle Beratung berücksichtigen.</li>
+<li>Cookies nur nach Zustimmung (Analyse/Marketing). Sie können <a href="/de/privacy-policy">Cookies verwalten</a> jederzeit.</li>
+</ul>
+</div>
+</section>
+<section className="section quick-links">
+<div className="stack">
+<h2>Nützliche Seiten</h2>
+<div className="grid cards-3">
+<article className="card">
+<div className="card-body">
+<h3 className="card-title"><a href="/de/blog">Blog</a></h3>
+<p className="card-excerpt">Weitere Tutorials und Anwendungsfälle.</p>
+</div>
+</article>
+<article className="card">
+<div className="card-body">
+<h3 className="card-title"><a href="/de/legal-notice">Rechtliche Hinweise</a></h3>
+<p className="card-excerpt">Publisher, hosting, Terms.</p>
+</div>
+</article>
+<article className="card">
+<div className="card-body">
+<h3 className="card-title"><a href="/de/privacy-policy">Datenschutzbestimmungen</a></h3>
+<p className="card-excerpt">DSGVO, Cookies, Einwilligungsmodus.</p>
+</div>
+</article>
+</div>
+</div>
+</section>

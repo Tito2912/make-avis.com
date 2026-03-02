@@ -1,0 +1,94 @@
+# Canonical home
+/index.html / 301!
+/index / 301!
+
+# Locale index -> canonical
+/en/index.html /en/ 301!
+/en/index /en/ 301!
+/es/index.html /es/ 301!
+/es/index /es/ 301!
+/de/index.html /de/ 301!
+/de/index /de/ 301!
+
+# Legacy privacy typo
+/politiques-de-confidentialite /politique-de-confidentialite 301!
+/politiques-de-confidentialite/* /politique-de-confidentialite 301!
+
+# Old .html / legacy -> canonical URLs (FR)
+/blog.html /blog 301!
+/blog-1.html /tutoriel-make-2025 301!
+/blog-1 /tutoriel-make-2025 301!
+/mentions-legales.html /mentions-legales 301!
+/politique-de-confidentialite.html /politique-de-confidentialite 301!
+
+# Old .html / legacy -> canonical URLs (EN)
+/en/blog.html /en/blog 301!
+/en/blog-1.html /en/make-tutorial-2025 301!
+/en/blog-1 /en/make-tutorial-2025 301!
+/en/legal-notice.html /en/legal-notice 301!
+/en/privacy-policy.html /en/privacy-policy 301!
+
+# Old .html / legacy -> canonical URLs (ES)
+/es/blog.html /es/blog 301!
+/es/blog-1.html /es/tutorial-make-2025 301!
+/es/blog-1 /es/tutorial-make-2025 301!
+/es/legal-notice.html /es/legal-notice 301!
+/es/privacy-policy.html /es/privacy-policy 301!
+
+# Old .html / legacy -> canonical URLs (DE)
+/de/blog.html /de/blog 301!
+/de/blog-1.html /de/make-tutorial-2025 301!
+/de/blog-1 /de/make-tutorial-2025 301!
+/de/legal-notice.html /de/legal-notice 301!
+/de/privacy-policy.html /de/privacy-policy 301!
+
+# Next export: serve pages for pretty URLs (avoid folder vs .html issues)
+/en /en.html 200
+/en/ /en.html 200
+/es /es.html 200
+/es/ /es.html 200
+/de /de.html 200
+/de/ /de.html 200
+
+/blog /blog.html 200
+/blog/ /blog.html 200
+/tutoriel-make-2025 /tutoriel-make-2025.html 200
+/tutoriel-make-2025/ /tutoriel-make-2025.html 200
+/mentions-legales /mentions-legales.html 200
+/mentions-legales/ /mentions-legales.html 200
+/politique-de-confidentialite /politique-de-confidentialite.html 200
+/politique-de-confidentialite/ /politique-de-confidentialite.html 200
+
+/en/blog /en/blog.html 200
+/en/blog/ /en/blog.html 200
+/en/make-tutorial-2025 /en/make-tutorial-2025.html 200
+/en/make-tutorial-2025/ /en/make-tutorial-2025.html 200
+/en/legal-notice /en/legal-notice.html 200
+/en/legal-notice/ /en/legal-notice.html 200
+/en/privacy-policy /en/privacy-policy.html 200
+/en/privacy-policy/ /en/privacy-policy.html 200
+
+/es/blog /es/blog.html 200
+/es/blog/ /es/blog.html 200
+/es/tutorial-make-2025 /es/tutorial-make-2025.html 200
+/es/tutorial-make-2025/ /es/tutorial-make-2025.html 200
+/es/legal-notice /es/legal-notice.html 200
+/es/legal-notice/ /es/legal-notice.html 200
+/es/privacy-policy /es/privacy-policy.html 200
+/es/privacy-policy/ /es/privacy-policy.html 200
+
+/de/blog /de/blog.html 200
+/de/blog/ /de/blog.html 200
+/de/make-tutorial-2025 /de/make-tutorial-2025.html 200
+/de/make-tutorial-2025/ /de/make-tutorial-2025.html 200
+/de/legal-notice /de/legal-notice.html 200
+/de/legal-notice/ /de/legal-notice.html 200
+/de/privacy-policy /de/privacy-policy.html 200
+/de/privacy-policy/ /de/privacy-policy.html 200
+
+/en/* /en/:splat.html 200
+/en/*/ /en/:splat.html 200
+/es/* /es/:splat.html 200
+/es/*/ /es/:splat.html 200
+/de/* /de/:splat.html 200
+/de/*/ /de/:splat.html 200
