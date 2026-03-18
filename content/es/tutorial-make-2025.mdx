@@ -1,19 +1,60 @@
 ---
-title: "Hacer: 2025 e-commerce & tutorial de automatizaci\u00f3n AI"
-description: "2025 Hacer tutorial: e-commerce + AI content workflows, webhooks, routers/iterators, manejo de errores, Data Stores y notas GDPR."
+title: "Make: tutorial 2025 de automatización para e-commerce e IA"
+description: "Tutorial Make 2025: flujos para e-commerce y contenido con IA, webhooks, routers, iterators, manejo de errores, Data Stores y RGPD."
 lang: "es"
 translationKey: "tutorial_2025"
 canonical: "/es/tutorial-make-2025"
 type: "article"
+primaryKeyword: "tutorial Make"
+updatedAt: "2026-03-17"
+internalLinks:
+  - href: "/es/"
+    anchor: "Inicio: opinión de Make y automatizaciones"
+  - href: "/es/blog"
+    anchor: "Blog Make: guías y casos de uso"
+jumpLinks:
+  - href: "#why-make-2025"
+    label: "Por qué Make en 2025"
+  - href: "#core-concepts"
+    label: "Conceptos clave"
+  - href: "#tutorial"
+    label: "Tutorial paso a paso"
+  - href: "#ecommerce"
+    label: "Casos de uso"
+  - href: "#error-retries"
+    label: "Errores y límites"
+  - href: "#data"
+    label: "Data Stores y mapping"
+  - href: "#ai-agents"
+    label: "AI Agents"
+  - href: "#grid"
+    label: "Make Grid"
+  - href: "#gdpr"
+    label: "RGPD y consentimiento"
+  - href: "#faq"
+    label: "FAQ"
+quickAnswer:
+  - "Make sigue siendo una opción muy sólida si buscas automatizaciones visuales con un catálogo amplio, webhooks, Data Stores y módulos de IA."
+  - "La diferencia real la marcan la arquitectura de escenarios, el control de errores, la observabilidad y el uso correcto de créditos."
+  - "Para producción, conviene separar flujos grandes en escenarios pequeños, activar incomplete executions y documentar rutas de fallback."
+faq:
+  - q: "¿Cuántas apps integra Make actualmente?"
+    a: "Make destaca en su sitio oficial más de 3.000 integraciones preconstruidas y más de 400 integraciones de IA."
+  - q: "¿Los agentes de IA sirven ya para producción?"
+    a: "Sirven para tareas asistidas y decisiones flexibles, pero conviene mantener validaciones fuertes y revisión humana cuando hay escrituras críticas."
+  - q: "¿Cómo funcionan los créditos en Make?"
+    a: "Las operaciones no IA suelen seguir costando 1 crédito por operación. Las funciones de IA nativas pueden consumir créditos dinámicos según tokens o archivos."
+  - q: "¿Qué debo vigilar con los webhooks?"
+    a: "El orden de ejecución, los límites de throughput, la idempotencia y la respuesta HTTP. Si el orden importa, usa procesamiento secuencial."
 ---
 
 <section className="section page-hero">
 <div className="stack">
-<h1>Automatiza tu negocio (comercio electrónico &amp; contenido AI) con Make en 2025</h1>
-<p className="lead">Este tutorial experto y práctico muestra cómo construir resiliente Realizar escenarios: mapeo visual, routers &amp; iterators, webhooks, manejo de errores &amp; , Data Stores, Make AI Agents, y observabilidad con Make Grid. Encontrarás flujos de comercio electrónico paso a paso (Shopify ↔ Sheets/Noción/Airtable, Gmail/Slack) y consejos de monitoreo de precios.</p>
+<h1>Automatiza tu negocio con Make en 2025: tutorial completo para e-commerce e IA</h1>
+<p className="lead">Este tutorial práctico explica cómo construir escenarios robustos en Make: mapping visual, routers e iterators, webhooks, manejo de errores, Data Stores, AI Agents y observabilidad con Make Grid. Verás flujos reales para e-commerce, contenidos con IA y operaciones internas, con notas de RGPD y control de costes.</p>
 <div className="cta-row">
 <a className="btn cta btn-lg" href="https://www.make.com/es/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=hero" rel="noopener nofollow sponsored noreferrer" target="_blank">
-            Crear mi cuenta Hacer
+            Crear mi cuenta Make
           </a>
 <a className="btn ghost" href="/es/blog">Volver al blog</a>
 </div>
@@ -22,96 +63,95 @@ type: "article"
 
 <section className="section" id="why-make-2025">
 <div className="stack">
-<h2>1) Por qué hacer en 2025: lo nuevo</h2>
+<h2>1) Por qué Make en 2025: qué ha cambiado</h2>
 <p>
-          Hacer que los restos sean una plataforma visual, no-código/bajo-código con un gran catálogo (2,700+ integraciones), un poderoso panel de mapeo, y los disparadores en tiempo real a través de webhooks. En 2025, varios cambios son especialmente relevantes:
+          Make sigue siendo una plataforma visual no-code/low-code con un catálogo amplio, un panel de mapping muy potente y disparadores en tiempo real por webhook. En 2026, los puntos que realmente importan al evaluar Make son estos:
         </p>
 <ul>
-<li><strong>Hacer agentes de IA (beta):</strong> construir flujos de trabajo agentes que pueden utilizar sus escenarios como herramientas y mantener el contexto a largo plazo (archivos/texto). Disponible en beta y evolucionando.</li>
-<li><strong>Hacer agarre (abierto beta):</strong> un mapa en vivo y autogenerado de todo su paisaje de automatización &amp; AI para visualizar dependencias y depurar más rápido.</li>
-<li><strong>Facturación de créditos (Sujeto 27, 2025):</strong> “operaciones” se convirtió en <em>acreedores</em>. La mayoría de las características no incluidas en la AI todavía consumen <em>1 crédito por operación</em>; Las características integradas de Make AI pueden usar <em>dinámica</em> credits based on token/file usage.</li>
-<li><strong>Webhook throughput &amp; colas:</strong> desencadenantes instantáneos normalmente se ejecutan en paralelo y Make puede procesar hasta <em>30 solicitudes/segundo webhook</em> a través de un Webhook; puede cambiar un escenario a secuencial si es necesario.</li>
-<li><strong>Despretación de la aplicación Twitter/X:</strong> la integración X (anteriormente Twitter) se suspendió en 2025 debido a la política/precio de la API; planificar las migraciones en consecuencia.</li>
-<li><strong>Más de 400 integraciones de aplicaciones AI:</strong> Hacer listas 400+ integraciones de aplicaciones de IA preconstruidas junto con 2.500+ aplicaciones generales, por lo que es fácil mezclar herramientas LLM con sistemas de negocio.</li>
+<li><strong>Más de 3.000 integraciones:</strong> Make comunica actualmente un catálogo de más de 3.000 apps preconstruidas, lo que mantiene su ventaja para equipos que quieren orquestar muchas herramientas sin desarrollar conectores.</li>
+<li><strong>Make AI Agents:</strong> los agentes pueden usar escenarios como herramientas, trabajar con archivos y texto como contexto y tomar decisiones dentro de límites de tiempo y pasos.</li>
+<li><strong>Make Grid:</strong> la beta abierta de Grid ayuda a visualizar dependencias, flujos de datos y componentes de automatización e IA a escala.</li>
+<li><strong>Modelo de créditos:</strong> desde el 27 de agosto de 2025, las operaciones pasaron a expresarse en créditos. La mayoría de operaciones no IA siguen costando 1 crédito; las funciones de IA nativas pueden consumir créditos dinámicos.</li>
+<li><strong>Webhooks y throughput:</strong> los webhooks instantáneos siguen siendo una de las grandes fortalezas de Make, con posibilidad de procesamiento secuencial cuando el orden importa.</li>
+<li><strong>Más de 400 integraciones de IA:</strong> esto permite combinar LLMs y herramientas especializadas con sistemas de negocio sin salir del mismo entorno.</li>
 </ul>
 <div className="cta-row">
 <a className="btn cta" href="https://www.make.com/es/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=why-2025" rel="noopener nofollow sponsored noreferrer" target="_blank">
-            Comenzar libre (Hacer)
+            Empezar gratis con Make
           </a>
 </div>
 </div>
 </section>
+
 <section className="section" id="core-concepts">
 <div className="stack">
-<h2>2) Conceptos básicos que importan</h2>
-<h3>Visual scenarios &amp; mapping</h3>
+<h2>2) Conceptos clave que sí importan</h2>
+<h3>Escenarios visuales y mapping</h3>
 <p>
-          Construir automatizaciones como <em>escenarios</em> sobre un lienzo. Las entradas y salidas de cada módulo se convierten en campos en el
-          <strong>Cartografía</strong> panel, donde arrastrar datos, transformar valores (funciones), y navegar arrays/collections. Usted puede ejecutar un solo módulo para “aprender” su estructura de salida, luego mapear con confianza a los próximos pasos.
+          En Make, la unidad de trabajo es el <em>scenario</em>. Cada módulo expone entradas y salidas dentro del panel de <strong>mapping</strong>, donde arrastras campos, aplicas funciones y navegas arrays o colecciones. Una buena práctica es ejecutar un módulo una vez para que Make aprenda la estructura de salida antes de encadenar el resto del flujo.
         </p>
-<h3>Routers, iterators &amp; aggregators</h3>
+<h3>Routers, iterators y aggregators</h3>
 <p>
-<strong>Routers</strong> ramificar su flujo en múltiples rutas con filtros y una posible <em>retroceso</em> ruta (procesada secuencialmente).
-          <strong>Alfabetizadores</strong> dividir un array en un paquete por elemento; utilizar un <em>array aggregator</em> después, si necesita volver a registrar los resultados.
+<strong>Routers</strong> dividen el flujo en varias rutas con filtros y una posible ruta de <em>fallback</em>. Los <strong>iterators</strong> separan arrays en bundles individuales y los <em>aggregators</em> vuelven a combinarlos cuando necesitas reconstruir el resultado.
         </p>
-<h3>Triggers: votación vs webhooks</h3>
+<h3>Triggers: polling frente a webhooks</h3>
 <p>
-          Los módulos de votación verifican los cambios en el horario. <strong>Webhooks</strong> recibir solicitudes HTTP y normalmente desencadenar escenarios al instante (paralela por defecto). Si prefiere el procesamiento ordenado o tiene recursos compartidos (por ejemplo, una API limitada por tarifas), active <em>secuencial</em> ejecución.
+          Los módulos de polling revisan cambios según una frecuencia. Los <strong>webhooks</strong> reciben solicitudes HTTP y, por defecto, disparan el escenario casi al instante. Si escribes sobre un mismo recurso o necesitas preservar el orden de eventos, cambia el escenario a modo <em>sequential</em>.
         </p>
-<h3>Manejo de errores &amp; ejecuciones incompletas</h3>
+<h3>Manejo de errores e incomplete executions</h3>
 <p>
-          Adjuntar controladores de error (ignore, curriculum vitae, commit, rollback, break) para manejar fallos esperados sin desactivar su escenario. <em>ejecuciones incompletas</em> para almacenar el estado de una carrera fallida para posterior reingresar y evitar la pérdida de datos. Para problemas transitorios (limites de tasa, plazos), Hacer aplica <em>retroceso exponencial</em> para repeticiones automatizadas.
+          Usa manejadores de error para ignorar, reanudar, confirmar, revertir o romper una ejecución. Activa las <em>incomplete executions</em> para guardar el estado de un fallo y relanzarlo después sin perder contexto. Para errores transitorios, Make aplica reintentos con <em>exponential backoff</em>.
         </p>
-<h3>Data Stores &amp; Data Structures</h3>
+<h3>Data Stores y Data Structures</h3>
 <p>
-<strong>Almacenes de datos</strong> son la base de datos integrada y ligera para los datos clave del negocio (conjuntos de asistencia, cursores, caches id).
-          <strong>Estructuras de datos</strong> describir formalmente los esquemas JSON/XML/CSV por lo que la asignación es predecible y validada.
+<strong>Data Stores</strong> son la base ligera integrada de Make, útil para deduplicación, cursores, cachés o colas pequeñas. Las <strong>Data Structures</strong> formalizan esquemas JSON/XML/CSV para que el mapping sea más predecible y validado.
         </p>
-<h3>Agentes AI &amp; context</h3>
+<h3>AI Agents y contexto</h3>
 <p>
-          Agents can use your scenarios as tools, keep <em>context</em> (archivos/texto) como memoria a largo plazo, y ejecutar dentro de los límites de tiempo/paso que configura. Puede utilizar el proveedor de inteligencia artificial de Make (uso de crédito dinamico) o su propia conexión AI en los planes Pro+.
+          Los agentes pueden utilizar escenarios como herramientas, conservar archivos o fragmentos de texto como contexto y ejecutarse con límites de tiempo y pasos. Puedes usar el proveedor de IA de Make o tu propia conexión en los planes compatibles.
         </p>
 </div>
 </section>
+
 <section className="section" id="tutorial">
 <div className="stack">
-<h2>3) tutorial paso a paso (con diagramas)</h2>
-<h3>A) Prepare su espacio de trabajo</h3>
+<h2>3) Tutorial paso a paso (con diagramas)</h2>
+<h3>A) Prepara el workspace</h3>
 <ol>
-<li>Crear un equipo y carpetas (por ejemplo, <em>Comercio electrónico</em>, <em>Índice</em>, <em>Opciones</em>). Nombrar escenarios claramente (prefijo por dominio e intención).</li>
-<li>Conjunto de entorno variable ( teclas API) como <em>Conexión</em>. Para flujos sensibles, utilice un equipo dedicado con miembros limitados.</li>
-<li>Plan <em>insumos/productos</em> para escenarios que se utilizan como herramientas (Agentes u otros escenarios). Utilice “Introducciones/outputs de escenario” para definir tipos y validación.</li>
+<li>Crea un equipo y separa carpetas por dominio de negocio: <em>E-commerce</em>, <em>Contenido</em>, <em>Ops</em>. Nombra los escenarios con prefijos claros.</li>
+<li>Guarda claves y credenciales como <em>Connections</em>. Para flujos sensibles, usa un equipo dedicado con permisos limitados.</li>
+<li>Define entradas y salidas cuando un escenario vaya a usarse como herramienta desde otros escenarios o desde AI Agents.</li>
 </ol>
 <figure>
-<img alt="Hacer lona de escenario con router e iterador" height="720" loading="lazy" src="/images/capture-make.png" width="1200"/>
-<figcaption>Ejemplo de tela: webhook - titulado router (VIP vs standard) - confianza iterator (ítems en línea) - acciones relacionadas.</figcaption>
+<img alt="Lienzo de escenario de Make con router e iterator" height="720" loading="lazy" src="/images/capture-make.png" width="1200"/>
+<figcaption>Ejemplo de lienzo: webhook -&gt; router (VIP frente a estándar) -&gt; iterator (líneas de pedido) -&gt; acciones.</figcaption>
 </figure>
-<h3>B) Construir una ingesta de plomo en tiempo real (Webhook - título CRM)</h3>
+<h3>B) Construye una captación de leads en tiempo real (Webhook -&gt; CRM)</h3>
 <ol>
-<li><strong>Trigger:</strong> Webhooks • <em>Webhook personalizado</em>. Copiar la URL; su página de formulario/instalación será POST aquí.</li>
-<li><strong>Validación:</strong> Añadir un <em>JSON √≥ Parse JSON</em> con una <em>Estructura de datos</em> (definir los campos requeridos). Si es inválido, ruta a un controlador de error que alerta Slack.</li>
-<li><strong>Routing:</strong> Añadir un <em>Router</em> para VIP vs guías estándar (filtros en UTM/source o gastar). Marcar un <em>ruta de caída</em>.</li>
-<li><strong>CRM upsert:</strong> Utilice el módulo CRM nativo (o HTTP) para <em>encontrar- contactos/actualización</em>. Considerar <em>secuencial</em> escenario si la API de CRM impone límites de tarifas estrictos.</li>
-<li><strong>Notificar:</strong> Slack o resumen de correo electrónico (campos reducidos). Incluye un enlace de vuelta a tu registro de CRM.</li>
-<li><strong>Observabilidad:</strong> Habilitación <em>ejecuciones incompletas</em> y crear un peso ligero <em>Data Store</em> para llaves de dedupe (email+source).</li>
+<li><strong>Trigger:</strong> Webhooks &gt; <em>Custom webhook</em>. Copia la URL; tu formulario o landing enviará aquí los datos.</li>
+<li><strong>Validación:</strong> añade <em>JSON &gt; Parse JSON</em> con una <em>Data Structure</em> para validar campos obligatorios.</li>
+<li><strong>Routing:</strong> usa un <em>Router</em> para separar leads VIP y leads estándar según UTM, origen o gasto.</li>
+<li><strong>CRM upsert:</strong> usa el módulo nativo del CRM o HTTP para buscar, crear o actualizar contactos. Si la API es estricta, activa modo secuencial.</li>
+<li><strong>Notificación:</strong> envía un resumen a Slack o correo con enlace al registro del CRM.</li>
+<li><strong>Observabilidad:</strong> activa incomplete executions y guarda claves de deduplicación en un <em>Data Store</em>.</li>
 </ol>
-<h3>C) Oleoducto de pedidos (Shopify - Propiedad Notion/Airtable + Gmail/Slack)</h3>
+<h3>C) Pipeline de pedidos (Shopify -&gt; Notion/Airtable + Gmail/Slack)</h3>
 <ol>
-<li><strong>Trigger:</strong> Shopify order creation (instant, if available) or polling.</li>
-<li><strong>Iterator:</strong> Iterate line items. Para cada artículo, normalice SKUs y recoja totales.</li>
-<li><strong>Subdivisión:</strong> Router por regla de cumplimiento (dropship vs in-house) y nivel de cliente.</li>
-<li><strong>Escribe:</strong> Apéndice una fila Noción/Airtable con campos mapeados; adjunta la factura PDF si está presente.</li>
-<li><strong>Comms:</strong> Enviar un mensaje Gmail personalizado; publicar un resumen Slack conciso con el enlace de pedido.</li>
-<li><strong>Resiliencia:</strong> Manejador de errores - revestidor de datos Actualizaciones de la tienda o marcar el orden de revisión manual (ejecución completa).</li>
+<li><strong>Trigger:</strong> creación de pedido en Shopify o polling si el conector no permite instantáneo.</li>
+<li><strong>Iterator:</strong> recorre los line items y normaliza SKUs, cantidades e importes.</li>
+<li><strong>Branching:</strong> divide por regla de fulfillment o por tipo de cliente.</li>
+<li><strong>Write:</strong> añade una fila en Notion o Airtable y adjunta la factura si existe.</li>
+<li><strong>Comms:</strong> manda un correo personalizado y publica un resumen breve en Slack.</li>
+<li><strong>Resilience:</strong> si falla una escritura crítica, usa rollback o marca el pedido para revisión manual.</li>
 </ol>
-<h3>D) Editorial calendar (AI-assisted)</h3>
+<h3>D) Calendario editorial asistido por IA</h3>
 <ol>
-<li>Trigger de una tabla Notion/Airtable “ideas” o a través de webhook de su CMS.</li>
-<li>Use Make AI Toolkit o su aplicación AI preferida para <em>Clasificar</em> ideas y generar esquemas (créditos: fijo + basado en token si utiliza el proveedor de Make).</li>
-<li>Crear tareas, redactar documentos y fechas debidas a través de Apps (Noción/Trello/Asana). <em>Data Store</em> cursores para evitar borradores duplicados.</li>
+<li>Parte de una tabla de ideas en Notion o Airtable, o desde un webhook de tu CMS.</li>
+<li>Utiliza Make AI Toolkit o tu app de IA preferida para clasificar ideas y proponer esquemas.</li>
+<li>Crea tareas, documentos y fechas de entrega en Notion, Trello o Asana, guardando cursores en Data Stores para evitar duplicados.</li>
 </ol>
-<h3>E) Minimal diagrams (textual)</h3>
-<pre aria-label="Escenario diagrama" className="schema">
+<h3>E) Diagrama mínimo</h3>
+<pre aria-label="Diagrama de escenario" className="schema">
 Webhook ▶ Parse JSON ▶ Router (VIP / Standard / Fallback)
   VIP ▶ CRM Upsert ▶ Slack VIP channel
   Standard ▶ CRM Upsert ▶ Slack general
@@ -123,157 +163,165 @@ Shopify (Order) ▶ Iterator (Items) ▶ Branch (Fulfillment)
         </pre>
 <div className="cta-row">
 <a className="btn cta" href="https://www.make.com/es/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=tutorial-cta" rel="noopener nofollow sponsored noreferrer" target="_blank">
-            Pruebe estos escenarios en Make
+            Probar estos escenarios en Make
           </a>
 </div>
 </div>
 </section>
+
 <section className="section" id="ecommerce">
 <div className="stack">
-<h2>4) Comercio electrónico &amp; Contenido de la IA: casos de uso real</h2>
+<h2>4) E-commerce y contenido con IA: casos reales</h2>
 <div className="grid cards-3">
 <article className="card">
 <div className="card-body">
-<h3>Recuperación de salida abandonada</h3>
-<p>Webhook de su tienda - confía enrich con Data Store (historia del cliente) - mail/SMS por proveedor - propiedad Slack digest of recovered orders.</p>
+<h3>Recuperación de checkout abandonado</h3>
+<p>Webhook desde la tienda, enriquecimiento con historial en Data Store, envío por email o SMS y resumen en Slack de pedidos recuperados.</p>
 </div>
 </article>
 <article className="card">
 <div className="card-body">
-<h3>Sincronización de inventarios</h3>
-<p>Proveedor de votación API por hora - Propiedad Iterator items - instrucciones actualizaciones condicionales para Shopify y Airtable. Añadir controlador de rollos si escribe fallas.</p>
+<h3>Sincronización de inventario</h3>
+<p>Polling periódico a la API del proveedor, iterator sobre artículos y actualizaciones condicionales en Shopify y Airtable.</p>
 </div>
 </article>
 <article className="card">
 <div className="card-body">
-<h3>Informes de contenido de la IA</h3>
-<p>Ideas table - Propiedad AI classify and outlined - Crear Notion docs and tasks. Los agentes pueden elegir herramientas (escenarios) y almacenar marca docs como contexto.</p>
+<h3>Briefings de contenido con IA</h3>
+<p>Tabla de ideas, clasificación con IA, creación de documentos y tareas en Notion. Los agentes pueden elegir escenarios como herramientas.</p>
 </div>
 </article>
 </div>
-<p className="note">Sugerencia: mantener un alcance estrecho por escenario; cadena a través de webhooks o entradas de escenario / salidas para evitar flujos gigantes, difíciles de de depurar.</p>
+<p className="note">Consejo: es mejor encadenar escenarios pequeños por webhook o por inputs/outputs que mantener un megaescenario difícil de depurar.</p>
 </div>
 </section>
+
 <section className="section" id="error-retries">
 <div className="stack">
-<h2>5) Confiabilidad: errores, registros, límites de tarifas</h2>
-<h3>Webhooks &amp; throughput</h3>
+<h2>5) Fiabilidad: errores, reintentos y límites</h2>
+<h3>Webhooks y throughput</h3>
 <p>
-          Webhooks instantáneo ejecutan inmediatamente y se ejecutan <em>paralelo</em> por defecto. Si los asuntos de orden estricto (pagos, acciones), cambiar <strong>procesamiento secuencial</strong>. Hacer puede manejar hasta <strong>30 solicitudes/segundo webhook</strong> por webhook; arriba que obtendrá HTTP 429.
+          Los webhooks instantáneos corren en <em>paralelo</em> por defecto. Si el orden importa, por ejemplo en pagos o stock, activa <strong>sequential processing</strong>. Make documenta hasta <strong>30 solicitudes entrantes por segundo y por webhook</strong>; por encima de eso aparecerá HTTP 429.
         </p>
-<h3>Desplazamiento exponencial predeterminado</h3>
+<h3>Exponential backoff</h3>
 <p>
-          Para errores transitorios (<code>RateLimitError</code>, <code>ConnectionError</code>, <code>ModuleTimeoutError</code>), Hacer calendarios automáticos re-runs with increasing delays. Con ejecuciones incompletas habilitadas, la escalera de retry va ~1 min - título 10 min - título ... hasta horas antes de desactivar el horario si los fallos persisten.
+          Para errores transitorios como <code>RateLimitError</code>, <code>ConnectionError</code> o <code>ModuleTimeoutError</code>, Make reprograma ejecuciones con retrasos crecientes. Con incomplete executions activadas, la escalera de reintentos puede llegar a horas antes de desactivar el escenario.
         </p>
-<h3>Manejadores de error (5 tipos)</h3>
+<h3>Tipos de manejadores de error</h3>
 <ul>
-<li><strong>Ignoro</strong> (drop/continue), <strong>Resumen</strong> (continúe con los defectos), <strong>Commit</strong> / <strong>Rollback</strong> (para módulos compatibles con ACID), <strong>Romper</strong> (Ejecución incompleta de fuerza).</li>
+<li><strong>Ignore</strong>, <strong>Resume</strong>, <strong>Commit</strong>, <strong>Rollback</strong> y <strong>Break</strong>. No todos aplican igual a todos los módulos, pero son la base para endurecer flujos críticos.</li>
 </ul>
 <h3>Patrón práctico</h3>
 <ol>
-<li>Habilitación <em>ejecuciones incompletas</em> y <em>secuencial</em> al escribir al mismo registro para evitar las condiciones de raza.</li>
-<li>Utilice una entrada de Data Store para guardar idempotency (por ejemplo, hash de payload).</li>
-<li>Ponte. <em>Respuesta de Webhook</em> cerca del final, si confías en el comportamiento de “el escenario de inhabilitación del terror” para la visibilidad.</li>
+<li>Activa incomplete executions y modo secuencial cuando varios eventos escriben sobre el mismo registro.</li>
+<li>Guarda un hash o clave de idempotencia en un Data Store.</li>
+<li>Coloca <em>Webhook response</em> al final si necesitas controlar mejor la visibilidad de errores.</li>
 </ol>
 </div>
 </section>
+
 <section className="section" id="data">
 <div className="stack">
-<h2>6) Data Stores, Data Structures &amp; mapping</h2>
-<h3>Almacenes de datos</h3>
+<h2>6) Data Stores, Data Structures y mapping</h2>
+<h3>Data Stores</h3>
 <p>
-          Piense en las tiendas de datos como tablas rápidas y estructuradas dentro Haga: perfecto para dedupe, cursores incrementales, pequeños diccionarios de referencia, o colas temporales. No son un reemplazo para su DB principal, pero eliminan un montón de código de pegamento para pequeñas necesidades de estado.
+          Piensa en los Data Stores como tablas rápidas dentro de Make. Funcionan bien para deduplicación, cursores incrementales, pequeños diccionarios de referencia y colas temporales. No sustituyen tu base principal, pero evitan mucho código auxiliar.
         </p>
-<h3>Estructuras de datos</h3>
+<h3>Data Structures</h3>
 <p>
-          Defina y reutiliza los esquemas para JSON/XML/CSV. Las estructuras validan los insumos/salidas y hacen predecible el mapeo. Utilice el generador al pegar una carga útil de muestra, luego los tipos de pinzas y los campos requeridos.
+          Define esquemas para JSON, XML o CSV y reutilízalos. Eso valida entradas y salidas y vuelve el mapping más estable. El generador a partir de una muestra suele ser la forma más rápida de empezar.
         </p>
-<h3>Mapping arrays</h3>
+<h3>Arrays y mapping</h3>
 <p>
-          Puede indexar elementos de array en la interfaz de usuario de mapeo y combinar funciones de array para seleccionar valores por clave. Cuando no tiene información de estructura (por ejemplo, después de Parse JSON), ejecute el módulo una vez por lo que haga “aprenda” su salida y expone campos abajo.
+          Puedes indexar elementos de arrays desde el panel de mapping y combinar funciones para extraer valores por clave. Si Make aún no conoce la estructura, ejecuta el módulo una vez para exponer los campos aguas abajo.
         </p>
 </div>
 </section>
+
 <section className="section" id="ai-agents">
 <div className="stack">
-<h2>7) Hacer agentes de IA: donde encajan</h2>
+<h2>7) Make AI Agents: dónde encajan</h2>
 <p>
-          Los agentes son ideales para tareas que necesitan decisiones flexibles: triaging tickets, enriqueciendo leads, resumiendo docs o orquestando tareas multi-paso que dependen del contexto. En Make, configure el agente (modelo, impulso del sistema, herramientas = escenarios, archivos de contexto). <em>Corre a un agente</em> módulo.
+          Los agentes encajan bien en tareas con decisiones flexibles: clasificar tickets, enriquecer leads, resumir documentos o coordinar acciones multipaso. En Make configuras el modelo, el prompt del sistema, las herramientas y el contexto, y luego ejecutas el agente desde el módulo <em>Run an agent</em>.
         </p>
 <ul>
-<li><strong>Contexto:</strong> cargar archivos (PDF, DOCX, CSV, JSON, TXT) o fragmentos de texto para construir la memoria a largo plazo del agente.</li>
-<li><strong>Herramientas:</strong> exponer escenarios seleccionados (debe estar a prueba de webhook personalizada o bajo demanda) con nombres claros/descripciones IO.</li>
-<li><strong>Timeout/steps:</strong> tiempo de ejecución y pasos de iteración para la confiabilidad y control de costes.</li>
-<li><strong>Créditos:</strong> Utilizando Make’s AI proveedor consume créditos basados en fichas (más 1 crédito por operación); el uso de su propio proveedor de AI usa 1 crédito/op y paga fichas a ese proveedor.</li>
+<li><strong>Contexto:</strong> puedes subir PDF, DOCX, CSV, JSON, TXT o fragmentos de texto.</li>
+<li><strong>Herramientas:</strong> expón escenarios on-demand o disparados por webhook con nombres y entradas claras.</li>
+<li><strong>Timeout y pasos:</strong> limita ambos para controlar coste y fiabilidad.</li>
+<li><strong>Créditos:</strong> con el proveedor de IA de Make, el consumo puede ser dinámico; con tu propio proveedor, Make cuenta la operación y el coste del modelo queda fuera.</li>
 </ul>
 <div className="cta-row">
 <a className="btn cta" href="https://www.make.com/es/ai-agents?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=agents" rel="noopener nofollow sponsored noreferrer" target="_blank">
-            Explorar agentes de inteligencia artificial
+            Explorar AI Agents
           </a>
 </div>
 </div>
 </section>
+
 <section className="section" id="grid">
 <div className="stack">
-<h2>8) Rejilla: escala de observabilidad</h2>
+<h2>8) Make Grid: observabilidad a escala</h2>
 <p>
-          A medida que se multiplican las automatizaciones, la visibilidad se convierte en el cuello de botella. <strong>Hacer agarre</strong> (beta abierta) muestra un mapa en vivo y autogenerado de escenarios, aplicaciones y componentes de IA para que puedas detectar dependencias, entender flujos de datos y depurar más rápido. También ayuda a los líderes a revisar la salud de la automatización sin excavar en cada escenario.
+          Cuando el número de automatizaciones crece, el problema deja de ser construir y pasa a ser entender dependencias. <strong>Make Grid</strong>, actualmente en beta abierta, ofrece un mapa vivo y autogenerado de escenarios, apps y componentes de IA para detectar relaciones, revisar flujos de datos y depurar más rápido.
         </p>
-<p className="note">Grid está en beta abierta y en evolución; verifique la disponibilidad actual en su cuenta.</p>
+<p className="note">Conviene comprobar la disponibilidad real de Grid en tu cuenta o plan antes de diseñar procesos en torno a esta vista.</p>
 </div>
 </section>
+
 <section className="section" id="gdpr">
 <div className="stack">
-<h2>9) RGPD, consentimiento &amp; consejos de registro</h2>
+<h2>9) RGPD, consentimiento y logging</h2>
 <ul>
-<li>Recoger el consentimiento en su sitio; fuego GA4 sólo después de que se acepte Analytics. Utilice el modo de consentimiento v2 y almacenar opciones con un timetamp.</li>
-<li>Acciones sensibles de registro (crear/actualizar cliente, reembolsos) con datos mínimos en un sistema seguro; evitar poner secretos en las notas de escenario.</li>
-<li>Proporcionar rutas de acceso al sujeto de datos: puede eliminar Hacer artefactos (Data Stores, conexiones, etc.) de la interfaz de usuario si es necesario.</li>
-<li>Restrict team access. Use least privilegio and separate “build” from “operate” if possible.</li>
+<li>Recoge el consentimiento en tu sitio y activa GA4 solo después de aceptar analítica. Si usas Consent Mode v2, guarda la preferencia con marca temporal.</li>
+<li>Registra acciones sensibles con el mínimo dato necesario y evita guardar secretos en notas de escenario.</li>
+<li>Define un proceso para acceso o borrado de datos, incluyendo Connections, Data Stores y registros relevantes.</li>
+<li>Restringe accesos de equipo y separa, si puedes, quién construye de quién opera.</li>
 </ul>
 </div>
 </section>
+
 <section className="section" id="limits">
 <div className="stack">
-<h2>10) Límites prácticos &amp; cuando no se automatice</h2>
+<h2>10) Límites prácticos y cuándo no automatizar</h2>
 <ul>
-<li><strong>API inestables:</strong> use retries/backoff y alertas, pero acepte retrocesos manuales cuando los proveedores están agitados.</li>
-<li><strong>Secuencias de alto riesgo:</strong> (por ejemplo:<em>Borrar</em>, <em>reembolso</em>) detrás de filtros explícitos &amp; aprobaciones.</li>
-<li><strong>Mega-scenarios:</strong> dividir en herramientas más pequeñas en demanda encadenadas a través de webhooks; esto escala mejor y depura más rápido.</li>
-<li><strong>X/Twitter workflows:</strong> alternativas del plan (Buffer, Hootsuite, Mastodon, Bluesky) desde que la aplicación X fue suspendida en 2025.</li>
+<li><strong>APIs inestables:</strong> usa retries y alertas, pero acepta fallback manual cuando el proveedor es frágil.</li>
+<li><strong>Acciones de alto riesgo:</strong> pon filtros y aprobación explícita antes de borrar, reembolsar o sobrescribir datos críticos.</li>
+<li><strong>Megaescenarios:</strong> divide en herramientas más pequeñas conectadas por webhook o escenarios bajo demanda.</li>
+<li><strong>Workflows con X/Twitter:</strong> si todavía dependes de esa integración, planifica alternativas porque fue retirada en 2025.</li>
 </ul>
 </div>
 </section>
+
 <section className="section faq" id="faq">
 <div className="stack">
 <h2>11) FAQ</h2>
 <details className="faq-item">
-<summary>¿Cuántas aplicaciones se integran?</summary>
+<summary>¿Cuántas apps integra Make?</summary>
 <div className="faq-body">
-            Hacer listas 2.700+ integraciones en 2025 y resalta 400+ integraciones de aplicaciones AI en todo el catálogo.
+            Make comunica actualmente más de 3.000 integraciones preconstruidas y más de 400 integraciones relacionadas con IA.
           </div>
 </details>
 <details className="faq-item">
-<summary>¿Los agentes están listos para la producción?</summary>
+<summary>¿Los agentes están listos para producción?</summary>
 <div className="faq-body">
-            Los agentes están en beta y evolucionan. Úsalos para tareas de estilo asistente y mantén a los humanos en el bucle. Para los escritos críticos de misión, las aprobaciones de diseño y la validación fuerte.
+            Son útiles para tareas asistidas y decisiones flexibles, pero las escrituras críticas siguen necesitando validaciones, límites y supervisión humana.
           </div>
 </details>
 <details className="faq-item">
-<summary>¿Mis costos cambiarán con créditos?</summary>
+<summary>¿Cambian los costes con los créditos?</summary>
 <div className="faq-body">
-            Su plan/precio se mantiene igual; la mayoría de las operaciones no IAI todavía cuestan 1 crédito. Las características integradas de IA usando el proveedor de Make pueden consumir créditos dinámicos basados en fichas/archivos.
+            El cambio principal afecta a cómo se mide el consumo. La mayoría de operaciones no IA siguen costando 1 crédito; algunas funciones de IA consumen créditos dinámicos.
           </div>
 </details>
 <details className="faq-item">
-<summary>¿Alguna compra con webhooks?</summary>
+<summary>¿Qué precauciones debo tomar con los webhooks?</summary>
 <div className="faq-body">
-            Respetar la guía de 30 req/s y utilizar el modo secuencial si el pedido importa. Agregue un módulo Webhook Response para controlar las respuestas y la visibilidad.
+            Controla idempotencia, orden, throughput y respuesta HTTP. Si varios eventos tocan el mismo recurso, usa modo secuencial.
           </div>
 </details>
 <div className="cta-row">
 <a className="btn cta" href="https://www.make.com/es/register?pc=makebyebyesalariat&amp;utm_source=make-avis&amp;utm_medium=cta&amp;utm_campaign=blog-1&amp;utm_content=faq" rel="noopener nofollow sponsored noreferrer" target="_blank">
-            Construya su primer escenario
+            Crear tu primer escenario
           </a>
 <a className="btn ghost" href="/es/blog">Más artículos</a>
 </div>
@@ -282,11 +330,11 @@ Shopify (Order) ▶ Iterator (Items) ▶ Branch (Fulfillment)
 
 <section className="section compliance">
 <div className="stack">
-<h2>Cumplimiento de la transparencia</h2>
+<h2>Cumplimiento y transparencia</h2>
 <ul className="list">
-<li>Sitio de afiliado independiente (E-Com Shop). Podemos ganar una comisión si usted se registra a través de nuestros enlaces.</li>
-<li>Sin consejos financieros. La automatización puede interactuar con herramientas relacionadas con la inversión, probar cuidadosamente y considerar el asesoramiento profesional.</li>
-<li>Las cookies sólo después del consentimiento (Analytics/Marketing). Puedes <a href="/es/privacy-policy">gestionar las cookies</a> en cualquier momento.</li>
+<li>Sitio de afiliación independiente (E-Com Shop). Podemos recibir una comisión si te registras desde nuestros enlaces.</li>
+<li>No es asesoramiento financiero. Si tus automatizaciones tocan herramientas sensibles, prueba con cuidado y documenta riesgos.</li>
+<li>Las cookies de analítica y marketing solo se activan tras consentimiento. Puedes <a href="/es/privacy-policy">gestionar las cookies</a> cuando quieras.</li>
 </ul>
 </div>
 </section>
@@ -303,13 +351,13 @@ Shopify (Order) ▶ Iterator (Items) ▶ Branch (Fulfillment)
 <article className="card">
 <div className="card-body">
 <h3 className="card-title"><a href="/es/legal-notice">Aviso legal</a></h3>
-<p className="card-excerpt">Editor, hosting, términos.</p>
+<p className="card-excerpt">Editor, hosting y condiciones.</p>
 </div>
 </article>
 <article className="card">
 <div className="card-body">
 <h3 className="card-title"><a href="/es/privacy-policy">Política de privacidad</a></h3>
-<p className="card-excerpt">RGPD, cookies, modo de consentimiento.</p>
+<p className="card-excerpt">RGPD, cookies y Consent Mode.</p>
 </div>
 </article>
 </div>
