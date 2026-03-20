@@ -1,0 +1,94 @@
+---
+title: "Make pricing (2026): operations, plans, and a simple cost estimation method"
+description: "Make pricing guide 2026: understand operation-based billing, pick the right plan, estimate monthly budget, and reduce consumption."
+lang: "en"
+translationKey: "tarifs-make"
+canonical: "/en/tarifs-make"
+type: "article"
+primaryKeyword: "Make pricing"
+date: "2026-03-20"
+updatedAt: "2026-03-20"
+jumpLinks:
+  - href: "#model"
+    label: "How Make bills"
+  - href: "#estimate"
+    label: "Estimate your cost"
+  - href: "#plan"
+    label: "Pick a plan"
+  - href: "#optimize"
+    label: "Reduce operations"
+quickAnswer:
+  - "Make is typically billed by operations/executions: the more your scenarios run, the more you consume."
+  - "Best estimate is per scenario: triggers/day × steps × safety margin."
+  - "Cost optimization = fewer unnecessary runs (filters, dedupe, batching) and better error handling."
+cta:
+  title: "Check Make plans (official)"
+  body: "Pricing varies by country and offers. Open the official page, then estimate usage with the method below."
+  buttonLabel: "Try Make for free"
+  buttonHref: "https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=pricing"
+faq:
+  - q: "Does Make have a free plan?"
+    a: "Make usually offers an entry tier depending on the period and country. Verify the current offer on the official pricing page."
+  - q: "Why does my operation count spike?"
+    a: "Often because triggers run too frequently, loops aren’t controlled, retries happen, or errors are not handled. Add filters, deduplication and batching."
+  - q: "Is Make cheaper than Zapier?"
+    a: "It depends on your workflows. Make is often strong for complex scenarios, but you must estimate your real usage."
+internalLinks:
+  - href: "/en/"
+    anchor: "Make Avis home (pillar)"
+  - href: "/en/make-tutorial-2025"
+    anchor: "Make tutorial 2025 (pillar)"
+  - href: "/en/make-vs-zapier"
+    anchor: "Make vs Zapier comparison"
+  - href: "/en/make-vs-n8n"
+    anchor: "Make vs n8n comparison"
+  - href: "/en/avantages-limites-make"
+    anchor: "Make pros & cons"
+---
+
+<p className="muted">Pricing guide · Updated Mar 20, 2026 · ~7–10 min</p>
+
+# Make pricing (2026): understand and estimate your budget
+
+The common trap is looking at a monthly plan without understanding the key variable: **consumption** (operations/executions). This page helps you estimate cost realistically, then reduce it without breaking automations.
+
+<h2 id="model">1) How Make bills (the logic)</h2>
+
+Make is typically priced based on:
+
+- a volume of operations/executions over a period,
+- feature limits/access by plan,
+- team options for advanced use cases (collaboration/governance).
+
+More runs and more steps per run → more consumption.
+
+<h2 id="estimate">2) Estimate your cost (simple method)</h2>
+
+For each scenario:
+
+1. Triggers per day (webhook, schedule, watch events).
+2. Average number of steps/modules per run.
+3. Variability (peaks, errors, retries) → add a safety margin (e.g., +20–30%).
+
+Mental math: 100 runs/day × 8 steps = 800 ops/day, then add margin.
+
+<h2 id="plan">3) Pick a plan (by profile)</h2>
+
+- **Discovery:** 1–2 simple scenarios, low volume.
+- **Business:** more scenarios, webhooks, logs, reliability needs.
+- **Team:** collaboration, governance, roles and visibility.
+
+Choose based on constraints (logs, reliability, team) and volume.
+
+<h2 id="optimize">4) Reduce operations (without losing value)</h2>
+
+Quick wins:
+
+- filter early (don’t run unnecessary branches),
+- dedupe (avoid re-processing the same record),
+- batch/aggregate (process in chunks when possible),
+- avoid overly frequent schedules,
+- handle errors to prevent retry loops.
+
+The best cost is an automation that runs “just enough”, not “all the time”.
+

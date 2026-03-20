@@ -1,0 +1,103 @@
+---
+title: "Make: pros and cons (2026) — strengths, limits, and best use cases"
+description: "Make pros and cons: routers, webhooks and mapping strengths, operation-based pricing limits, governance tradeoffs, and how to decide vs alternatives like n8n/Zapier."
+lang: "en"
+translationKey: "avantages-limites-make"
+canonical: "/en/avantages-limites-make"
+type: "article"
+primaryKeyword: "Make pros and cons"
+date: "2026-03-20"
+updatedAt: "2026-03-20"
+jumpLinks:
+  - href: "#pros"
+    label: "Pros"
+  - href: "#cons"
+    label: "Cons"
+  - href: "#fit"
+    label: "Best fit"
+  - href: "#checklist"
+    label: "Checklist"
+  - href: "#alternatives"
+    label: "Alternatives"
+quickAnswer:
+  - "Make is great for building complex no-code workflows (routers, iterations, mapping, error handlers)."
+  - "The main tradeoff is operation-based pricing and a learning curve for advanced scenarios."
+  - "If you need self-hosting or strict versioning, compare with n8n."
+cta:
+  title: "Start the smart way"
+  body: "Begin with 1 useful scenario (webhook or schedule), measure operations, then expand gradually with monitoring."
+  buttonLabel: "Try Make for free"
+  buttonHref: "https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=pros-cons"
+faq:
+  - q: "Is Make good for non-technical teams?"
+    a: "Yes for simple to medium scenarios. For complex workflows, a technical owner helps standardize naming, logging and error handling."
+  - q: "How do I prevent operation usage from exploding?"
+    a: "Filter early, dedupe, batch, and avoid overly frequent triggers. Measure usage per scenario."
+  - q: "Is Make good for webhooks and APIs?"
+    a: "Yes: webhooks, routers, mapping and error handlers make it strong. If you need heavy custom code, n8n may be more flexible."
+internalLinks:
+  - href: "/en/"
+    anchor: "Make Avis home (pillar)"
+  - href: "/en/make-tutorial-2025"
+    anchor: "Make tutorial 2025 (pillar)"
+  - href: "/en/tarifs-make"
+    anchor: "Make pricing: understand operations"
+  - href: "/en/make-vs-zapier"
+    anchor: "Make vs Zapier comparison"
+  - href: "/en/make-vs-n8n"
+    anchor: "Make vs n8n comparison"
+---
+
+<p className="muted">Decision guide · Updated Mar 20, 2026 · ~7–10 min</p>
+
+# Make: pros and cons (2026)
+
+Make (ex‑Integromat) is one of the most powerful no-code tools to build **visual** and **reliable** automations. Still, it has clear tradeoffs: operation-based pricing, a learning curve for advanced flows, and SaaS dependency.
+
+<h2 id="pros">1) The biggest pros</h2>
+
+The most practical strengths:
+
+- **Routers, iterators, aggregators** to handle branching, loops and batching.
+- **Mapping** to transform data field by field (arrays, structures, functions).
+- **Webhooks** for real-time triggers and controlled handling.
+- **Error handling** with retries, run history, and recovery patterns.
+- **Ecosystem**: many integrations, plus HTTP requests when no connector exists.
+
+<h2 id="cons">2) The main cons (and mitigations)</h2>
+
+Common limits:
+
+- **Operation-based pricing**: frequent triggers can burn budget quickly. → *Fix:* filter early, dedupe, batch, and tune schedules.
+- **Learning curve**: advanced flows require method (loops, errors, idempotency). → *Fix:* standardize patterns (naming, logs, alerts).
+- **SaaS dependency**: uptime and product changes are outside your control. → *Fix:* monitoring + fallback + documentation on critical flows.
+- **Not “full dev” governance**: if you need strict CI/CD and code review, a dev-first tool may fit better (e.g., n8n).
+
+<h2 id="fit">3) Who is Make the best fit for?</h2>
+
+Make is often a great choice if:
+
+- you’re a solo builder/SMB and want speed,
+- ops/marketing teams need to iterate without dev time,
+- you connect SaaS apps and do data transformations,
+- you want UI-first debugging and visibility.
+
+Make is less ideal if:
+
+- you must **self-host** (data constraints),
+- you want strict **code-like industrialization**,
+- your workflows require heavy custom logic.
+
+<h2 id="checklist">4) Checklist before committing</h2>
+
+- Which triggers run “all the time”? Can you reduce frequency?
+- Who owns maintenance (logs, alerts, documentation)?
+- What data flows through? Any legal/customer constraints?
+- Is total cost controlled? (operations + human time)
+
+<h2 id="alternatives">5) Useful alternatives</h2>
+
+- **Zapier**: simpler for fast linear workflows → see [Make vs Zapier](/en/make-vs-zapier).
+- **n8n**: more dev-flexible and self-hostable → see [Make vs n8n](/en/make-vs-n8n).
+- **Power Automate / Pipedream**: relevant depending on Microsoft stack or dev/API needs.
+

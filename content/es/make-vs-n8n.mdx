@@ -1,0 +1,132 @@
+---
+title: "Make vs n8n (2026): SaaS visual vs open source autoalojable"
+description: "Comparativa Make vs n8n: hosting (SaaS vs self-host), flexibilidad, integraciones, coste total, seguridad y casos de uso."
+lang: "es"
+translationKey: "make-vs-n8n"
+canonical: "/es/make-vs-n8n"
+type: "article"
+primaryKeyword: "Make vs n8n"
+date: "2026-03-20"
+updatedAt: "2026-03-20"
+jumpLinks:
+  - href: "#resumen"
+    label: "Resumen"
+  - href: "#hosting"
+    label: "Hosting y control"
+  - href: "#flex"
+    label: "Flexibilidad e integraciones"
+  - href: "#coste"
+    label: "Coste total"
+  - href: "#casos"
+    label: "Casos de uso"
+  - href: "#elegir"
+    label: "Cómo elegir"
+quickAnswer:
+  - "Elige Make si quieres un SaaS visual listo para usar y rápido de configurar."
+  - "Elige n8n si priorizas autoalojamiento, control de datos y extensibilidad para dev."
+  - "Compara coste total (tiempo + infraestructura), no solo el precio."
+cta:
+  title: "Probar Make con un workflow real"
+  body: "Toma 1 workflow (webhook + 3–5 pasos) y compara setup, debugging, fiabilidad y coste estimado."
+  buttonLabel: "Probar Make gratis"
+  buttonHref: "https://www.make.com/es/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=make-vs-n8n"
+faq:
+  - q: "¿n8n es gratis?"
+    a: "n8n es open source, pero el autoalojamiento tiene costes (servidor, mantenimiento, monitorización). También existe un plan cloud de pago."
+  - q: "¿Cuál es mejor para cumplimiento (GDPR/RGPD)?"
+    a: "Si necesitas controlar hosting y residencia de datos, n8n autoalojado puede ser ventaja. Si no, Make puede encajar si las garantías contractuales son suficientes."
+  - q: "¿Make puede sustituir a n8n en workflows complejos?"
+    a: "A menudo sí (routers, iteradores, mapping, manejo de errores). Si necesitas mucho código y control de infra, n8n puede ser más flexible."
+internalLinks:
+  - href: "/es/"
+    anchor: "Inicio (pilar)"
+  - href: "/es/tarifs-make"
+    anchor: "Precios Make: estimar coste"
+  - href: "/es/make-vs-zapier"
+    anchor: "Make vs Zapier"
+  - href: "/es/avantages-limites-make"
+    anchor: "Ventajas y límites de Make"
+  - href: "/es/tutorial-make-2025"
+    anchor: "Tutorial Make 2025"
+---
+
+<p className="muted">Comparativa · Actualizado 20 mar 2026 · ~8–12 min</p>
+
+# Make vs n8n (2026)
+
+La pregunta útil no es “¿cuál es más potente?”, sino **dónde quieres poner la complejidad**:
+
+- **Make**: complejidad en el diseño del escenario; infraestructura gestionada (SaaS).
+- **n8n**: más libertad (open source + código), pero te encargas de infraestructura/mantenimiento si lo autoalojas.
+
+<h2 id="resumen">1) Resumen (decisión rápida)</h2>
+
+Elige **Make** si:
+
+- quieres una herramienta visual “lista para usar”,
+- tu equipo es más no-code / ops,
+- valoras rapidez y debugging en la UI.
+
+Elige **n8n** si:
+
+- el autoalojamiento y la residencia de datos son clave,
+- puedes operarlo (logs, updates, seguridad),
+- necesitas extensiones custom (código, nodos, APIs internas).
+
+<h2 id="hosting">2) Hosting y control (el gran diferenciador)</h2>
+
+- **Make**: SaaS. Delegas infraestructura, escalado y disponibilidad, pero aceptas dependencia de plataforma.
+- **n8n**: autoalojable. Controlas la infra (cloud u on-prem), secretos, roles y política de logs.
+
+Antes de decidir, valida:
+
+- datos sensibles (PII) y requisitos contractuales,
+- necesidad de VPC/on-prem,
+- observabilidad (alertas, retries, colas),
+- tolerancia a incidentes y capacidad de operación.
+
+<h2 id="flex">3) Flexibilidad e integraciones</h2>
+
+- **Make** destaca por el mapping visual, routers/iteradores/agrupadores y un catálogo grande de integraciones.
+- **n8n** destaca cuando mezclas pasos visuales con lógica “dev” (HTTP, código) o conectas sistemas internos.
+
+Atajo:
+
+- muchos workflows “conectar A con B” → Make (o Zapier),
+- muchos workflows “ETL + lógica + APIs custom” → n8n suele ganar.
+
+<h2 id="coste">4) Coste total</h2>
+
+- **Make**: suele facturar por consumo (operaciones). Es predecible si mides bien tus ejecuciones.
+- **n8n**: coste variable (cloud vs autoalojamiento). En self-host, incluye servidor + mantenimiento.
+
+Mini método:
+
+1. estima ejecuciones/día,
+2. estima pasos por ejecución,
+3. añade margen,
+4. añade tiempo humano (debug, updates, monitoring).
+
+Para Make, mira también: [Precios Make](/es/tarifs-make).
+
+<h2 id="casos">5) Casos de uso</h2>
+
+Make suele encajar mejor en:
+
+- marketing ops y e-commerce (velocidad + UI),
+- equipos no técnicos,
+- transformaciones guiadas por UI.
+
+n8n suele encajar mejor en:
+
+- sistemas internos (APIs propias),
+- entornos regulados (self-host),
+- equipos técnicos que quieren versionar/industrializar.
+
+<h2 id="elegir">6) Cómo elegir (checklist)</h2>
+
+- Quieres **SaaS + velocidad** → Make.
+- Quieres **self-host + control** → n8n.
+- Muchos workflows simples → Make (o Zapier).
+- Workflows críticos y complejos → Make o n8n según equipo y compliance.
+

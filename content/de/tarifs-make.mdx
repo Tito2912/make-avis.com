@@ -1,0 +1,96 @@
+---
+title: "Make Preise (2026): Operations, Pläne und einfache Kostenschätzung"
+description: "Make Preise 2026: Abrechnung nach Operations verstehen, passenden Plan wählen, Monatsbudget schätzen und Verbrauch reduzieren."
+lang: "de"
+translationKey: "tarifs-make"
+canonical: "/de/tarifs-make"
+type: "article"
+primaryKeyword: "Make Preise"
+date: "2026-03-20"
+updatedAt: "2026-03-20"
+jumpLinks:
+  - href: "#modell"
+    label: "Abrechnungsmodell"
+  - href: "#schaetzen"
+    label: "Kosten schätzen"
+  - href: "#plan"
+    label: "Plan wählen"
+  - href: "#optimieren"
+    label: "Operations reduzieren"
+quickAnswer:
+  - "Make wird meist nach Operations/Executions abgerechnet: mehr Runs und mehr Schritte pro Run = mehr Verbrauch."
+  - "Am besten pro Szenario schätzen: Trigger/Tag × Schritte × Sicherheitsmarge."
+  - "Verbrauch senken: früh filtern, deduplizieren, batchen und Fehler sauber behandeln."
+cta:
+  title: "Make Pläne prüfen (offiziell)"
+  body: "Preise variieren nach Land und Angebot. Offizielle Seite öffnen und Verbrauch mit der Methode unten schätzen."
+  buttonLabel: "Make kostenlos testen"
+  buttonHref: "https://www.make.com/de/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=preise"
+faq:
+  - q: "Gibt es einen Free Plan?"
+    a: "Je nach Land/Zeitraum gibt es oft einen Einstiegstarif. Prüfe die aktuelle Übersicht auf der offiziellen Pricing-Seite."
+  - q: "Warum steigen Operations plötzlich?"
+    a: "Typische Gründe: zu häufige Trigger, Loops ohne Limits, Retries bei Fehlern oder fehlende Filter. Run-History prüfen und Trigger/Fallback optimieren."
+  - q: "Ist Make günstiger als Zapier?"
+    a: "Kommt auf Workflows und Volumen an. Vergleiche reale Runs/Steps und Wartungsaufwand – nicht nur den Monatsbetrag."
+internalLinks:
+  - href: "/de/"
+    anchor: "Startseite (Pillar)"
+  - href: "/de/make-tutorial-2025"
+    anchor: "Make Tutorial 2025 (Pillar)"
+  - href: "/de/make-vs-zapier"
+    anchor: "Make vs Zapier"
+  - href: "/de/make-vs-n8n"
+    anchor: "Make vs n8n"
+  - href: "/de/avantages-limites-make"
+    anchor: "Make Pros & Cons"
+---
+
+<p className="muted">Preis-Guide · Aktualisiert 20. März 2026 · ~7–10 Min</p>
+
+# Make Preise (2026): Kosten realistisch schätzen
+
+Der häufigste Fehler: einen Monatsplan auswählen, ohne die zentrale Variable zu verstehen — **Verbrauch** (Operations/Executions). Dieses Tutorial zeigt dir ein einfaches Modell, um Kosten zu schätzen, den passenden Plan zu wählen und unnötige Operations zu vermeiden.
+
+<h2 id="modell">1) Abrechnungsmodell</h2>
+
+Make rechnet typischerweise nach:
+
+- **Operations/Executions** (wie oft Szenarien laufen und wie viele Schritte pro Run),
+- **Feature-Limits** je Plan (z. B. Logs, Governance, bestimmte Module),
+- **Team-Optionen** für fortgeschrittene Nutzung (Rollen, Zusammenarbeit).
+
+Merke: ein Trigger, der 1.000×/Tag auslöst, kann auch bei “kleinen” Szenarien teuer werden.
+
+<h2 id="schaetzen">2) Kosten schätzen</h2>
+
+Schätze den Verbrauch **pro Szenario**:
+
+1. Trigger pro Tag (Webhook, Schedule, Watch Events)
+2. Durchschnittliche Schritte/Module pro Run
+3. Sicherheitsmarge für Peaks/Fehler/Retrys (z. B. +20–30%)
+
+Beispiel: 100 Runs/Tag × 8 Schritte = 800 Operations/Tag (+ Margin).
+
+<h2 id="plan">3) Plan wählen</h2>
+
+Wähle nach **Volumen** und **Anforderungen**:
+
+- **Einstieg/Discovery:** 1–2 einfache Szenarien, wenig Volumen.
+- **Business:** mehr Szenarien, Webhooks, Logs, höhere Zuverlässigkeit.
+- **Team:** Rollen, Governance, mehr Sichtbarkeit und Collaboration.
+
+Praxis-Tipp: Plane zuerst nach Logs/Fehlerhandling (Stabilität) und erst dann nach “Features”.
+
+<h2 id="optimieren">4) Operations reduzieren</h2>
+
+Quick Wins, die fast immer funktionieren:
+
+- **früh filtern** (unnötige Branches gar nicht erst ausführen),
+- **deduplizieren** (gleiche Daten nicht mehrfach verarbeiten),
+- **batchen/aggregieren** (wenn möglich in Paketen statt einzeln),
+- **Schedules entschärfen** (nicht jede Minute, wenn es nicht nötig ist),
+- **Fehler sauber behandeln** (Retry-Loops vermeiden, Alerts setzen),
+- **Idempotenz prüfen** (damit Wiederholungen nicht doppelte Side-Effects erzeugen).
+
+Wenn du das Kostenmodell einmal pro Szenario aufschreibst, werden die größten “Cost-Leaks” sehr schnell sichtbar.

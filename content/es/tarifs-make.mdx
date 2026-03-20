@@ -1,0 +1,96 @@
+---
+title: "Precios de Make (2026): operaciones, planes y método para estimar el coste"
+description: "Guía precios Make 2026: entender facturación por operaciones, elegir plan, estimar presupuesto mensual y reducir consumo."
+lang: "es"
+translationKey: "tarifs-make"
+canonical: "/es/tarifs-make"
+type: "article"
+primaryKeyword: "precios Make"
+date: "2026-03-20"
+updatedAt: "2026-03-20"
+jumpLinks:
+  - href: "#modelo"
+    label: "Cómo factura Make"
+  - href: "#estimar"
+    label: "Estimar coste"
+  - href: "#plan"
+    label: "Elegir plan"
+  - href: "#optimizar"
+    label: "Reducir operaciones"
+quickAnswer:
+  - "Make suele facturar por operaciones/ejecuciones: más ejecuciones y más pasos por ejecución = más consumo."
+  - "Mejor estimación: por escenario (triggers/día × pasos × margen)."
+  - "Optimizar coste = menos ejecuciones inútiles (filtros, dedupe, batch) y mejor gestión de errores."
+cta:
+  title: "Ver planes Make (oficial)"
+  body: "Los precios varían por país y oferta. Abre la página oficial y estima tu consumo con el método de abajo."
+  buttonLabel: "Probar Make gratis"
+  buttonHref: "https://www.make.com/es/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=precios"
+faq:
+  - q: "¿Hay plan gratis?"
+    a: "Suele existir un nivel de entrada según país/periodo. Verifica en la página oficial."
+  - q: "¿Por qué suben las operaciones?"
+    a: "Triggers demasiado frecuentes, loops, retries y errores no controlados. Añade filtros, dedupe y batching."
+  - q: "¿Make es más barato que Zapier?"
+    a: "Depende del workflow. Estima consumo real."
+internalLinks:
+  - href: "/es/"
+    anchor: "Inicio (pilar)"
+  - href: "/es/tutorial-make-2025"
+    anchor: "Tutorial Make 2025 (pilar)"
+  - href: "/es/make-vs-zapier"
+    anchor: "Make vs Zapier"
+  - href: "/es/make-vs-n8n"
+    anchor: "Make vs n8n"
+  - href: "/es/avantages-limites-make"
+    anchor: "Pros y contras de Make"
+---
+
+<p className="muted">Guía precios · Actualizado 20 mar 2026 · ~7–10 min</p>
+
+# Precios de Make (2026)
+
+La trampa típica: mirar un plan mensual sin entender la variable clave: **consumo** (operaciones/ejecuciones). Esta guía te ayuda a estimar el coste de forma realista y a reducir operaciones sin romper tus automatizaciones.
+
+<h2 id="modelo">1) Cómo factura Make</h2>
+
+Make suele facturar según:
+
+- volumen de operaciones,
+- límites y funcionalidades por plan (logs, gobernanza, etc.),
+- opciones de equipo (roles, colaboración) en planes más avanzados.
+
+Idea simple: cuanto más se ejecuta un escenario y más pasos tiene, más consume.
+
+<h2 id="estimar">2) Estimar coste</h2>
+
+La forma más útil es estimar **por escenario**:
+
+1. triggers por día (webhook, schedule, watch events),
+2. pasos/módulos promedio por ejecución,
+3. variabilidad (picos, errores, retries) → añade un margen (por ejemplo +20–30%).
+
+Ejemplo mental: 100 ejecuciones/día × 8 pasos = 800 operaciones/día (+ margen).
+
+<h2 id="plan">3) Elegir plan</h2>
+
+Elige según **volumen** y **necesidades**:
+
+- **Discovery:** 1–2 escenarios simples, bajo volumen.
+- **Business:** más escenarios, webhooks, logs, fiabilidad.
+- **Team:** colaboración, roles y gobernanza.
+
+Consejo: prioriza logs/gestión de errores en workflows críticos, incluso antes del “precio”.
+
+<h2 id="optimizar">4) Optimizar operaciones</h2>
+
+Quick wins:
+
+- filtrar temprano (evitar ramas innecesarias),
+- dedupe (no procesar el mismo registro dos veces),
+- batch/agrupación (procesar por lotes),
+- evitar schedules demasiado frecuentes,
+- manejar errores para evitar bucles de retry,
+- revisar idempotencia (reintentos sin efectos duplicados).
+
+Cuando mides consumo escenario por escenario, los mayores “leaks” suelen ser muy obvios.

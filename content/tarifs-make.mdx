@@ -1,0 +1,94 @@
+---
+title: "Tarifs Make (2026) : opérations, plans et méthode simple pour estimer le coût"
+description: "Guide tarifs Make 2026 : comprendre la facturation par opérations, choisir le bon plan, estimer un budget mensuel et optimiser la consommation."
+lang: "fr"
+translationKey: "tarifs-make"
+canonical: "/tarifs-make"
+type: "article"
+primaryKeyword: "tarifs Make"
+date: "2026-03-20"
+updatedAt: "2026-03-20"
+jumpLinks:
+  - href: "#modele"
+    label: "Comment Make facture"
+  - href: "#estimer"
+    label: "Estimer votre coût"
+  - href: "#choisir"
+    label: "Choisir un plan"
+  - href: "#optimiser"
+    label: "Réduire les opérations"
+quickAnswer:
+  - "Make est généralement facturé selon un volume d’exécutions/opérations : plus vos scénarios tournent, plus vous consommez."
+  - "La bonne estimation se fait par scénario : déclencheurs/jour × étapes × marge de sécurité."
+  - "Optimiser le coût = réduire les exécutions inutiles (filtres, déduplication, batch) et mieux gérer les erreurs."
+cta:
+  title: "Vérifier les plans Make (officiel)"
+  body: "Les tarifs évoluent selon pays et offres. Ouvrez la page officielle, puis estimez votre consommation avec la méthode ci‑dessous."
+  buttonLabel: "Essayer Make gratuitement"
+  buttonHref: "https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=tarifs"
+faq:
+  - q: "Make a-t-il une offre gratuite ?"
+    a: "Selon la période et le pays, Make propose généralement un palier de découverte. Vérifiez l’offre actuelle sur la page officielle."
+  - q: "Pourquoi mes opérations explosent ?"
+    a: "Souvent à cause de déclencheurs trop fréquents, de boucles non contrôlées, de retries et d’erreurs non gérées. Ajoutez filtres, déduplication et batching."
+  - q: "Make est-il plus rentable que Zapier ?"
+    a: "Ça dépend du type de scénarios. Make est souvent plus efficace sur des workflows complexes, mais il faut estimer votre consommation réelle."
+internalLinks:
+  - href: "/"
+    anchor: "Accueil Make Avis (pilier)"
+  - href: "/tutoriel-make-2025"
+    anchor: "Tutoriel Make 2025 (pilier)"
+  - href: "/make-vs-zapier"
+    anchor: "Make vs Zapier : comparatif"
+  - href: "/make-vs-n8n"
+    anchor: "Make vs n8n : comparatif"
+  - href: "/avantages-limites-make"
+    anchor: "Avantages & limites de Make"
+---
+
+<p className="muted">Guide tarifs · Mis à jour le 20 mars 2026 · ~7–10 min</p>
+
+# Tarifs Make (2026) : comprendre et estimer votre budget
+
+Le piège classique est de regarder un plan “mensuel” sans comprendre la variable clé : **la consommation** (opérations/exécutions). Ce guide vous aide à estimer votre coût de manière réaliste, puis à le réduire sans casser vos automatisations.
+
+<h2 id="modele">1) Comment Make facture (la logique)</h2>
+
+Make est généralement facturé selon :
+
+- un volume d’opérations/exécutions sur une période,
+- des limites/accès à certaines fonctionnalités selon les plans,
+- des options d’équipe (collaboration, gouvernance) pour les usages plus avancés.
+
+L’idée : plus votre scénario tourne et plus il contient d’étapes, plus il consomme.
+
+<h2 id="estimer">2) Estimer votre coût (méthode simple)</h2>
+
+Pour chaque scénario :
+
+1. Déclencheurs par jour (webhook, schedule, watch events).
+2. Nombre moyen d’étapes (modules) par exécution.
+3. Variabilité (pics, erreurs, retries) → ajoutez une marge (ex. +20–30%).
+
+Exemple mental : 100 exécutions/jour × 8 étapes = 800 opérations/jour, puis ajoutez une marge.
+
+<h2 id="choisir">3) Choisir un plan (selon votre profil)</h2>
+
+- **Découverte** : 1–2 scénarios simples, faible volume.
+- **Business** : scénarios plus nombreux, webhooks, erreurs, logs, besoins de fiabilité.
+- **Équipe** : collaboration, gouvernance, besoin de visibilité et de rôles.
+
+Choisissez le plan sur vos contraintes (fiabilité, logs, équipe) et votre volume.
+
+<h2 id="optimiser">4) Réduire les opérations (sans perdre de valeur)</h2>
+
+Quick wins :
+
+- filtrez tôt (ne pas exécuter des branches inutiles),
+- dédupliquez (éviter de re-traiter la même donnée),
+- batch/agrégation (traiter par lots quand possible),
+- limitez les schedules trop fréquents,
+- gérez les erreurs (éviter les retries en boucle).
+
+Le meilleur coût, c’est une automatisation qui tourne “juste assez”, pas une automatisation qui tourne “tout le temps”.
+
