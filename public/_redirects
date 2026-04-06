@@ -2,13 +2,18 @@
 /index.html / 301!
 /index / 301!
 
+# Force no trailing slash on locale home
+/en/ /en 301!
+/es/ /es 301!
+/de/ /de 301!
+
 # Locale index -> canonical
-/en/index.html /en/ 301!
-/en/index /en/ 301!
-/es/index.html /es/ 301!
-/es/index /es/ 301!
-/de/index.html /de/ 301!
-/de/index /de/ 301!
+/en/index.html /en 301!
+/en/index /en 301!
+/es/index.html /es 301!
+/es/index /es 301!
+/de/index.html /de 301!
+/de/index /de 301!
 
 # Legacy privacy typo
 /politiques-de-confidentialite /politique-de-confidentialite 301!

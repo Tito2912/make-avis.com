@@ -1,0 +1,141 @@
+---
+title: "Make Integrationen (2026): Apps, Setups & typische Fehler"
+description: "Make Integrationen 2026: native Apps vs Webhooks/HTTP, sinnvolle Stacks (Shopify, Stripe, Sheets …), Auth-Basics und typische Fallen, die Duplicates und Operations-Spikes erzeugen."
+lang: "de"
+translationKey: "make-integrations"
+canonical: "/de/make-integrations"
+type: "article"
+primaryKeyword: "Make Integrationen"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#auswahl"
+    label: "Connector wählen"
+  - href: "#stacks"
+    label: "Stacks mit hohem ROI"
+  - href: "#auth"
+    label: "Auth & Rechte"
+  - href: "#fallen"
+    label: "Typische Fallen"
+  - href: "#kosten"
+    label: "Kosten & Operations"
+  - href: "#checkliste"
+    label: "Produktions-Checkliste"
+quickAnswer:
+  - "Starte mit nativen Apps, nutze Webhooks für Echtzeit und HTTP für Edge-Cases."
+  - "Plane Zuverlässigkeit zuerst (Idempotenz, Dedupe, Pagination) – erst dann skaliere Volumen."
+  - "Kosten in Make hängen stark an Operations: Trigger-Takt, Loops und Retries sind die größten Treiber."
+cta:
+  title: "Make mit deinen 3 Kern-Tools testen"
+  body: "Wähle 1 Trigger-App + 2 Ziel-Apps (z. B. Shopify → Sheets → Slack) und miss Setup-Zeit, Stabilität und monatliche Operations."
+  buttonLabel: "Make kostenlos testen"
+  buttonHref: "https://www.make.com/de/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=integrationen"
+faq:
+  - q: "Wie viele Integrationen unterstützt Make?"
+    a: "Make bietet tausende Apps und zusätzlich HTTP, Webhooks und Custom Apps – dadurch kannst du auch Tools anbinden, die keinen nativen Connector haben."
+  - q: "Webhooks oder Polling?"
+    a: "Wenn die Quelle Webhooks sauber unterstützt, sind sie meist schneller und effizienter. Polling ist ok, aber du musst Intervalle, Filter und Limits setzen, um Operations-Spikes zu vermeiden."
+  - q: "Wann lohnt sich eine Custom App?"
+    a: "Wenn du dieselbe API in mehreren Szenarien wiederverwendest (Auth + wiederkehrende Endpoints), ist eine Custom App oft wartbarer als viele einzelne HTTP-Module."
+internalLinks:
+  - href: "/de"
+    anchor: "Make Bewertung (Pillar)"
+  - href: "/de/make-webhooks"
+    anchor: "Make Webhooks: Instant Trigger & Responses"
+  - href: "/de/tarifs-make"
+    anchor: "Make Preise: Kosten schätzen"
+  - href: "/de/make-pricing-calculator"
+    anchor: "Make Kostenrechner (Operations)"
+  - href: "/de/make-ai-agents"
+    anchor: "Make KI-Agenten: sichere Workflows"
+  - href: "/de/make-tutorial-2025"
+    anchor: "Make Tutorial 2025"
+---
+
+<p className="muted">Integrationen · Aktualisiert 6. April 2026 · ~8–12 Min</p>
+
+# Make Integrationen (2026)
+
+In Make bedeutet „Integration“ nicht nur „App verbinden“. In der Praxis hast du vier Bausteine:
+
+- **Native App-Module** (z. B. Shopify, Stripe, Google Sheets)
+- **Webhooks** (Echtzeit-Trigger bei Events)
+- **HTTP** (jede API anbinden, auch ohne native Module)
+- **Custom Apps** (wiederverwendbarer Connector mit Auth + Endpoints)
+
+Dieses Guide hilft dir, den richtigen Ansatz zu wählen – und typische Fehler zu vermeiden, die später Duplicates, Ausfälle oder unnötige Operations verursachen.
+
+<h2 id="auswahl">1) Connector wählen (native App vs Webhook vs HTTP)</h2>
+
+Ein pragmatisches Entscheidungsmodell:
+
+- **Native App**, wenn sie den Endpoint abdeckt, den du brauchst.
+- **Webhook**, wenn du Events in Echtzeit brauchst (Bestellung, Zahlung, Formular).
+- **HTTP**, wenn du ein API-Feature brauchst, das der native Connector nicht anbietet.
+- **Custom App**, wenn du dieselbe API wieder und wieder nutzt (und Auth sauber kapseln willst).
+
+Wenn du unsicher bist: **Starte nativ**. Für Edge-Cases baust du ein „Escape Hatch“ mit HTTP.
+
+<h2 id="stacks">2) Stacks mit hohem ROI (bewährte Kombinationen)</h2>
+
+Ein paar Muster, die in der Praxis gut skalieren:
+
+- **E-Commerce:** Shopify/WooCommerce → Stripe → Sheets/Airtable → Slack/Email
+- **Lead Gen:** Webhook (Form) → CRM (HubSpot/Pipedrive) → Enrichment → Routing/Alerts
+- **Finance/Ops:** Rechnungen → Drive/Storage → Sheets/ERP → Alerts + Archiv
+- **Support:** Email/Ticket → KI-Klassifizierung → Routing → SLA-Alerts
+- **Content:** Notion/Airtable → KI-Module → CMS → Social/Newsletter
+
+Wichtig: Definiere pro Stack eine **Source of Truth** (z. B. Order-ID, Customer-ID). Ohne stabile IDs sind Duplicates fast garantiert.
+
+<h2 id="auth">3) Auth & Rechte (Sicherheit + DSGVO/Compliance)</h2>
+
+Viele „Integrationsprobleme“ sind eigentlich **Berechtigungsprobleme**:
+
+- Nutze, wenn möglich, **dedizierte Service-Accounts** statt persönlicher Logins.
+- Vergib Rechte nach dem Prinzip **Least Privilege** (nur lesen/schreiben, was nötig ist).
+- Plane **Key-Rotation** (API Keys/Secrets regelmäßig erneuern).
+- Halte fest, welche Systeme **PII** (personenbezogene Daten) enthalten.
+
+Für EU-Setups (DSGVO) lohnt sich ein Mini-Check:
+
+- Datenminimierung (nur Felder übertragen, die du wirklich brauchst)
+- Logging/Run-History ohne sensible Inhalte (keine Passwörter, Tokens, unnötige PII)
+- Prüfe je Tool, ob ein **AVV/DPA** verfügbar ist und wer Datenverarbeiter ist
+
+<h2 id="fallen">4) Typische Fallen (und wie du sie vermeidest)</h2>
+
+- **Duplicates:** Idempotenz-Key (z. B. Order-ID) + Dedupe über Data Store/Unique Keys.
+- **Pagination:** immer „next page“ sauber implementieren; sonst fehlen Daten oder du loopst endlos.
+- **Rate Limits:** Requests drosseln, batchen, Caches nutzen.
+- **Unbounded Trigger:** Polling ohne Filter (z. B. „Watch all“) frisst Operations.
+- **Silent Failures:** Error Handler + Alerts (Slack/Email) + Dead-letter-Strategie für problematische Items.
+
+Wenn du Produktions-Workflows baust: plane Fehlerpfade explizit. „Happy Path only“ ist die häufigste Ursache für spätere Notfälle.
+
+<h2 id="kosten">5) Kosten & Operations (was wirklich zählt)</h2>
+
+In Make hängen Kosten stark an **Operations**:
+
+- viele Module pro Run = mehr Operations,
+- Loops multiplizieren Steps,
+- Retries und Fehlerpfade erhöhen Verbrauch zusätzlich,
+- Polling kann „leere Runs“ erzeugen, die trotzdem zählen.
+
+Quick Wins:
+
+- früh filtern (vor Routern/Loops),
+- batchen (erst sammeln, dann einmal schreiben),
+- deduplizieren (Data Store / Unique Keys),
+- Polling-Intervalle nur so eng wie nötig.
+
+<h2 id="checkliste">6) Produktions-Checkliste</h2>
+
+- Stabile IDs + Dedupe-Strategie (Data Store/Unique Key)
+- Pagination + Backoff bei APIs
+- Error Handler + Alerting + Wiederanlauf (Retries mit Grenzen)
+- Operatives Budget: geschätzte Operations/Monat + Sicherheitsmarge
+- Dokumentation: welche Felder übertragen werden und warum (Compliance)
+
+Wenn du den schnellsten Start willst: baue zuerst einen Webhook-basierten Flow und beobachte 7 Tage lang Runs/Fehler/Operations.
+

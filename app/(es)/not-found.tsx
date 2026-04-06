@@ -5,12 +5,13 @@ export default function NotFoundPage() {
   return (
     <div className="stack">
       <section className="card">
-        <h1>Page introuvable</h1>
-        <p className="muted">La page demandée n’existe pas (ou a été déplacée).</p>
-        <Link className="btn-primary" href="/">
-          Retour à {SITE.brandName}
+        <h1>Página no encontrada</h1>
+        <p className="muted">La página solicitada no existe (o ha sido movida).</p>
+        <Link className="btn-primary" href="/es">
+          Volver a {SITE.brandName}
         </Link>
       </section>
     </div>
   );
 }
+

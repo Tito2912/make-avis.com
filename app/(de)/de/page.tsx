@@ -6,7 +6,7 @@ import { buildArticleJsonLd, buildBreadcrumbJsonLd } from '@/lib/schema';
 import { buildAlternates, getOpenGraphImage, getOpenGraphType, parseRobots } from '@/lib/seo';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const meta = await getDocMetaByRouteSegments([]);
+  const meta = await getDocMetaByRouteSegments(['de']);
   if (!meta) return {};
 
   const all = await getAllDocMetas();
@@ -34,8 +34,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function HomePage() {
-  const post = await getPostByRouteSegments([]);
+export default async function GermanHomePage() {
+  const post = await getPostByRouteSegments(['de']);
   if (!post) return notFound();
 
   const articleJsonLd = buildArticleJsonLd(post);
@@ -66,3 +66,4 @@ export default async function HomePage() {
     </>
   );
 }
+

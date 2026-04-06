@@ -1,11 +1,7 @@
 import type { Metadata, Viewport } from 'next';
-import './globals.css';
+import '../globals.css';
 import { SITE } from '@/lib/site';
-import { SiteFooter } from '@/components/SiteFooter';
-import { SiteHeader } from '@/components/SiteHeader';
-import { CookieBanner } from '@/components/CookieBanner';
-import { LangHtmlUpdater } from '@/components/LangHtmlUpdater';
-import { FaqEnhancer } from '@/components/FaqEnhancer';
+import { SiteShell } from '@/components/SiteShell';
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
@@ -44,12 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" suppressHydrationWarning>
       <body>
-        <LangHtmlUpdater />
-        <FaqEnhancer />
-        <SiteHeader />
-        <main className="container">{children}</main>
-        <SiteFooter />
-        <CookieBanner />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

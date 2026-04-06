@@ -1,0 +1,137 @@
+---
+title: "Integraciones de Make (2026): mejores apps, setup y errores"
+description: "Integraciones de Make 2026: cuándo usar apps nativas vs webhooks/HTTP, stacks recomendados (Shopify, Stripe, Sheets …), auth y errores típicos que generan duplicados y picos de operaciones."
+lang: "es"
+translationKey: "make-integrations"
+canonical: "/es/make-integrations"
+type: "article"
+primaryKeyword: "integraciones de Make"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#elegir"
+    label: "Elegir el conector"
+  - href: "#stacks"
+    label: "Stacks con mejor ROI"
+  - href: "#auth"
+    label: "Auth y permisos"
+  - href: "#errores"
+    label: "Errores comunes"
+  - href: "#coste"
+    label: "Operaciones y coste"
+  - href: "#checklist"
+    label: "Checklist de producción"
+quickAnswer:
+  - "Empieza con apps nativas cuando existan; usa webhooks para tiempo real y HTTP para casos avanzados."
+  - "Diseña fiabilidad primero (idempotencia, dedupe, paginación) antes de escalar volumen."
+  - "El coste en Make depende mucho de operaciones: polling, loops y retries son los grandes multiplicadores."
+cta:
+  title: "Probar Make con tus 3 herramientas clave"
+  body: "Elige 1 app de trigger + 2 apps de destino (p. ej., Shopify → Sheets → Slack) y mide setup, fiabilidad y operaciones mensuales."
+  buttonLabel: "Probar Make gratis"
+  buttonHref: "https://www.make.com/es/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=integraciones"
+faq:
+  - q: "¿Cuántas integraciones soporta Make?"
+    a: "Make cuenta con miles de apps y también soporta HTTP, webhooks y apps personalizadas, lo que permite integrar herramientas incluso sin módulo nativo."
+  - q: "¿Webhooks o polling?"
+    a: "Si la fuente lo soporta bien, los webhooks suelen ser más rápidos y eficientes. Con polling, controla intervalos y filtros para evitar picos de operaciones."
+  - q: "¿Cuándo conviene una app personalizada?"
+    a: "Cuando reutilizas la misma API en varios escenarios (auth + endpoints recurrentes) y quieres mantenerlo más limpio que con muchos módulos HTTP sueltos."
+internalLinks:
+  - href: "/es"
+    anchor: "Opinión de Make (pilar)"
+  - href: "/es/make-webhooks"
+    anchor: "Webhooks en Make: triggers instantáneos"
+  - href: "/es/tarifs-make"
+    anchor: "Precios Make: estimar coste"
+  - href: "/es/make-pricing-calculator"
+    anchor: "Calculadora de precios (operaciones)"
+  - href: "/es/make-ai-agents"
+    anchor: "Agentes de IA en Make: flujos seguros"
+  - href: "/es/tutorial-make-2025"
+    anchor: "Tutorial Make 2025"
+---
+
+<p className="muted">Integraciones · Actualizado 6 abr 2026 · ~8–12 min</p>
+
+# Integraciones de Make (2026)
+
+En Make, “integración” puede significar varias cosas:
+
+- un **módulo de app nativa** (Shopify, Stripe, Google Sheets…),
+- un **webhook** (trigger instantáneo cuando ocurre un evento),
+- el módulo **HTTP** (conectar cualquier API),
+- o una **app personalizada** (conector reutilizable con auth + endpoints).
+
+La clave es elegir el camino correcto sin disparar operaciones ni crear escenarios frágiles.
+
+<h2 id="elegir">1) Elegir el conector (regla práctica)</h2>
+
+Una regla simple:
+
+- **App nativa** si existe y cubre el endpoint que necesitas.
+- **Webhook** para eventos en tiempo real.
+- **HTTP** si necesitas funciones de API que el conector no expone.
+- **App personalizada** si vas a reutilizar la misma API en varios escenarios.
+
+Si dudas: empieza nativo y usa HTTP como “escape hatch” para casos borde.
+
+<h2 id="stacks">2) Stacks con mejor ROI (combinaciones típicas)</h2>
+
+Patrones que suelen funcionar bien:
+
+- **E-commerce:** Shopify/WooCommerce → Stripe → Sheets/Airtable → Slack/Email
+- **Captación:** Webhook (formulario) → CRM (HubSpot/Pipedrive) → Enrichment → Alerts
+- **Ops/finanzas:** Facturas → Drive/Storage → Sheets/ERP → Alertas + archivado
+- **Soporte:** Email/tickets → IA (clasificación) → routing → SLA alerts
+- **Contenido:** Notion/Airtable → IA → CMS → social/newsletter
+
+Define siempre un **ID estable** (order_id, customer_id, etc.) para que deduplicar sea fácil.
+
+<h2 id="auth">3) Auth y permisos (seguridad + RGPD)</h2>
+
+Checklist rápida:
+
+- usa cuentas de servicio cuando puedas (no cuentas personales),
+- aplica **mínimos privilegios** (solo permisos necesarios),
+- rota claves/tokens periódicamente,
+- separa entornos (test vs producción).
+
+En la UE, piensa también en RGPD:
+
+- minimiza datos (no envíes campos que no aportan al objetivo),
+- evita logs con PII sensible,
+- revisa si hay **DPA/AVV** con los proveedores que procesan datos.
+
+<h2 id="errores">4) Errores comunes (y cómo evitarlos)</h2>
+
+- **Duplicados:** idempotencia + Data Store/unique keys.
+- **Paginación:** gestiona “next page” correctamente.
+- **Rate limits:** throttling, batching y caché de lecturas.
+- **Triggers sin filtro:** polling cada minuto sin condiciones puede explotar el consumo.
+- **Fallos silenciosos:** error handlers + alertas + re-proceso controlado.
+
+<h2 id="coste">5) Operaciones y coste (lo que realmente importa)</h2>
+
+El coste en Make suele venir de:
+
+- muchos módulos por ejecución,
+- loops (multiplican pasos),
+- retries,
+- polling (runs “vacíos” que también cuentan).
+
+Para controlarlo:
+
+- filtra pronto,
+- agrupa escrituras,
+- deduplica,
+- usa webhooks cuando sea posible.
+
+<h2 id="checklist">6) Checklist de producción</h2>
+
+- IDs estables + estrategia anti-duplicados
+- paginación + backoff
+- error handling + alertas
+- estimación de operaciones/mes + margen
+- documentación de flujos de datos (RGPD)
+

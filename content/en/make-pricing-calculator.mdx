@@ -1,0 +1,109 @@
+---
+title: "Make pricing calculator (2026): estimate operations in 5 minutes"
+description: "Make operations calculator: estimate monthly operations per scenario (triggers × steps × days), add safety margin, and learn where operations usually explode."
+lang: "en"
+translationKey: "make-pricing-calculator"
+canonical: "/en/make-pricing-calculator"
+type: "article"
+primaryKeyword: "Make pricing calculator"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#formula"
+    label: "The formula"
+  - href: "#worksheet"
+    label: "Scenario worksheet"
+  - href: "#example"
+    label: "Example"
+  - href: "#spikes"
+    label: "Why operations spike"
+  - href: "#reduce"
+    label: "Reduce operations"
+quickAnswer:
+  - "Monthly operations ≈ triggers/day × steps/run × days/month × safety margin."
+  - "Operations usually spike from loops, polling triggers, retries and duplicates."
+  - "Filter early, batch writes and dedupe to reduce cost."
+cta:
+  title: "Check Make plans (official)"
+  body: "Plans and limits vary by country and promotions. Open the official page, then use the calculator below to estimate your monthly operations."
+  buttonLabel: "Try Make for free"
+  buttonHref: "https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=pricing-calculator"
+faq:
+  - q: "Are all modules 1 operation?"
+    a: "Not always. Some actions can count differently depending on the module and how it processes items. Use this calculator for estimation, then validate with real runs."
+  - q: "How big should my safety margin be?"
+    a: "Start with 20–50% depending on variability (bursts, retries, seasonal peaks). Increase if you have spiky traffic."
+  - q: "What’s the fastest way to cut operations?"
+    a: "Filter early, dedupe, batch writes, and avoid high-frequency polling when webhooks are possible."
+internalLinks:
+  - href: "/en"
+    anchor: "Make review (pillar)"
+  - href: "/en/tarifs-make"
+    anchor: "Make pricing: plans & operations"
+  - href: "/en/make-webhooks"
+    anchor: "Make webhooks: instant triggers"
+  - href: "/en/make-integrations"
+    anchor: "Make integrations: best apps & setup tips"
+  - href: "/en/make-tutorial-2025"
+    anchor: "Make tutorial 2025"
+---
+
+<p className="muted">Pricing · Updated Apr 6, 2026 · ~6–9 min</p>
+
+# Make pricing calculator (2026)
+
+Make is often “cheap” or “expensive” depending on **operations**. The best way to choose a plan is to estimate operations per scenario and then validate with real runs.
+
+<h2 id="formula">1) The formula</h2>
+
+Use this baseline (per scenario):
+
+- **Monthly operations** ≈ (triggers/day) × (steps/run) × (days/month) × (**safety margin**)
+
+Defaults you can start with:
+
+- days/month: **30**
+- safety margin: **1.2 to 1.5**
+
+<h2 id="worksheet">2) Scenario worksheet</h2>
+
+For each scenario, write:
+
+- Trigger type: webhook (instant) or polling (scheduled)
+- Triggers/day (average + peak)
+- Steps/run (count modules on the “happy path”)
+- Loop multipliers (items per run)
+- Retry rate (rough guess)
+
+Then compute:
+
+- steps/run × items/run (if looping) = “effective steps”
+
+<h2 id="example">3) Example</h2>
+
+Shopify order webhook → 8 steps → 200 orders/day:
+
+- 200 × 8 × 30 × 1.25 ≈ **60,000 operations/month**
+
+If your scenario loops over 5 line items per order, the effective steps can multiply fast — that’s why loops matter.
+
+<h2 id="spikes">4) Why operations spike</h2>
+
+The most common causes:
+
+- **Polling** too frequently (wasted runs)
+- **Loops** over many items (line items, contacts, rows)
+- **Retries** on transient errors
+- **Duplicates** (same event processed twice)
+- **Chatty API designs** (many small calls instead of batch)
+
+<h2 id="reduce">5) Reduce operations (high impact)</h2>
+
+- Filter early (before routers/loops)
+- Batch writes (aggregate then write once)
+- Cache lookups and dedupe (Data Store)
+- Prefer webhooks over polling when possible
+- Handle errors with targeted retries (not blind retries everywhere)
+
+If you want a “real estimate”, run the scenario for 3–7 days and compare the model against actual consumption.
+

@@ -37,6 +37,11 @@ export const UI_TRANSLATIONS: Record<
     language: string;
     menu: string;
     tryFree: string;
+    jumpTo: string;
+    quickAnswer: string;
+    nextSteps: string;
+    toc: string;
+    onThisPage: string;
   }
 > = {
   fr: {
@@ -55,6 +60,11 @@ export const UI_TRANSLATIONS: Record<
     language: 'Langue',
     menu: 'Menu',
     tryFree: 'Essayer Make gratuitement',
+    jumpTo: 'Aller à',
+    quickAnswer: 'Réponse rapide',
+    nextSteps: 'Étapes suivantes',
+    toc: 'Sommaire',
+    onThisPage: 'Sur cette page',
   },
   en: {
     blog: 'Blog',
@@ -72,6 +82,11 @@ export const UI_TRANSLATIONS: Record<
     language: 'Language',
     menu: 'Menu',
     tryFree: 'Try Make for free',
+    jumpTo: 'Jump to',
+    quickAnswer: 'Quick answer',
+    nextSteps: 'Next steps',
+    toc: 'Table of contents',
+    onThisPage: 'On this page',
   },
   es: {
     blog: 'Blog',
@@ -89,6 +104,11 @@ export const UI_TRANSLATIONS: Record<
     language: 'Idioma',
     menu: 'Menú',
     tryFree: 'Probar Make gratis',
+    jumpTo: 'Ir a',
+    quickAnswer: 'Respuesta rápida',
+    nextSteps: 'Siguientes pasos',
+    toc: 'Tabla de contenidos',
+    onThisPage: 'En esta página',
   },
   de: {
     blog: 'Blog',
@@ -106,6 +126,11 @@ export const UI_TRANSLATIONS: Record<
     language: 'Sprache',
     menu: 'Menü',
     tryFree: 'Make kostenlos testen',
+    jumpTo: 'Springe zu',
+    quickAnswer: 'Kurzantwort',
+    nextSteps: 'Nächste Schritte',
+    toc: 'Inhaltsverzeichnis',
+    onThisPage: 'Auf dieser Seite',
   },
 };
 
@@ -137,9 +162,9 @@ type TranslationKey = 'home' | 'blog_index' | 'tutorial_2025' | 'legal_notice' |
 const ROUTE_BY_KEY: Record<TranslationKey, Record<Lang, string>> = {
   home: {
     fr: '/',
-    en: '/en/',
-    es: '/es/',
-    de: '/de/',
+    en: '/en',
+    es: '/es',
+    de: '/de',
   },
   blog_index: {
     fr: '/blog',

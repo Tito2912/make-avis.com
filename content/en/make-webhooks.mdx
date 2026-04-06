@@ -1,0 +1,112 @@
+---
+title: "Make webhooks (2026): instant triggers, security & best practices"
+description: "Make webhooks guide: how instant triggers work, how to respond (Webhook response), secure endpoints, handle retries, and keep operations under control."
+lang: "en"
+translationKey: "make-webhooks"
+canonical: "/en/make-webhooks"
+type: "article"
+primaryKeyword: "Make webhooks"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#instant"
+    label: "Instant vs scheduled"
+  - href: "#setup"
+    label: "How to set up"
+  - href: "#security"
+    label: "Security"
+  - href: "#retries"
+    label: "Retries & error handling"
+  - href: "#cost"
+    label: "Operations & cost"
+quickAnswer:
+  - "Prefer webhooks for real-time events when your source supports it."
+  - "Treat webhook flows like production APIs: validate, dedupe, and respond fast."
+  - "Control operations by filtering early and limiting loops/retries."
+cta:
+  title: "Build your first webhook scenario"
+  body: "Create 1 webhook trigger + 3–5 steps, then test bursts (10–100 events) to validate reliability and operations."
+  buttonLabel: "Try Make for free"
+  buttonHref: "https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=webhooks"
+faq:
+  - q: "Should I respond 200 immediately?"
+    a: "Usually yes. Respond fast to avoid timeouts and retries; do heavy work asynchronously if possible."
+  - q: "How do I prevent duplicates?"
+    a: "Use event IDs + idempotency. Store processed IDs in a Data Store or design a unique key in the destination."
+  - q: "Can I secure my webhook?"
+    a: "Yes: verify signatures (if the source supports it), use secret tokens, and whitelist payload structure before processing."
+internalLinks:
+  - href: "/en"
+    anchor: "Make review (pillar)"
+  - href: "/en/make-integrations"
+    anchor: "Make integrations: best apps & setup tips"
+  - href: "/en/tarifs-make"
+    anchor: "Make pricing: estimate cost"
+  - href: "/en/make-pricing-calculator"
+    anchor: "Make pricing calculator (operations)"
+  - href: "/en/make-tutorial-2025"
+    anchor: "Make tutorial 2025"
+---
+
+<p className="muted">Webhooks · Updated Apr 6, 2026 · ~7–10 min</p>
+
+# Make webhooks (2026)
+
+Webhooks are the cleanest way to trigger scenarios **instantly** when an event happens (order created, payment succeeded, form submitted…).
+
+The moment you adopt webhooks, your Make scenario becomes part of your system’s “real-time” surface area — so treat it like a production endpoint.
+
+<h2 id="instant">1) Instant vs scheduled triggers</h2>
+
+- **Instant (webhook):** events push to you → faster and often more efficient.
+- **Scheduled (polling):** you check every X minutes → simpler but can waste operations at scale.
+
+If a source supports webhooks reliably, prefer instant.
+
+<h2 id="setup">2) How to set up (simple flow)</h2>
+
+Typical architecture:
+
+1. **Custom webhook** (trigger)
+2. Validate payload (required fields, types)
+3. Dedupe (event ID / Data Store)
+4. Route by type (router)
+5. Write to destination(s)
+6. Optional: **Webhook response** (ack / message)
+
+Keep the response fast and offload heavy processing if needed.
+
+<h2 id="security">3) Security basics</h2>
+
+At minimum:
+
+- validate payload structure (never trust fields blindly),
+- use a shared secret when possible (token header/query),
+- verify signatures (Stripe-style) when supported,
+- never log sensitive data unnecessarily.
+
+<h2 id="retries">4) Retries & error handling</h2>
+
+Retries happen when:
+
+- your webhook times out,
+- your destination API rate-limits,
+- you hit transient errors.
+
+Best practices:
+
+- add error handlers,
+- implement backoff for API calls,
+- send alerts for repeated failures,
+- make the flow idempotent (so retry ≠ duplicate record).
+
+<h2 id="cost">5) Operations & cost</h2>
+
+Webhooks can scale fast. Control operations by:
+
+- filtering early (discard irrelevant events),
+- collapsing loops (aggregate then write),
+- limiting retries and handling known errors cleanly.
+
+If you want a concrete method, use the pricing calculator and estimate operations from your event volume.
+

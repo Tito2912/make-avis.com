@@ -1,0 +1,118 @@
+---
+title: "Make integrations (2026): best apps, setup tips & pitfalls"
+description: "Make integrations guide (2026): how to choose apps vs webhooks/HTTP, recommended stacks (Shopify, Stripe, Sheets…), and how to avoid costly operation spikes."
+lang: "en"
+translationKey: "make-integrations"
+canonical: "/en/make-integrations"
+type: "article"
+primaryKeyword: "Make integrations"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#choose"
+    label: "Choose the right connector"
+  - href: "#stacks"
+    label: "Best integration stacks"
+  - href: "#pitfalls"
+    label: "Common pitfalls"
+  - href: "#cost"
+    label: "Cost & operations"
+  - href: "#checklist"
+    label: "Production checklist"
+quickAnswer:
+  - "Start with native apps when possible; use Webhooks/HTTP for flexibility."
+  - "Design for reliability (idempotency, dedupe, pagination) before scaling volume."
+  - "Integration cost in Make is mostly operations: optimize triggers, filters and batching."
+cta:
+  title: "Try Make with your 3 core tools"
+  body: "Pick 1 trigger app + 2 destination apps (e.g., Shopify → Sheets → Slack) and measure setup time, reliability and monthly operations."
+  buttonLabel: "Try Make for free"
+  buttonHref: "https://www.make.com/en/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=integrations"
+faq:
+  - q: "How many integrations does Make support?"
+    a: "Make has thousands of apps and also supports HTTP, webhooks and custom apps, which lets you connect tools even without a native module."
+  - q: "Should I use Webhooks or polling?"
+    a: "If the source supports it, prefer instant webhooks for speed. If not, use scheduled polling but control volume to avoid operation spikes."
+  - q: "Can I build a custom integration?"
+    a: "Yes: you can use HTTP modules, or create a custom app (best when you need reusable authentication + endpoints)."
+internalLinks:
+  - href: "/en"
+    anchor: "Make review (pillar)"
+  - href: "/en/make-webhooks"
+    anchor: "Make webhooks: instant triggers & responses"
+  - href: "/en/tarifs-make"
+    anchor: "Make pricing: estimate cost"
+  - href: "/en/make-pricing-calculator"
+    anchor: "Make pricing calculator (operations)"
+  - href: "/en/make-tutorial-2025"
+    anchor: "Make tutorial 2025"
+---
+
+<p className="muted">Integrations · Updated Apr 6, 2026 · ~8–12 min</p>
+
+# Make integrations (2026)
+
+“Integration” in Make can mean:
+
+- a **native app module** (Shopify, Stripe, Google Sheets…),
+- a **webhook** (instant trigger when something happens),
+- the **HTTP module** (connect any API),
+- or a **custom app** (reusable connector with auth + endpoints).
+
+This guide helps you choose the right approach **without blowing up operations** and with a setup that stays reliable at scale.
+
+<h2 id="choose">1) Choose the right connector</h2>
+
+Use this decision rule:
+
+- **Native app** when it exists and covers the endpoint you need.
+- **Webhooks** for real-time triggers (orders, payments, forms, events).
+- **HTTP** when you need an API feature not exposed by the native module.
+- **Custom app** when you’ll reuse the same API across multiple scenarios (auth + endpoints).
+
+If you’re unsure: start native, then “escape hatch” to HTTP for edge cases.
+
+<h2 id="stacks">2) Best integration stacks (high ROI)</h2>
+
+Typical stacks that work well:
+
+- **E-commerce:** Shopify/WooCommerce → Stripe → Google Sheets → Slack/Email.
+- **Lead gen:** Webhook (form) → CRM (HubSpot/Pipedrive) → Enrichment → Notifications.
+- **Ops & finance:** Invoices → Accounting/Sheets → Storage → Alerts.
+- **Content:** Airtable/Notion → AI modules → CMS → Social scheduling.
+
+Make sure each stack has a **single source of truth** (ID) to prevent duplicates.
+
+<h2 id="pitfalls">3) Common pitfalls (and how to avoid them)</h2>
+
+- **Duplicates:** add an idempotency key (source record ID) + store processed IDs (Data Store).
+- **Pagination:** always handle “next page” properly; avoid infinite loops.
+- **Rate limits:** throttle requests, batch updates, and cache lookups.
+- **Unbounded triggers:** polling every minute without filters can explode volume.
+- **Silent failures:** configure error handlers and alerts (Slack/email) for retries and exceptions.
+
+<h2 id="cost">4) Cost & operations (what really matters)</h2>
+
+In Make, cost is driven by **operations**:
+
+- one run with 10 modules ≈ 10 operations (simplified),
+- loops multiply operations,
+- retries and error paths add extra operations.
+
+To control cost:
+
+- filter early (before loops),
+- batch writes (aggregate, then write once),
+- dedupe (Data Store / unique keys),
+- schedule non-urgent tasks (hourly/daily) instead of instant.
+
+<h2 id="checklist">5) Production checklist</h2>
+
+- Stable IDs + dedupe strategy (Data Store / unique key)
+- Retry/error handler + alerting
+- Pagination + backoff for APIs
+- Operational budget estimate (monthly ops)
+- Observability: logging, run history, error dashboard
+
+If you want the fastest next step: start with a webhook-driven scenario and measure your first week of operations.
+

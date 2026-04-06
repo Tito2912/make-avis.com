@@ -12,3 +12,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${SITE.baseUrl}/sitemap.xml`,
   };
 }
+

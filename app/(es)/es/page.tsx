@@ -1,18 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArticleLayout } from '@/components/ArticleLayout';
-import { getAllDocMetas, getAllStaticParams, getDocMetaByRouteSegments, getPostByRouteSegments } from '@/lib/content';
+import { getAllDocMetas, getDocMetaByRouteSegments, getPostByRouteSegments } from '@/lib/content';
 import { buildArticleJsonLd, buildBreadcrumbJsonLd } from '@/lib/schema';
 import { buildAlternates, getOpenGraphImage, getOpenGraphType, parseRobots } from '@/lib/seo';
 
-export async function generateStaticParams() {
-  const all = await getAllStaticParams();
-  return all.filter((x) => x.slug.length > 0);
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const meta = await getDocMetaByRouteSegments(slug);
+export async function generateMetadata(): Promise<Metadata> {
+  const meta = await getDocMetaByRouteSegments(['es']);
   if (!meta) return {};
 
   const all = await getAllDocMetas();
@@ -40,9 +34,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function CatchAllPage({ params }: { params: Promise<{ slug: string[] }> }) {
-  const { slug } = await params;
-  const post = await getPostByRouteSegments(slug);
+export default async function SpanishHomePage() {
+  const post = await getPostByRouteSegments(['es']);
   if (!post) return notFound();
 
   const articleJsonLd = buildArticleJsonLd(post);

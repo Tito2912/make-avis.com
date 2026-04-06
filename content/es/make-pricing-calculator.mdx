@@ -1,0 +1,109 @@
+---
+title: "Calculadora de precios de Make (2026): estima operaciones en 5 min"
+description: "Calculadora de operaciones en Make: consumo mensual por escenario (triggers/día × pasos × días × margen), por qué suben las operaciones y cómo reducirlas."
+lang: "es"
+translationKey: "make-pricing-calculator"
+canonical: "/es/make-pricing-calculator"
+type: "article"
+primaryKeyword: "calculadora de precios de Make"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#formula"
+    label: "La fórmula"
+  - href: "#worksheet"
+    label: "Worksheet"
+  - href: "#ejemplo"
+    label: "Ejemplo"
+  - href: "#picos"
+    label: "Por qué hay picos"
+  - href: "#reducir"
+    label: "Reducir operaciones"
+quickAnswer:
+  - "Operaciones/mes ≈ triggers/día × pasos/ejecución × 30 × margen."
+  - "Los picos suelen venir de loops, polling, retries y duplicados."
+  - "Filtra pronto, batch y dedupe para bajar coste."
+cta:
+  title: "Ver planes de Make (oficial)"
+  body: "Los planes cambian según país y promociones. Abre la página oficial y usa la calculadora como estimación inicial."
+  buttonLabel: "Probar Make gratis"
+  buttonHref: "https://www.make.com/es/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=calculadora-precios"
+faq:
+  - q: "¿Cada módulo cuenta como 1 operación?"
+    a: "No siempre. Depende del módulo y cómo procesa items. Usa la calculadora para estimar y valida con ejecuciones reales."
+  - q: "¿Qué margen de seguridad uso?"
+    a: "Empieza con 20–50% según variabilidad (ráfagas, retries, estacionalidad)."
+  - q: "¿La forma más rápida de bajar operaciones?"
+    a: "Filtros tempranos, dedupe, batching de escrituras y evitar polling de alta frecuencia cuando puedes usar webhooks."
+internalLinks:
+  - href: "/es"
+    anchor: "Opinión de Make (pilar)"
+  - href: "/es/tarifs-make"
+    anchor: "Precios Make: planes y operaciones"
+  - href: "/es/make-webhooks"
+    anchor: "Webhooks en Make: triggers instantáneos"
+  - href: "/es/make-integrations"
+    anchor: "Integraciones de Make: apps y setup"
+  - href: "/es/make-ai-agents"
+    anchor: "Agentes de IA en Make: casos de uso"
+  - href: "/es/tutorial-make-2025"
+    anchor: "Tutorial Make 2025"
+---
+
+<p className="muted">Precios · Actualizado 6 abr 2026 · ~6–9 min</p>
+
+# Calculadora de precios de Make (2026)
+
+En Make, muchas veces lo “caro” o “barato” depende del **consumo** (operaciones). La forma más fiable de elegir plan es estimar operaciones por escenario y luego validar con consumo real.
+
+<h2 id="formula">1) La fórmula</h2>
+
+Por escenario:
+
+- **Operaciones/mes** ≈ (triggers/día) × (pasos/ejecución) × (días/mes) × (**margen**)
+
+Valores iniciales:
+
+- días/mes: **30**
+- margen: **1,2 a 1,5**
+
+<h2 id="worksheet">2) Worksheet</h2>
+
+Para cada escenario anota:
+
+- tipo de trigger (webhook o polling)
+- triggers/día (media + pico)
+- pasos/ejecución (módulos en el camino “happy”)
+- multiplicador por loops (items por ejecución)
+- tasa de retries (aprox.)
+
+Luego:
+
+- pasos × items = “pasos efectivos”
+
+<h2 id="ejemplo">3) Ejemplo</h2>
+
+Webhook de pedido → 8 pasos → 200 pedidos/día:
+
+- 200 × 8 × 30 × 1,25 ≈ **60.000 operaciones/mes**
+
+Si además iteras 5 line items por pedido, el consumo puede multiplicarse rápido.
+
+<h2 id="picos">4) Por qué hay picos de operaciones</h2>
+
+- polling demasiado frecuente,
+- loops/paginación sin límites,
+- retries por errores transitorios,
+- duplicados,
+- APIs “chatty” con muchos calls pequeños.
+
+<h2 id="reducir">5) Reducir operaciones</h2>
+
+- filtra antes de routers/loops
+- batching/aggregación
+- caché y dedupe (Data Store)
+- webhooks cuando sea posible
+- retries con límites y condiciones
+
+Para afinar: ejecuta el escenario 3–7 días y compara tu estimación con el consumo real.
+

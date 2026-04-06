@@ -1,0 +1,126 @@
+---
+title: "Webhooks en Make (2026): triggers instantáneos y seguridad"
+description: "Guía de webhooks en Make: triggers instantáneos, Webhook response, seguridad (tokens/firmas), dedupe, retries y cómo controlar operaciones cuando sube el volumen."
+lang: "es"
+translationKey: "make-webhooks"
+canonical: "/es/make-webhooks"
+type: "article"
+primaryKeyword: "webhooks en Make"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#instant"
+    label: "Instant vs polling"
+  - href: "#setup"
+    label: "Setup paso a paso"
+  - href: "#payload"
+    label: "Diseño del payload"
+  - href: "#seguridad"
+    label: "Seguridad"
+  - href: "#reintentos"
+    label: "Reintentos y errores"
+  - href: "#coste"
+    label: "Operaciones y coste"
+quickAnswer:
+  - "Si la fuente lo permite, usa webhooks para eventos en tiempo real."
+  - "Valida, deduplica y responde rápido para evitar timeouts y duplicados."
+  - "Controla el consumo con filtros tempranos, límites en loops y retries razonables."
+cta:
+  title: "Crear tu primer escenario con webhook"
+  body: "Monta 1 trigger webhook + 3–5 pasos y prueba ráfagas (10–100 eventos) para validar fiabilidad y operaciones."
+  buttonLabel: "Probar Make gratis"
+  buttonHref: "https://www.make.com/es/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=webhooks"
+faq:
+  - q: "¿Debo responder 200 inmediatamente?"
+    a: "Normalmente sí. Responde rápido para evitar timeouts y reintentos; si el trabajo es pesado, intenta procesarlo de forma asíncrona."
+  - q: "¿Cómo evito duplicados?"
+    a: "Usa IDs de evento e idempotencia. Guarda IDs procesados (Data Store) o define claves únicas en el destino."
+  - q: "¿Puedo asegurar un webhook?"
+    a: "Sí: tokens/secretos, verificación de firma si la fuente lo soporta, y validación estricta del payload antes de ejecutar acciones."
+internalLinks:
+  - href: "/es"
+    anchor: "Opinión de Make (pilar)"
+  - href: "/es/make-integrations"
+    anchor: "Integraciones de Make: apps y setup"
+  - href: "/es/tarifs-make"
+    anchor: "Precios Make: estimar coste"
+  - href: "/es/make-pricing-calculator"
+    anchor: "Calculadora de precios (operaciones)"
+  - href: "/es/tutorial-make-2025"
+    anchor: "Tutorial Make 2025"
+---
+
+<p className="muted">Webhooks · Actualizado 6 abr 2026 · ~7–10 min</p>
+
+# Webhooks en Make (2026)
+
+Los webhooks son la forma más limpia de disparar escenarios **al instante** cuando ocurre un evento (pago, pedido, formulario, lead…).
+
+En cuanto usas webhooks, tu escenario se comporta como un endpoint “de producción”. Por eso conviene tratarlo como tal.
+
+<h2 id="instant">1) Instant (webhook) vs scheduled (polling)</h2>
+
+- **Instant:** el evento se envía a tu webhook → rápido y eficiente.
+- **Polling:** consultas cada X minutos → simple, pero puede generar muchas ejecuciones vacías.
+
+Si la fuente ofrece webhooks fiables, suele ser mejor opción.
+
+<h2 id="setup">2) Setup paso a paso (flujo recomendado)</h2>
+
+Arquitectura típica:
+
+1. **Custom webhook** (trigger)
+2. Validación (campos obligatorios, tipos, allowlist de eventos)
+3. Dedupe/idempotencia (ID de evento)
+4. Router por tipo (y/o reglas de negocio)
+5. Escritura en destinos (CRM, Slack, Sheets…)
+6. Opcional: **Webhook response**
+
+Consejo: mantén el “camino de respuesta” ligero. Responder lento puede provocar reintentos en el proveedor.
+
+<h2 id="payload">3) Diseño del payload (para escalar sin dolor)</h2>
+
+Un payload robusto incluye:
+
+- **event_id** (o clave única)
+- **event_type**
+- **timestamp**
+- **version**
+
+Si tú envías el webhook desde tu sistema, añadir estos campos desde el inicio te ahorra horas de debug más adelante.
+
+<h2 id="seguridad">4) Seguridad (y RGPD)</h2>
+
+Mínimos:
+
+- valida estructura y tipos (no confíes en campos sin comprobar)
+- usa secreto/token
+- verifica firma si existe
+- evita logs con PII innecesaria
+
+RGPD: reduce datos, define finalidad y documenta a qué sistemas se envían (flujo de datos).
+
+<h2 id="reintentos">5) Reintentos y errores</h2>
+
+Los reintentos suelen venir de:
+
+- timeouts,
+- rate limits,
+- errores transitorios.
+
+Buenas prácticas:
+
+- idempotencia (reintento ≠ duplicado)
+- backoff en llamadas a API
+- error handlers + alertas
+- ruta de “eventos problemáticos” para re-procesar sin bloquear todo
+
+<h2 id="coste">6) Operaciones y coste</h2>
+
+Controla operaciones con:
+
+- filtros tempranos (descartar eventos irrelevantes)
+- límites/paginación en loops
+- batching cuando sea posible
+- retries con límites y condiciones
+

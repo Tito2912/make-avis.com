@@ -1,0 +1,111 @@
+---
+title: "Make Kostenrechner (2026): Operations in 5 Minuten schätzen"
+description: "Make Operations Rechner: Monatsverbrauch pro Szenario schätzen (Trigger/Tag × Steps × Tage × Sicherheitsmarge), Ursachen für Spikes erkennen und Operations effektiv reduzieren."
+lang: "de"
+translationKey: "make-pricing-calculator"
+canonical: "/de/make-pricing-calculator"
+type: "article"
+primaryKeyword: "Make Kostenrechner"
+date: "2026-04-06"
+updatedAt: "2026-04-06"
+jumpLinks:
+  - href: "#formel"
+    label: "Formel"
+  - href: "#worksheet"
+    label: "Worksheet pro Szenario"
+  - href: "#beispiel"
+    label: "Beispiel"
+  - href: "#spikes"
+    label: "Warum Operations steigen"
+  - href: "#reduzieren"
+    label: "Operations reduzieren"
+quickAnswer:
+  - "Monatliche Operations ≈ Trigger/Tag × Steps/Run × 30 × Sicherheitsmarge."
+  - "Spikes kommen oft von Loops, Polling, Retries und Duplicates."
+  - "Früh filtern, batchen und deduplizieren sind die schnellsten Hebel."
+cta:
+  title: "Make Pläne prüfen (offiziell)"
+  body: "Pläne und Limits ändern sich je nach Land/Angebot. Öffne die offizielle Pricing-Seite und nutze den Rechner unten als Schätzung."
+  buttonLabel: "Make kostenlos testen"
+  buttonHref: "https://www.make.com/de/register?pc=makebyebyesalariat&utm_source=make-avis&utm_medium=cta&utm_campaign=cluster&utm_content=kostenrechner"
+faq:
+  - q: "Zählt jedes Modul als 1 Operation?"
+    a: "Nicht immer. Je nach Modul und Item-Verarbeitung kann die Zählung variieren. Nutze den Rechner als Näherung und validiere mit echten Runs."
+  - q: "Wie groß sollte die Sicherheitsmarge sein?"
+    a: "Starte mit 20–50% – abhängig von Bursts, Retries und Saisonalität. Bei stark schwankendem Traffic eher höher."
+  - q: "Was ist der schnellste Weg, Operations zu senken?"
+    a: "Filter früh, vermeide unnötiges Polling, batche Writes und dedupliziere Events/Records."
+internalLinks:
+  - href: "/de"
+    anchor: "Make Bewertung (Pillar)"
+  - href: "/de/tarifs-make"
+    anchor: "Make Preise: Pläne & Operations"
+  - href: "/de/make-webhooks"
+    anchor: "Make Webhooks: Instant Trigger"
+  - href: "/de/make-integrations"
+    anchor: "Make Integrationen: Apps & Setup"
+  - href: "/de/make-ai-agents"
+    anchor: "Make KI-Agenten: Use Cases"
+  - href: "/de/make-tutorial-2025"
+    anchor: "Make Tutorial 2025"
+---
+
+<p className="muted">Kosten · Aktualisiert 6. April 2026 · ~6–9 Min</p>
+
+# Make Kostenrechner (2026)
+
+Bei Make entscheidet oft nicht der Monatsbetrag, sondern dein **Verbrauch** (Operations). Der schnellste Weg zur passenden Planwahl: Operations pro Szenario grob schätzen und anschließend mit echten Runs verifizieren.
+
+<h2 id="formel">1) Formel (Baseline)</h2>
+
+Pro Szenario:
+
+- **Monatliche Operations** ≈ (Trigger/Tag) × (Steps/Run) × (Tage/Monat) × (**Sicherheitsmarge**)
+
+Startwerte:
+
+- Tage/Monat: **30**
+- Sicherheitsmarge: **1,2 bis 1,5**
+
+<h2 id="worksheet">2) Worksheet pro Szenario</h2>
+
+Notiere dir pro Szenario:
+
+- Trigger-Typ: Webhook (instant) oder Schedule (polling)
+- Trigger/Tag (Durchschnitt + Peak)
+- Steps/Run (Module im Happy Path zählen)
+- Loop-Multiplikator (Items pro Run)
+- Retry-Rate (grobe Schätzung)
+
+Dann:
+
+- Steps/Run × Items/Run = „effektive Steps“
+
+<h2 id="beispiel">3) Beispiel</h2>
+
+Shopify Order Webhook → 8 Steps → 200 Orders/Tag:
+
+- 200 × 8 × 30 × 1,25 ≈ **60.000 Operations/Monat**
+
+Wenn du pro Order über 5 Line Items loopst, kann sich der Verbrauch schnell vervielfachen – daher sind Loops (und Pagination) die größten Treiber.
+
+<h2 id="spikes">4) Warum Operations steigen</h2>
+
+Die häufigsten Ursachen:
+
+- **Polling** zu häufig (viele „leere“ Runs)
+- **Loops** ohne Limits (Items explodieren)
+- **Retries** bei transienten Fehlern
+- **Duplicates** (gleiches Event mehrfach verarbeitet)
+- „Chatty“ APIs (viele kleine Calls statt Batch)
+
+<h2 id="reduzieren">5) Operations reduzieren (High Impact)</h2>
+
+- früh filtern (vor Routern/Loops)
+- batchen (Aggregator, Sammeln → 1 Write)
+- caching + dedupe (Data Store)
+- Webhooks statt Polling, wo möglich
+- Fehler gezielt behandeln (nicht blind überall retrien)
+
+Für eine realistische Schätzung: lass das Szenario 3–7 Tage laufen und vergleiche dein Modell mit dem tatsächlichen Verbrauch.
+
