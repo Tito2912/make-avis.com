@@ -3,16 +3,10 @@
 /index / 301!
 
 # Force no trailing slash on locale home
-/en/ /en 301!
-/es/ /es 301!
-/de/ /de 301!
 
 # Locale index -> canonical
-/en/index.html /en 301!
 /en/index /en 301!
-/es/index.html /es 301!
 /es/index /es 301!
-/de/index.html /de 301!
 /de/index /de 301!
 
 # Legacy privacy typo
@@ -48,12 +42,6 @@
 /de/privacy-policy.html /de/privacy-policy 301!
 
 # Next export: serve pages for pretty URLs (avoid folder vs .html issues)
-/en /en.html 200
-/en/ /en.html 200
-/es /es.html 200
-/es/ /es.html 200
-/de /de.html 200
-/de/ /de.html 200
 
 /blog /blog.html 200
 /blog/ /blog.html 200
